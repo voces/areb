@@ -1,23 +1,7 @@
 
 // http://www.wc3c.net/showthread.php?t=937
 
-import pngjs from "pngjs";
-
 import BufferUtils from "./BufferUtils.mjs";
-
-const PNG = pngjs.PNG;
-
-const tilesetNames = {
-	A: "Ashenvale",
-	B: "Barrens",
-	F: "Lordaeron Fall",
-	L: "Lordaeron Summer",
-	N: "Northrend",
-	V: "Village",
-	W: "Lordaeron Winter",
-	X: "City Dalaran",
-	Y: "City Lordaeron"
-};
 
 const readTiles = reader => {
 
@@ -26,10 +10,8 @@ const readTiles = reader => {
 
 };
 
-const warIndexToPngIndex = ( width, height, index ) =>
-	( ( height - Math.floor( index / width ) - 1 ) * width + index % width ) * 4;
-const pngIndexToWarIndex = ( width, height, index ) =>
-	( height - Math.floor( Math.floor( index / 4 ) / width ) ) * width + Math.floor( index / 4 ) % width;
+const w3eIndexToEbIndex = ( width, height, index ) =>
+	( height - Math.floor( index / width ) - 1 ) * width + index % width;
 
 export default w3eBuffer => {
 
@@ -84,31 +66,10 @@ export default w3eBuffer => {
 
 	}
 
-	let min = Infinity;
-	let max = - Infinity;
-	for ( let i = 0; i < data.length; i ++ ) {
+	const cliffmap = [];
+	for ( let i = 0; i < data.length; i ++ )
+		cliffmap[ w3eIndexToEbIndex( width, height, i ) ] = data[ i ].finalHeight;
 
-		if ( min > data[ i ].finalHeight ) min = data[ i ].finalHeight;
-		if ( max < data[ i ].finalHeight ) max = data[ i ].finalHeight;
-
-	}
-	const ratio = max - min;
-
-	const png = new PNG( { width, height, colorType: 2 } );
-	for ( let i = 0; i < data.length; i ++ ) {
-
-		const value = Math.floor( ( data[ i ].finalHeight - min ) / ratio * 256 );
-		const index = warIndexToPngIndex( width, height, i );
-
-		if ( index < 161 * 4 + 1 ) console.log( i );
-
-		png.data[ index ] = value;
-		png.data[ index + 1 ] = value;
-		png.data[ index + 2 ] = data[ i ].flags ? Math.min( value * 1.5 + 16, 255 ) : value;
-		png.data[ index + 3 ] = 255;
-
-	}
-
-	return png;
+	return { cliffmap };
 
 };
