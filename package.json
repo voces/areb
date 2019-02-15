@@ -1,0 +1,19 @@
+{
+  "name": "areb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint-config-mdcs": "^4.2.3",
+    "eslint-config-verit": "^1.0.1",
+    "eslint": "^5.13.0",
+    "pngjs": "^3.3.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "verit",
+  "license": "ISC"
+}
