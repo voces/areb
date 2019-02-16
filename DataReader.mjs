@@ -1,17 +1,4 @@
 
-const gets = [
-	"getInt8",
-	"getUint8",
-	"getInt16",
-	"getUint16",
-	"getInt32",
-	"getUint32",
-	"getFloat32",
-	"getFloat64",
-	"getBigInt64",
-	"getBigUint64"
-];
-
 export default class DataReader {
 
 	constructor( dataView ) {
@@ -109,8 +96,19 @@ export default class DataReader {
 
 	readChars( length ) {
 
-		console.log( "readChars", length );
 		return Array( length ).fill().map( () => this.readChar() ).join( "" );
+
+	}
+
+	// WC3-style short, where it's 2 bytes, except first byte is a flag and second is the sign...
+	readShort() {
+
+		const value = this.readUint16();
+
+		// Returns a number between -16384 and 16383 and a boolean
+		const unsignedShortComponent = value & 0x3FFF;
+		const signedShortComponent = value & 0x4000 ? unsignedShortComponent * - 1 - 1 : unsignedShortComponent;
+		return [ signedShortComponent, !! ( value & 0x8000 ) ];
 
 	}
 
@@ -123,6 +121,13 @@ export default class DataReader {
 			bits.push( !! ( rawBits & 1 << i ) );
 
 		return bits;
+
+	}
+
+	readNibbles() {
+
+		const value = this.readUint8();
+		return [ value >> 4, value & 0xF ];
 
 	}
 

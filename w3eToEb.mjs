@@ -1,20 +1,35 @@
 
 // http://www.wc3c.net/showthread.php?t=937
+// Ldrt", "Ldro", "Ldrg", "Lrok", "Lgrs", "Lgrd"
+const tileMap = {
+	Ldrt: { name: "Lordaeron Dirt", color: "#474632" },
+	Ldro: { name: "Lrodaeron Rough Dirt", color: "#835931" },
+	Ldrg: { name: "Lrodaeron Grassy Dirt", color: "#2b3c1f" },
+	Lrok: { name: "Lrodaeron Rock", color: "#876b62" },
+	Lgrs: { name: "Lrodaeron Grass", color: "#0c4013" },
+	Lgrd: { name: "Lrodaeron Dark Grass", color: "#043609" },
+	Watr: { name: "Water", color: "#567ebf" },
+	Bdry: { name: "Boundary", color: "#000000" },
+	Blgt: { name: "Blight", color: "#564725" }
+};
 
-import BufferUtils from "./BufferUtils.mjs";
+const BOUNDARY_FLAG = 0b1000;
+const WATER_FLAG = 0b0100;
+const BLIGHT_FLAG = 0b010;
+const RAMP_FLAG = 0b0001;
 
 const readTiles = reader => {
 
-	const length = reader.readInt32();
-	console.log( { length } );
+	const length = reader.readUint32();
 	if ( length > 16 )
 		throw new Error( `bad length (${length})!` );
 
 	const tiles = Array( length ).fill().map( () => reader.readChars( 4 ) );
-	console.log( { tiles } );
 	return tiles;
 
 };
+
+const isRamp = ( flagmap, x, y ) => flagmap[ y ][ x ].ramp && flagmap[ y - 1 ][ x ].ramp && flagmap[ y + 1 ][ x ].ramp && flagmap[ y ][ x - 1 ].ramp && flagmap[ y ][ x + 1 ].ramp;
 
 const w3eIndexToEbIndex = ( width, height, index ) =>
 	( height - Math.floor( index / width ) - 1 ) * width + index % width;
@@ -24,47 +39,55 @@ export default reader => {
 	// const reader = BufferUtils.wrap( w3eBuffer );
 
 	// header: W3E!
-	console.log( reader.readChars( 4 ) );
+	reader.readChars( 4 );
 
 	// version: 11
-	console.log( reader.readUint8() );
+	reader.readUint32();
 
 	const tileset = reader.readChar();
 
-	const isUsingCustomTileset = !! reader.readInt16();
-	console.log( { isUsingCustomTileset } );
+	const isUsingCustomTileset = !! reader.readInt32();
 
 	const groundTiles = readTiles( reader );
-
 	const cliffTiles = readTiles( reader );
 
-	const width = reader.readInt();
-	const height = reader.readInt();
+	const tileTypes = [
+		...groundTiles.map( code => tileMap[ code ] || tileMap.Ldrt ),
+		tileMap.Watr,
+		tileMap.Blgt,
+		tileMap.Bdry
+	];
+	const waterIndex = tileTypes.length - 3;
+	const blightIndex = tileTypes.length - 2;
+	const boundaryIndex = tileTypes.length - 1;
+
+	const width = reader.readInt32();
+	const height = reader.readInt32();
 
 	const center = {
-		x: reader.readFloat(),
-		y: reader.readFloat()
+		x: reader.readFloat32(),
+		y: reader.readFloat32()
 	};
-	console.log( { tileset, isUsingCustomTileset, groundTiles, cliffTiles, width, height, center } );
+
 	const length = width * height;
 	const data = [];
 	for ( let i = 0; i < length; i ++ ) {
 
-		const height = reader.readShort();
-		const waterAndBoundary = reader.readShort();
-		const flagsAndGroundTexture = reader.readFlags();
-		const textureDetails = reader.readByte();
-		const cliffTextureAndLayerHeight = reader.readByte();
+		const [ height ] = reader.readShort();
+		const [ water, boundary ] = reader.readShort();
+		const [ flags, groundTextureType ] = reader.readNibbles();
+		const textureDetails = reader.readUint8();
+		const [ cliffTexture, layerHeight ] = reader.readNibbles();
 
 		const tile = {
 			height,
-			boundary: 1 / waterAndBoundary < 0,
-			water: Math.abs( waterAndBoundary ),
-			flags: flagsAndGroundTexture >> 4,
-			groundTextureType: flagsAndGroundTexture & 0xF,
+			boundary,
+			water,
+			flags,
+			groundTextureType,
 			textureDetails,
-			cliffTexture: cliffTextureAndLayerHeight >> 4,
-			layerHeight: cliffTextureAndLayerHeight & 0xF
+			cliffTexture,
+			layerHeight
 		};
 
 		tile.finalHeight = ( tile.height - 0x2000 + ( tile.layerHeight - 2 ) * 0x0200 ) / 4;
@@ -73,10 +96,33 @@ export default reader => {
 
 	}
 
-	const cliffmap = [];
-	for ( let i = 0; i < data.length; i ++ )
-		cliffmap[ w3eIndexToEbIndex( width, height, i ) ] = data[ i ].finalHeight;
+	const rawCliffmap = [];
+	const rawTilemap = [];
+	const rawFlagmap = [];
+	for ( let i = 0; i < data.length; i ++ ) {
 
-	return { cliffmap };
+		const index = w3eIndexToEbIndex( width, height, i );
+
+		rawCliffmap[ index ] = data[ i ].layerHeight;
+
+		rawTilemap[ index ] =
+			data[ i ].flags & BOUNDARY_FLAG && boundaryIndex ||
+			data[ i ].flags & WATER_FLAG && waterIndex ||
+			data[ i ].flags & BLIGHT_FLAG && blightIndex ||
+			data[ i ].groundTextureType;
+
+		rawFlagmap[ index ] = {
+			boundary: data[ i ].flags & BOUNDARY_FLAG > 0,
+			water: data[ i ].flags & WATER_FLAG > 0,
+			blight: data[ i ].flags & BLIGHT_FLAG > 0,
+			ramp: data[ i ].flags & RAMP_FLAG > 0
+		};
+
+	}
+	const tilemap = Array( height ).fill().map( ( _, y ) => rawTilemap.slice( y * width, ( y + 1 ) * width - 1 ) );
+	const flagmap = Array( height ).fill().map( ( _, y ) => rawFlagmap.slice( y * width, ( y + 1 ) * width - 1 ) );
+	const cliffmap = Array( height ).fill().map( ( _, y ) => rawCliffmap.slice( y * width, ( y + 1 ) * width - 1 ).map( ( height, x ) => isRamp( flagmap, x, y ) ? "r" : height ) );
+
+	return { tileset, isUsingCustomTileset, groundTiles, cliffTiles, width, height, center, cliffmap, tilemap, tileTypes, flagmap, data };
 
 };
