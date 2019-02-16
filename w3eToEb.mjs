@@ -5,27 +5,34 @@ import BufferUtils from "./BufferUtils.mjs";
 
 const readTiles = reader => {
 
-	const length = reader.readInt();
-	return Array( length ).fill().map( () => reader.readChars( 4 ) );
+	const length = reader.readInt32();
+	console.log( { length } );
+	if ( length > 16 )
+		throw new Error( `bad length (${length})!` );
+
+	const tiles = Array( length ).fill().map( () => reader.readChars( 4 ) );
+	console.log( { tiles } );
+	return tiles;
 
 };
 
 const w3eIndexToEbIndex = ( width, height, index ) =>
 	( height - Math.floor( index / width ) - 1 ) * width + index % width;
 
-export default w3eBuffer => {
+export default reader => {
 
-	const reader = BufferUtils.wrap( w3eBuffer );
+	// const reader = BufferUtils.wrap( w3eBuffer );
 
 	// header: W3E!
-	reader.readChars( 4 );
+	console.log( reader.readChars( 4 ) );
 
 	// version: 11
-	reader.readInt();
+	console.log( reader.readUint8() );
 
-	const tileset = reader.readChars( 1 );
+	const tileset = reader.readChar();
 
-	const isUsingCustomTileset = !! reader.readInt();
+	const isUsingCustomTileset = !! reader.readInt16();
+	console.log( { isUsingCustomTileset } );
 
 	const groundTiles = readTiles( reader );
 
@@ -38,7 +45,7 @@ export default w3eBuffer => {
 		x: reader.readFloat(),
 		y: reader.readFloat()
 	};
-
+	console.log( { tileset, isUsingCustomTileset, groundTiles, cliffTiles, width, height, center } );
 	const length = width * height;
 	const data = [];
 	for ( let i = 0; i < length; i ++ ) {
