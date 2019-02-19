@@ -6,11 +6,8 @@ import {
 	DirectionalLight,
 	HemisphereLight,
 	PCFSoftShadowMap,
-	PlaneGeometry,
 	Vector3,
-	FogExp2,
-	MeshPhongMaterial,
-	Mesh
+	FogExp2
 } from "./node_modules/three/build/three.module.js";
 
 import DataReader from "./DataReader.mjs";
@@ -29,9 +26,11 @@ document.querySelector( "input" ).addEventListener( "change", e => {
 		const terrain = new Terrain( {
 			cliffmap: terrainDef.cliffmap,
 			tilemap: terrainDef.tilemap,
-			tileTypes: terrainDef.tileTypes
+			tileTypes: terrainDef.tileTypes,
+			flagmap: terrainDef.flagmap
 		} );
 		scene.add( terrain.mesh );
+		scene.add( terrain.waterMesh );
 
 		camera.position.z = terrainDef.width * 0.4;
 		camera.position.y = terrainDef.height * - 0.6;
@@ -79,22 +78,8 @@ scene.add( light );
 const light2 = new HemisphereLight( 0xffffbb, 0x080820, 1 );
 scene.add( light2 );
 
-const fog = new FogExp2( 0x000000, 0.015 );
+const fog = new FogExp2( 0x000000, 0.005 );
 scene.fog = fog;
-
-{
-
-	const geometry = new PlaneGeometry( 50, 50, 32, 32 );
-	for ( let i = 0; i < geometry.vertices.length; i ++ )
-		geometry.vertices[ i ].z += Math.random();
-
-	const material = new MeshPhongMaterial( { color: 0x0077be, flatShading: true, opacity: 0.5, transparent: true } );
-	const mesh = new Mesh( geometry, material );
-	mesh.castShadow = true;
-	mesh.receiveShadow = true;
-	scene.add( mesh );
-
-}
 
 const keyboard = {};
 function onKey( e ) {

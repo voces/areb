@@ -118,10 +118,10 @@ export default reader => {
 			data[ i ].groundTextureType;
 
 		rawFlagmap[ index ] = {
-			boundary: data[ i ].flags & BOUNDARY_FLAG > 0,
-			water: data[ i ].flags & WATER_FLAG > 0,
-			blight: data[ i ].flags & BLIGHT_FLAG > 0,
-			ramp: data[ i ].flags & RAMP_FLAG > 0
+			boundary: ( data[ i ].flags & BOUNDARY_FLAG ) > 0,
+			water: ( data[ i ].flags & WATER_FLAG ) > 0,
+			blight: ( data[ i ].flags & BLIGHT_FLAG ) > 0,
+			ramp: ( data[ i ].flags & RAMP_FLAG ) > 0
 		};
 
 	}

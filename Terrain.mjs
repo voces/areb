@@ -1,9 +1,39 @@
 
 import { Geometry, Mesh, MeshPhongMaterial, FaceColors, Vector3, Face3, Color } from "./node_modules/three/build/three.module.js";
 // https://github.com/mrdoob/three.js/blob/master/examples/js/objects/Water2.js
+
+// class Tile {
+
+// 	constructor( {
+// 		cliffmap,
+// 		x,
+// 		y
+// 	} ) {
+
+// 		this.x = x;
+// 		this.y = y;
+
+// 		this.floor = [
+// 			new Vector3( x, - y, cliffmap[ y ][ x ] ),
+// 			new Vector3( x + 1, - y, cliffmap[ y ][ x ] ),
+// 			new Vector3( x, - y - 1, cliffmap[ y ][ x ] ),
+// 			new Vector3( x + 1, - y - 1, cliffmap[ y ][ x ] )
+// 		];
+
+// 		this.walls = [];
+
+// 	}
+
+// }
+
 export default class Terrain {
 
-	constructor( { cliffmap = [[ 0 ]], tilemap = [[ 0 ]], tileTypes = [ { name: "Grass", color: "#608038" } ] } ) {
+	constructor( {
+		cliffmap = [[ 0 ]],
+		tilemap = [[ 0 ]],
+		tileTypes = [ { name: "Grass", color: "#608038" } ],
+		flagmap = [[ {} ]]
+	} ) {
 
 		this._cliffmap = cliffmap;
 
@@ -16,6 +46,14 @@ export default class Terrain {
 		const material = new MeshPhongMaterial( {
 			vertexColors: FaceColors,
 			flatShading: true
+		} );
+
+		const waterGeometry = new Geometry();
+		const waterMaterial = new MeshPhongMaterial( {
+			color: 0x0077be,
+			flatShading: true,
+			opacity: 0.25,
+			transparent: true
 		} );
 
 		function color( x, y ) {
@@ -53,6 +91,20 @@ export default class Terrain {
 					);
 					geometry.faces.push( new Face3( index + 1, index, index + 2, undefined, color( x, y ) ) );
 					geometry.faces.push( new Face3( index + 1, index + 2, index + 3, undefined, color( x, y ) ) );
+
+					if ( flagmap[ y ][ x ].water ) {
+
+						const index = waterGeometry.vertices.length;
+						waterGeometry.vertices.push(
+							new Vector3( x, - y, cliffmap[ y ][ x ] + 3 / 8 ),
+							new Vector3( x + 1, - y, cliffmap[ y ][ x ] + 3 / 8 ),
+							new Vector3( x, - y - 1, cliffmap[ y ][ x ] + 3 / 8 ),
+							new Vector3( x + 1, - y - 1, cliffmap[ y ][ x ] + 3 / 8 )
+						);
+						waterGeometry.faces.push( new Face3( index + 1, index, index + 2 ) );
+						waterGeometry.faces.push( new Face3( index + 1, index + 2, index + 3 ) );
+
+					}
 
 					// Left wall (next gets right)
 					if ( x > 0 ) {
@@ -273,6 +325,7 @@ export default class Terrain {
 		geometry.computeBoundingBox();
 		const offset = geometry.boundingBox.getCenter().negate();
 		geometry.translate( offset.x, offset.y, 0 );
+		waterGeometry.translate( offset.x, offset.y, 0 );
 
 		for ( let i = 0; i < geometry.vertices.length; i ++ ) {
 
@@ -286,6 +339,7 @@ export default class Terrain {
 		geometry.computeVertexNormals();
 
 		this.mesh = new Mesh( geometry, material );
+		this.waterMesh = new Mesh( waterGeometry, waterMaterial );
 
 		this.mesh.castShadow = true;
 		this.mesh.receiveShadow = true;
