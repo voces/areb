@@ -1,6 +1,6 @@
 
 import { Geometry, Mesh, MeshPhongMaterial, FaceColors, Vector3, Face3, Color } from "./node_modules/three/build/three.module.js";
-
+// https://github.com/mrdoob/three.js/blob/master/examples/js/objects/Water2.js
 export default class Terrain {
 
 	constructor( { cliffmap = [[ 0 ]], tilemap = [[ 0 ]], tileTypes = [ { name: "Grass", color: "#608038" } ] } ) {
@@ -71,8 +71,18 @@ export default class Terrain {
 								new Vector3( x, - y, z + 1 ),
 								new Vector3( x, - y - 1, z + 1 )
 							);
-							if ( currentIsLow ) geometry.faces.push( new Face3( index + 1, index, index + 2 ), new Face3( index + 1, index + 2, index + 3 ) );
-							else geometry.faces.push( new Face3( index + 2, index, index + 1 ), new Face3( index + 2, index + 1, index + 3 ) );
+
+							if ( currentIsLow )
+								geometry.faces.push(
+									new Face3( index + 1, index, index + 2 ),
+									new Face3( index + 1, index + 2, index + 3 )
+								);
+
+							else
+								geometry.faces.push(
+									new Face3( index + 2, index, index + 1 ),
+									new Face3( index + 2, index + 1, index + 3 )
+								);
 
 						}
 
@@ -95,8 +105,18 @@ export default class Terrain {
 								new Vector3( x, - y, z + 1 ),
 								new Vector3( x + 1, - y, z + 1 )
 							);
-							if ( currentIsLow ) geometry.faces.push( new Face3( index + 2, index, index + 1 ), new Face3( index + 2, index + 1, index + 3 ) );
-							else geometry.faces.push( new Face3( index + 1, index, index + 2 ), new Face3( index + 1, index + 2, index + 3 ) );
+
+							if ( currentIsLow )
+								geometry.faces.push(
+									new Face3( index + 2, index, index + 1 ),
+									new Face3( index + 2, index + 1, index + 3 )
+								);
+
+							else
+								geometry.faces.push(
+									new Face3( index + 1, index, index + 2 ),
+									new Face3( index + 1, index + 2, index + 3 )
+								);
 
 						}
 
@@ -134,7 +154,12 @@ export default class Terrain {
 					geometry.faces.push( new Face3( index + 1, index, index + 2, undefined, color( x, y ) ) );
 					geometry.faces.push( new Face3( index + 1, index + 2, index + 3, undefined, color( x, y ) ) );
 
-					const walls = [ { a: 0, b: 1, neighbor: { x: 0, y: - 1 } }, { a: 1, b: 3, neighbor: { x: 1, y: 0 } }, { a: 3, b: 2, neighbor: { x: 0, y: 1 } }, { a: 2, b: 0, neighbor: { x: - 1, y: 0 } } ];
+					const walls = [
+						{ a: 0, b: 1, neighbor: { x: 0, y: - 1 } },
+						{ a: 1, b: 3, neighbor: { x: 1, y: 0 } },
+						{ a: 3, b: 2, neighbor: { x: 0, y: 1 } },
+						{ a: 2, b: 0, neighbor: { x: - 1, y: 0 } }
+					];
 					for ( let i = 0; i < walls.length; i ++ ) {
 
 						// Don't put triangles where they won't be seen
@@ -179,8 +204,18 @@ export default class Terrain {
 								new Vector3( x, - y, z + 1 ),
 								new Vector3( x, - y - 1, z + 1 )
 							);
-							if ( currentIsLow ) geometry.faces.push( new Face3( index + 1, index, index + 2 ), new Face3( index + 1, index + 2, index + 3 ) );
-							else geometry.faces.push( new Face3( index + 2, index, index + 1 ), new Face3( index + 2, index + 1, index + 3 ) );
+
+							if ( currentIsLow )
+								geometry.faces.push(
+									new Face3( index + 1, index, index + 2 ),
+									new Face3( index + 1, index + 2, index + 3 )
+								);
+
+							else
+								geometry.faces.push(
+									new Face3( index + 2, index, index + 1 ),
+									new Face3( index + 2, index + 1, index + 3 )
+								);
 
 						}
 
@@ -202,8 +237,18 @@ export default class Terrain {
 								new Vector3( x, - y, z + 1 ),
 								new Vector3( x + 1, - y, z + 1 )
 							);
-							if ( currentIsLow ) geometry.faces.push( new Face3( index + 2, index, index + 1 ), new Face3( index + 2, index + 1, index + 3 ) );
-							else geometry.faces.push( new Face3( index + 1, index, index + 2 ), new Face3( index + 1, index + 2, index + 3 ) );
+
+							if ( currentIsLow )
+								geometry.faces.push(
+									new Face3( index + 2, index, index + 1 ),
+									new Face3( index + 2, index + 1, index + 3 )
+								);
+
+							else
+								geometry.faces.push(
+									new Face3( index + 1, index, index + 2 ),
+									new Face3( index + 1, index + 2, index + 3 )
+								);
 
 						}
 

@@ -1,5 +1,17 @@
 
-import { Scene, PerspectiveCamera, WebGLRenderer, BoxGeometry, MeshBasicMaterial, Mesh, DirectionalLight } from "./node_modules/three/build/three.module.js";
+import {
+	Scene,
+	PerspectiveCamera,
+	WebGLRenderer,
+	DirectionalLight,
+	HemisphereLight,
+	PCFSoftShadowMap,
+	PlaneGeometry,
+	Vector3,
+	FogExp2,
+	MeshPhongMaterial,
+	Mesh
+} from "./node_modules/three/build/three.module.js";
 
 import DataReader from "./DataReader.mjs";
 import w3eToEb from "./w3eToEb.mjs";
@@ -21,10 +33,9 @@ document.querySelector( "input" ).addEventListener( "change", e => {
 		} );
 		scene.add( terrain.mesh );
 
-		// camera.position.z = terrainDef.width * 0.6;
 		camera.position.z = terrainDef.width * 0.4;
-		// camera.position.y = terrainDef.height * - 0.8;
 		camera.position.y = terrainDef.height * - 0.6;
+		updateLight();
 
 	};
 	reader.readAsArrayBuffer( e.target.files[ 0 ] );
@@ -37,34 +48,84 @@ camera.position.z = 10;
 camera.position.y = - 12.5;
 camera.rotation.x = 0.6;
 
-const renderer = new WebGLRenderer();
+const renderer = new WebGLRenderer( { antialias: true } );
 renderer.setSize( window.innerWidth, window.innerHeight );
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = PCFSoftShadowMap; // default THREE.PCFShadowMap
 document.body.appendChild( renderer.domElement );
 
-const geometry = new BoxGeometry( 1, 1, 1 );
-const material = new MeshBasicMaterial( { color: 0x005520 } );
-const cube = new Mesh( geometry, material );
-scene.add( cube );
+const light = new DirectionalLight( 0xffffff, 1 );
+window.light = light;
+light.target = camera;
+const lightTilt = new Vector3( - 10, - 15, 25 );
+const updateLight = () => {
 
-const light = new DirectionalLight( 0xffffff, 0.75 );
-light.position.set( - 10, - 15, 25 );
-light.shadow.camera.near = 0;
-light.shadow.camera.far = 100;
-light.shadow.camera.left = - 2 * 18;
-light.shadow.camera.right = 2 * 18;
-light.shadow.camera.top = 2 * 9;
-light.shadow.camera.bottom = - 2 * 9;
-light.shadow.mapSize.width = 4096;
-light.shadow.mapSize.height = 4096;
+	const height = camera.position.z;
+	light.position.copy( camera.position ).add( lightTilt );
+	light.shadow.camera.near = 0;
+	light.shadow.camera.far = height * 5 + 100;
+	light.shadow.camera.left = - height * 10;
+	light.shadow.camera.right = height * 6;
+	light.shadow.camera.top = height * 10;
+	light.shadow.camera.bottom = - height * 4;
+	light.shadow.mapSize.width = 4096;
+	light.shadow.mapSize.height = 4096;
 
+};
+updateLight();
 light.castShadow = true;
 scene.add( light );
+
+const light2 = new HemisphereLight( 0xffffbb, 0x080820, 1 );
+scene.add( light2 );
+
+const fog = new FogExp2( 0x000000, 0.015 );
+scene.fog = fog;
+
+{
+
+	const geometry = new PlaneGeometry( 50, 50, 32, 32 );
+	for ( let i = 0; i < geometry.vertices.length; i ++ )
+		geometry.vertices[ i ].z += Math.random();
+
+	const material = new MeshPhongMaterial( { color: 0x0077be, flatShading: true, opacity: 0.5, transparent: true } );
+	const mesh = new Mesh( geometry, material );
+	mesh.castShadow = true;
+	mesh.receiveShadow = true;
+	scene.add( mesh );
+
+}
+
+const keyboard = {};
+function onKey( e ) {
+
+	if ( e.type === "keyup" ) keyboard[ e.key ] = false;
+	else keyboard[ e.key ] = true;
+
+}
+window.addEventListener( "keydown", onKey );
+window.addEventListener( "keyup", onKey );
+window.addEventListener( "wheel", e => {
+
+	camera.position.z *= e.deltaY > 0 ? 1.05 : 0.95;
+	updateLight();
+
+} );
 
 function render() {
 
 	requestAnimationFrame( render );
-	cube.rotation.x += .01;
-	cube.rotation.y += .04;
+	if ( keyboard.ArrowLeft || keyboard.ArrowRight || keyboard.ArrowUp || keyboard.ArrowDown ) {
+
+		if ( keyboard.ArrowLeft ) camera.position.x -= camera.position.z / 100;
+		if ( keyboard.ArrowRight ) camera.position.x += camera.position.z / 100;
+		if ( keyboard.ArrowUp ) camera.position.y += camera.position.z / 100;
+		if ( keyboard.ArrowDown ) camera.position.y -= camera.position.z / 100;
+
+		updateLight();
+
+	}
+
 	renderer.render( scene, camera );
 
 }

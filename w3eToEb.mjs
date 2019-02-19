@@ -29,7 +29,13 @@ const readTiles = reader => {
 
 };
 
-const isRamp = ( flagmap, x, y ) => flagmap[ y ][ x ].ramp && flagmap[ y - 1 ][ x ].ramp && flagmap[ y + 1 ][ x ].ramp && flagmap[ y ][ x - 1 ].ramp && flagmap[ y ][ x + 1 ].ramp;
+const isRamp = ( flagmap, cliffmap, x, y ) =>
+	// WC3 ramps should be surrounded
+	flagmap[ y ][ x ].ramp &&
+	flagmap[ y - 1 ][ x ].ramp &&
+	flagmap[ y + 1 ][ x ].ramp &&
+	flagmap[ y ][ x - 1 ].ramp &&
+	flagmap[ y ][ x + 1 ].ramp;
 
 const w3eIndexToEbIndex = ( width, height, index ) =>
 	( height - Math.floor( index / width ) - 1 ) * width + index % width;
@@ -57,8 +63,8 @@ export default reader => {
 		tileMap.Blgt,
 		tileMap.Bdry
 	];
-	const waterIndex = tileTypes.length - 3;
-	const blightIndex = tileTypes.length - 2;
+	// const waterIndex = tileTypes.length - 3;
+	// const blightIndex = tileTypes.length - 2;
 	const boundaryIndex = tileTypes.length - 1;
 
 	const width = reader.readInt32();
@@ -107,8 +113,8 @@ export default reader => {
 
 		rawTilemap[ index ] =
 			data[ i ].flags & BOUNDARY_FLAG && boundaryIndex ||
-			data[ i ].flags & WATER_FLAG && waterIndex ||
-			data[ i ].flags & BLIGHT_FLAG && blightIndex ||
+			// data[ i ].flags & WATER_FLAG && waterIndex ||
+			// data[ i ].flags & BLIGHT_FLAG && blightIndex ||
 			data[ i ].groundTextureType;
 
 		rawFlagmap[ index ] = {
@@ -121,7 +127,8 @@ export default reader => {
 	}
 	const tilemap = Array( height ).fill().map( ( _, y ) => rawTilemap.slice( y * width, ( y + 1 ) * width - 1 ) );
 	const flagmap = Array( height ).fill().map( ( _, y ) => rawFlagmap.slice( y * width, ( y + 1 ) * width - 1 ) );
-	const cliffmap = Array( height ).fill().map( ( _, y ) => rawCliffmap.slice( y * width, ( y + 1 ) * width - 1 ).map( ( height, x ) => isRamp( flagmap, x, y ) ? "r" : height ) );
+	const cliffmap = Array( height ).fill().map( ( _, y ) => rawCliffmap.slice( y * width, ( y + 1 ) * width - 1 ) )
+		.map( ( rows, y, cliffmap ) => rows.map( ( height, x ) => isRamp( flagmap, cliffmap, x, y ) ? "r" : height - 4 ) );
 
 	return { tileset, isUsingCustomTileset, groundTiles, cliffTiles, width, height, center, cliffmap, tilemap, tileTypes, flagmap, data };
 
