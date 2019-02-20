@@ -111,7 +111,7 @@ export default reader => {
 		const index = w3eIndexToEbIndex( width, height, i );
 
 		rawCliffmap[ index ] = data[ i ].layerHeight;
-		rawHeightmap[ index ] = data[ i ].height;
+		rawHeightmap[ index ] = data[ i ].height / 256 - 32;
 
 		rawTilemap[ index ] =
 			data[ i ].flags & BOUNDARY_FLAG && boundaryIndex ||

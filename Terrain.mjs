@@ -5,16 +5,28 @@ import { memoize } from "./util.mjs";
 
 const memoizedColor = memoize( hex => new Color( hex ) );
 
+const empty2d = val => {
+
+	const innerProxy = new Proxy( {}, { get: () => val } );
+	const outerProxy = new Proxy( {}, { get: () => innerProxy } );
+	return outerProxy;
+
+};
+
 export default class Terrain {
 
 	constructor( {
-		cliffmap = [[ 0 ]],
-		tilemap = [[ 0 ]],
+		cliffmap,
+		tilemap = empty2d( 0 ),
 		tileTypes = [ { name: "Grass", color: "#608038" } ],
-		flagmap = [[ {} ]]
+		flagmap = empty2d( {} ),
+		heightmap = empty2d( 0 )
 	} ) {
 
+		this._zHeight = memoize( this._zHeight );
+
 		this._cliffmap = cliffmap;
+		this._heightmap = heightmap;
 
 		const height = cliffmap.length - 1;
 		const width = Math.min( ...cliffmap.map( row => row.length ) ) - 1;
@@ -60,11 +72,12 @@ export default class Terrain {
 
 					// Floor
 					const index = geometry.vertices.length;
+					const { topLeft, topRight, botLeft, botRight } = this._zHeight( x, y );
 					geometry.vertices.push(
-						new Vector3( x, - y, cliffmap[ y ][ x ] ),
-						new Vector3( x + 1, - y, cliffmap[ y ][ x ] ),
-						new Vector3( x, - y - 1, cliffmap[ y ][ x ] ),
-						new Vector3( x + 1, - y - 1, cliffmap[ y ][ x ] )
+						new Vector3( x, - y, cliffmap[ y ][ x ] + botLeft ),
+						new Vector3( x + 1, - y, cliffmap[ y ][ x ] + botRight ),
+						new Vector3( x, - y - 1, cliffmap[ y ][ x ] + topLeft ),
+						new Vector3( x + 1, - y - 1, cliffmap[ y ][ x ] + topRight )
 					);
 					geometry.faces.push( new Face3( index + 1, index, index + 2, undefined, color( x, y ) ) );
 					geometry.faces.push( new Face3( index + 1, index + 2, index + 3, undefined, color( x, y ) ) );
@@ -73,10 +86,10 @@ export default class Terrain {
 
 						const index = waterGeometry.vertices.length;
 						waterGeometry.vertices.push(
-							new Vector3( x, - y, cliffmap[ y ][ x ] + 3 / 8 ),
-							new Vector3( x + 1, - y, cliffmap[ y ][ x ] + 3 / 8 ),
-							new Vector3( x, - y - 1, cliffmap[ y ][ x ] + 3 / 8 ),
-							new Vector3( x + 1, - y - 1, cliffmap[ y ][ x ] + 3 / 8 )
+							new Vector3( x, - y, cliffmap[ y ][ x ] + botLeft + 3 / 8 ),
+							new Vector3( x + 1, - y, cliffmap[ y ][ x ] + botRight + 3 / 8 ),
+							new Vector3( x, - y - 1, cliffmap[ y ][ x ] + topLeft + 3 / 8 ),
+							new Vector3( x + 1, - y - 1, cliffmap[ y ][ x ] + topRight + 3 / 8 )
 						);
 						waterGeometry.faces.push( new Face3( index + 1, index, index + 2 ) );
 						waterGeometry.faces.push( new Face3( index + 1, index + 2, index + 3 ) );
@@ -352,4 +365,31 @@ export default class Terrain {
 
 	}
 
+	_zHeight( x, y ) {
+
+		const [ topLeft, topRight, botLeft, botRight ] = zHeightConsts
+			.map( corner => corner.map( ( { x: xOffset, y: yOffset } ) => {
+
+				const finalX = x + xOffset;
+				const finalY = y + yOffset;
+				if ( finalX < 0 || finalY < 0 ) return;
+				const row = this._heightmap[ finalY ];
+				if ( ! row ) return;
+				return row[ finalX ];
+
+			} ) )
+			.map( heights => heights.reduce( ( sum, part ) => isNaN( part ) ? sum : sum + part, 0 ) / heights.length );
+
+		console.log( x, y, { topLeft, topRight, botLeft, botRight } );
+		return { topLeft, topRight, botLeft, botRight };
+
+	}
+
 }
+
+const zHeightConsts = [
+	[ { y: 0, x: 0 }, { y: - 1, x: 0 }, { y: 0, x: - 1 }, { y: - 1, x: - 1 } ],
+	[ { y: 0, x: 0 }, { y: - 1, x: 0 }, { y: 0, x: 1 }, { y: - 1, x: 1 } ],
+	[ { y: 0, x: 0 }, { y: 1, x: 0 }, { y: 0, x: 1 }, { y: 1, x: 1 } ],
+	[ { y: 0, x: 0 }, { y: 1, x: 0 }, { y: 0, x: - 1 }, { y: 1, x: - 1 } ]
+];
