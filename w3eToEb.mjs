@@ -42,8 +42,6 @@ const w3eIndexToEbIndex = ( width, height, index ) =>
 
 export default reader => {
 
-	// const reader = BufferUtils.wrap( w3eBuffer );
-
 	// header: W3E!
 	reader.readChars( 4 );
 
