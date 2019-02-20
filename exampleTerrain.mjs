@@ -21,5 +21,5 @@ export default new Terrain( {
 		43210
 		32100
 		21000
-		10000`.map( r => r.map( v => v ) )
+		10000`
 } );

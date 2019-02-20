@@ -74,10 +74,10 @@ export default class Terrain {
 					const index = geometry.vertices.length;
 					const { topLeft, topRight, botLeft, botRight } = this._zHeight( x, y );
 					geometry.vertices.push(
-						new Vector3( x, - y, cliffmap[ y ][ x ] + botLeft ),
-						new Vector3( x + 1, - y, cliffmap[ y ][ x ] + botRight ),
-						new Vector3( x, - y - 1, cliffmap[ y ][ x ] + topLeft ),
-						new Vector3( x + 1, - y - 1, cliffmap[ y ][ x ] + topRight )
+						new Vector3( x, - y, cliffmap[ y ][ x ] + topLeft ),
+						new Vector3( x + 1, - y, cliffmap[ y ][ x ] + topRight ),
+						new Vector3( x, - y - 1, cliffmap[ y ][ x ] + botLeft ),
+						new Vector3( x + 1, - y - 1, cliffmap[ y ][ x ] + botRight )
 					);
 					geometry.faces.push( new Face3( index + 1, index, index + 2, undefined, color( x, y ) ) );
 					geometry.faces.push( new Face3( index + 1, index + 2, index + 3, undefined, color( x, y ) ) );
@@ -367,7 +367,7 @@ export default class Terrain {
 
 	_zHeight( x, y ) {
 
-		const [ topLeft, topRight, botLeft, botRight ] = zHeightConsts
+		const parts = zHeightConsts
 			.map( corner => corner.map( ( { x: xOffset, y: yOffset } ) => {
 
 				const finalX = x + xOffset;
@@ -377,10 +377,12 @@ export default class Terrain {
 				if ( ! row ) return;
 				return row[ finalX ];
 
-			} ) )
+			} ) );
+
+		const [ topLeft, topRight, botRight, botLeft ] = parts
+			.map( heights => heights.filter( height => ! isNaN( height ) ) )
 			.map( heights => heights.reduce( ( sum, part ) => isNaN( part ) ? sum : sum + part, 0 ) / heights.length );
 
-		console.log( x, y, { topLeft, topRight, botLeft, botRight } );
 		return { topLeft, topRight, botLeft, botRight };
 
 	}

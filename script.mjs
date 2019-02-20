@@ -14,7 +14,7 @@ import DataReader from "./DataReader.mjs";
 import w3eToEb from "./w3eToEb.mjs";
 import Terrain from "./Terrain.mjs";
 
-import exampleTerrain from "./exampleTerrain.mjs";
+// import exampleTerrain from "./exampleTerrain.mjs";
 
 document.querySelector( "input" ).addEventListener( "change", e => {
 
@@ -50,7 +50,7 @@ camera.position.z = 10;
 camera.position.y = - 12.5;
 camera.rotation.x = 0.6;
 
-scene.add( exampleTerrain.mesh );
+// scene.add( exampleTerrain.mesh );
 
 const renderer = new WebGLRenderer( { antialias: true } );
 renderer.setSize( window.innerWidth, window.innerHeight );
