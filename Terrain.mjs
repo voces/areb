@@ -1,30 +1,9 @@
 
 import { Geometry, Mesh, MeshPhongMaterial, FaceColors, Vector3, Face3, Color } from "./node_modules/three/build/three.module.js";
+import { memoize } from "./util.mjs";
 // https://github.com/mrdoob/three.js/blob/master/examples/js/objects/Water2.js
 
-// class Tile {
-
-// 	constructor( {
-// 		cliffmap,
-// 		x,
-// 		y
-// 	} ) {
-
-// 		this.x = x;
-// 		this.y = y;
-
-// 		this.floor = [
-// 			new Vector3( x, - y, cliffmap[ y ][ x ] ),
-// 			new Vector3( x + 1, - y, cliffmap[ y ][ x ] ),
-// 			new Vector3( x, - y - 1, cliffmap[ y ][ x ] ),
-// 			new Vector3( x + 1, - y - 1, cliffmap[ y ][ x ] )
-// 		];
-
-// 		this.walls = [];
-
-// 	}
-
-// }
+const memoizedColor = memoize( hex => new Color( hex ) );
 
 export default class Terrain {
 
@@ -61,9 +40,7 @@ export default class Terrain {
 			try {
 
 				const hex = tileTypes[ tilemap[ y ][ x ] ].color.toUpperCase();
-				if ( color.colors[ hex ] ) return color.colors[ hex ];
-
-				return color.colors[ hex ] = new Color( hex );
+				return memoizedColor( hex );
 
 			} catch ( err ) {
 
@@ -327,6 +304,7 @@ export default class Terrain {
 		geometry.translate( offset.x, offset.y, 0 );
 		waterGeometry.translate( offset.x, offset.y, 0 );
 
+		// Randomly move vertices a bit (so we don't have completely flat surfaces)
 		for ( let i = 0; i < geometry.vertices.length; i ++ ) {
 
 			geometry.vertices[ i ].x += ( Math.random() - 0.5 ) * ( Math.random() - 0.5 ) * 0.75;

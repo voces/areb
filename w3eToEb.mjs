@@ -105,11 +105,13 @@ export default reader => {
 	const rawCliffmap = [];
 	const rawTilemap = [];
 	const rawFlagmap = [];
+	const rawHeightmap = [];
 	for ( let i = 0; i < data.length; i ++ ) {
 
 		const index = w3eIndexToEbIndex( width, height, i );
 
 		rawCliffmap[ index ] = data[ i ].layerHeight;
+		rawHeightmap[ index ] = data[ i ].height;
 
 		rawTilemap[ index ] =
 			data[ i ].flags & BOUNDARY_FLAG && boundaryIndex ||
@@ -126,10 +128,25 @@ export default reader => {
 
 	}
 	const tilemap = Array( height ).fill().map( ( _, y ) => rawTilemap.slice( y * width, ( y + 1 ) * width - 1 ) );
+	const heightmap = Array( height ).fill().map( ( _, y ) => rawHeightmap.slice( y * width, ( y + 1 ) * width - 1 ) );
 	const flagmap = Array( height ).fill().map( ( _, y ) => rawFlagmap.slice( y * width, ( y + 1 ) * width - 1 ) );
 	const cliffmap = Array( height ).fill().map( ( _, y ) => rawCliffmap.slice( y * width, ( y + 1 ) * width - 1 ) )
 		.map( ( rows, y, cliffmap ) => rows.map( ( height, x ) => isRamp( flagmap, cliffmap, x, y ) ? "r" : height - 4 ) );
 
-	return { tileset, isUsingCustomTileset, groundTiles, cliffTiles, width, height, center, cliffmap, tilemap, tileTypes, flagmap, data };
+	return {
+		tileset,
+		isUsingCustomTileset,
+		groundTiles,
+		cliffTiles,
+		width,
+		height,
+		center,
+		cliffmap,
+		tilemap,
+		tileTypes,
+		flagmap,
+		data,
+		heightmap
+	};
 
 };
