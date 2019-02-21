@@ -13,6 +13,15 @@ const empty2d = val => {
 
 };
 
+// const get = ( obj, ...path ) => {
+
+// 	let cur = obj;
+// 	while ( cur && path.length ) cur = cur[ path.shift() ];
+
+// 	return cur;
+
+// };
+
 export default class Terrain {
 
 	constructor( {
@@ -27,6 +36,7 @@ export default class Terrain {
 
 		this._cliffmap = cliffmap;
 		this._heightmap = heightmap;
+		this._flagmap = flagmap;
 
 		const height = cliffmap.length - 1;
 		const width = Math.min( ...cliffmap.map( row => row.length ) ) - 1;
@@ -36,7 +46,8 @@ export default class Terrain {
 		const geometry = new Geometry();
 		const material = new MeshPhongMaterial( {
 			vertexColors: FaceColors,
-			flatShading: true
+			flatShading: true,
+			shininess: 5
 		} );
 
 		const waterGeometry = new Geometry();
@@ -66,13 +77,14 @@ export default class Terrain {
 		const rampWalls = [];
 
 		for ( let y = height; y >= 0; y -- )
-			for ( let x = 0; x <= width; x ++ )
+			for ( let x = 0; x <= width; x ++ ) {
+
+				const { topLeft, topRight, botLeft, botRight } = this._zHeight( x, y );
 
 				if ( ! isNaN( cliffmap[ y ][ x ] ) ) {
 
 					// Floor
 					const index = geometry.vertices.length;
-					const { topLeft, topRight, botLeft, botRight } = this._zHeight( x, y );
 					geometry.vertices.push(
 						new Vector3( x, - y, cliffmap[ y ][ x ] + topLeft ),
 						new Vector3( x + 1, - y, cliffmap[ y ][ x ] + topRight ),
@@ -86,10 +98,10 @@ export default class Terrain {
 
 						const index = waterGeometry.vertices.length;
 						waterGeometry.vertices.push(
-							new Vector3( x, - y, cliffmap[ y ][ x ] + botLeft + 3 / 8 ),
-							new Vector3( x + 1, - y, cliffmap[ y ][ x ] + botRight + 3 / 8 ),
-							new Vector3( x, - y - 1, cliffmap[ y ][ x ] + topLeft + 3 / 8 ),
-							new Vector3( x + 1, - y - 1, cliffmap[ y ][ x ] + topRight + 3 / 8 )
+							new Vector3( x, - y, cliffmap[ y ][ x ] + topLeft + 3 / 8 ),
+							new Vector3( x + 1, - y, cliffmap[ y ][ x ] + topRight + 3 / 8 ),
+							new Vector3( x, - y - 1, cliffmap[ y ][ x ] + botLeft + 3 / 8 ),
+							new Vector3( x + 1, - y - 1, cliffmap[ y ][ x ] + botRight + 3 / 8 )
 						);
 						waterGeometry.faces.push( new Face3( index + 1, index, index + 2 ) );
 						waterGeometry.faces.push( new Face3( index + 1, index + 2, index + 3 ) );
@@ -108,10 +120,10 @@ export default class Terrain {
 
 							const index = geometry.vertices.length;
 							geometry.vertices.push(
-								new Vector3( x, - y, z ),
-								new Vector3( x, - y - 1, z ),
-								new Vector3( x, - y, z + 1 ),
-								new Vector3( x, - y - 1, z + 1 )
+								new Vector3( x, - y, z + topLeft ),
+								new Vector3( x, - y - 1, z + botLeft ),
+								new Vector3( x, - y, z + 1 + topLeft ),
+								new Vector3( x, - y - 1, z + 1 + botLeft )
 							);
 
 							if ( currentIsLow )
@@ -142,10 +154,10 @@ export default class Terrain {
 
 							const index = geometry.vertices.length;
 							geometry.vertices.push(
-								new Vector3( x, - y, z ),
-								new Vector3( x + 1, - y, z ),
-								new Vector3( x, - y, z + 1 ),
-								new Vector3( x + 1, - y, z + 1 )
+								new Vector3( x, - y, z + topLeft ),
+								new Vector3( x + 1, - y, z + topRight ),
+								new Vector3( x, - y, z + 1 + topLeft ),
+								new Vector3( x + 1, - y, z + 1 + topRight )
 							);
 
 							if ( currentIsLow )
@@ -178,19 +190,19 @@ export default class Terrain {
 					];
 
 					const near = nearRaw.map( tile => isNaN( tile ) ? - Infinity : tile );
-					const [ topLeft, top, topRight, left, right, botLeft, bot, botRight ] = near;
+					const [ topLeftCliff, top, topRightCliff, left, right, botLeftCliff, bot, botRightCliff ] = near;
 
-					const topLeftHeight = Math.max( topLeft, top, left );
-					const topRightHeight = Math.max( topRight, top, right );
-					const botLeftHeight = Math.max( botLeft, bot, left );
-					const botRightHeight = Math.max( botRight, bot, right );
+					const topLeftHeight = Math.max( topLeftCliff, top, left );
+					const topRightHeight = Math.max( topRightCliff, top, right );
+					const botLeftHeight = Math.max( botLeftCliff, bot, left );
+					const botRightHeight = Math.max( botRightCliff, bot, right );
 
 					const index = geometry.vertices.length;
 					geometry.vertices.push(
-						new Vector3( x, - y, topLeftHeight ),
-						new Vector3( x + 1, - y, topRightHeight ),
-						new Vector3( x, - y - 1, botLeftHeight ),
-						new Vector3( x + 1, - y - 1, botRightHeight )
+						new Vector3( x, - y, topLeftHeight + topLeft ),
+						new Vector3( x + 1, - y, topRightHeight + topRight ),
+						new Vector3( x, - y - 1, botLeftHeight + botLeft ),
+						new Vector3( x + 1, - y - 1, botRightHeight + botRight )
 					);
 
 					geometry.faces.push( new Face3( index + 1, index, index + 2, undefined, color( x, y ) ) );
@@ -241,10 +253,10 @@ export default class Terrain {
 
 							const index = geometry.vertices.length;
 							geometry.vertices.push(
-								new Vector3( x, - y, z ),
-								new Vector3( x, - y - 1, z ),
-								new Vector3( x, - y, z + 1 ),
-								new Vector3( x, - y - 1, z + 1 )
+								new Vector3( x, - y, z + topLeft ),
+								new Vector3( x, - y - 1, z + botLeft ),
+								new Vector3( x, - y, z + 1 + topLeft ),
+								new Vector3( x, - y - 1, z + 1 + botLeft )
 							);
 
 							if ( currentIsLow )
@@ -274,10 +286,10 @@ export default class Terrain {
 
 							const index = geometry.vertices.length;
 							geometry.vertices.push(
-								new Vector3( x, - y, z ),
-								new Vector3( x + 1, - y, z ),
-								new Vector3( x, - y, z + 1 ),
-								new Vector3( x + 1, - y, z + 1 )
+								new Vector3( x, - y, z + topLeft ),
+								new Vector3( x + 1, - y, z + topRight ),
+								new Vector3( x, - y, z + 1 + topLeft ),
+								new Vector3( x + 1, - y, z + 1 + topRight )
 							);
 
 							if ( currentIsLow )
@@ -297,6 +309,8 @@ export default class Terrain {
 					}
 
 				}
+
+			}
 
 		// Randomly rotate 50% of squares
 		for ( let i = 0; i < geometry.faces.length / 2; i ++ )
@@ -322,7 +336,7 @@ export default class Terrain {
 
 			geometry.vertices[ i ].x += ( Math.random() - 0.5 ) * ( Math.random() - 0.5 ) * 0.75;
 			geometry.vertices[ i ].y += ( Math.random() - 0.5 ) * ( Math.random() - 0.5 ) * 0.75;
-			geometry.vertices[ i ].z += ( Math.random() - 0.5 ) * ( Math.random() - 0.5 ) * 0.75;
+			geometry.vertices[ i ].z += ( Math.random() - 0.5 ) * ( Math.random() - 0.5 ) * 0.25;
 
 		}
 

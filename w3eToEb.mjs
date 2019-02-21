@@ -9,7 +9,7 @@ const tileMap = {
 	Lgrs: { name: "Lrodaeron Grass", color: "#0c4013" },
 	Lgrd: { name: "Lrodaeron Dark Grass", color: "#043609" },
 	Watr: { name: "Water", color: "#567ebf" },
-	Bdry: { name: "Boundary", color: "#000000" },
+	Bdry: { name: "Boundary", color: "#111" },
 	Blgt: { name: "Blight", color: "#564725" }
 };
 
@@ -102,20 +102,29 @@ export default reader => {
 
 	const rawCliffmap = [];
 	const rawTilemap = [];
+	// const rawCliffTilemap = [];
 	const rawFlagmap = [];
 	const rawHeightmap = [];
+	const rawWatermap = [];
 	for ( let i = 0; i < data.length; i ++ ) {
 
 		const index = w3eIndexToEbIndex( width, height, i );
 
 		rawCliffmap[ index ] = data[ i ].layerHeight;
-		rawHeightmap[ index ] = data[ i ].height / 256 - 32;
+		rawWatermap[ index ] = data[ i ].water;// / 512 - 16;
+		rawHeightmap[ index ] = data[ i ].height / 512 - 16;
 
 		rawTilemap[ index ] =
 			data[ i ].flags & BOUNDARY_FLAG && boundaryIndex ||
 			// data[ i ].flags & WATER_FLAG && waterIndex ||
 			// data[ i ].flags & BLIGHT_FLAG && blightIndex ||
 			data[ i ].groundTextureType;
+
+		// rawTilemap[ index ] =
+		// 	data[ i ].flags & BOUNDARY_FLAG && boundaryIndex ||
+		// 	// data[ i ].flags & WATER_FLAG && waterIndex ||
+		// 	// data[ i ].flags & BLIGHT_FLAG && blightIndex ||
+		// 	data[ i ].groundTextureType;
 
 		rawFlagmap[ index ] = {
 			boundary: ( data[ i ].flags & BOUNDARY_FLAG ) > 0,
@@ -127,6 +136,7 @@ export default reader => {
 	}
 	const tilemap = Array( height ).fill().map( ( _, y ) => rawTilemap.slice( y * width, ( y + 1 ) * width - 1 ) );
 	const heightmap = Array( height ).fill().map( ( _, y ) => rawHeightmap.slice( y * width, ( y + 1 ) * width - 1 ) );
+	const watermap = Array( height ).fill().map( ( _, y ) => rawWatermap.slice( y * width, ( y + 1 ) * width - 1 ) );
 	const flagmap = Array( height ).fill().map( ( _, y ) => rawFlagmap.slice( y * width, ( y + 1 ) * width - 1 ) );
 	const cliffmap = Array( height ).fill().map( ( _, y ) => rawCliffmap.slice( y * width, ( y + 1 ) * width - 1 ) )
 		.map( ( rows, y, cliffmap ) => rows.map( ( height, x ) => isRamp( flagmap, cliffmap, x, y ) ? "r" : height - 4 ) );
@@ -144,7 +154,8 @@ export default reader => {
 		tileTypes,
 		flagmap,
 		data,
-		heightmap
+		heightmap,
+		watermap
 	};
 
 };

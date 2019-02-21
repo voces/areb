@@ -17,12 +17,21 @@ const fetchCache = ( rootCache, args ) => {
 export const memoize = fn => {
 
 	const cache = {};
-	return function ( ...args ) {
+	const memoizedFn = function ( ...args ) {
 
 		const [ value, container, contains, lastArg ] = fetchCache( cache, args );
 		if ( contains ) return value;
 		else return container[ lastArg ] = fn.apply( this, args );
 
 	};
+
+	memoizedFn.memoize = ( value, ...args ) => {
+
+		const [ , container,, lastArg ] = fetchCache( cache, args );
+		return container[ lastArg ] = fn.apply( this, args );
+
+	};
+
+	return memoizedFn;
 
 };

@@ -24,13 +24,14 @@ document.querySelector( "input" ).addEventListener( "change", e => {
 		const view = new DataView( evt.target.result );
 		const reader = new DataReader( view );
 		const terrainDef = w3eToEb( reader );
-		// console.log( terrainDef );
+		console.log( terrainDef );
 		const terrain = new Terrain( {
 			cliffmap: terrainDef.cliffmap,
 			tilemap: terrainDef.tilemap,
 			tileTypes: terrainDef.tileTypes,
 			flagmap: terrainDef.flagmap,
-			heightmap: terrainDef.heightmap
+			heightmap: terrainDef.heightmap,
+			watermap: terrainDef.watermap
 		} );
 		scene.add( terrain.mesh );
 		scene.add( terrain.waterMesh );
@@ -102,15 +103,17 @@ window.addEventListener( "wheel", e => {
 
 } );
 
+const keys = [ "ArrowLeft", "a", "ArrowRight", "d", "ArrowUp", "w", "ArrowDown", "s" ];
+
 function render() {
 
 	requestAnimationFrame( render );
-	if ( keyboard.ArrowLeft || keyboard.ArrowRight || keyboard.ArrowUp || keyboard.ArrowDown ) {
+	if ( keys.some( key => keyboard[ key ] ) ) {
 
-		if ( keyboard.ArrowLeft ) camera.position.x -= camera.position.z / 100;
-		if ( keyboard.ArrowRight ) camera.position.x += camera.position.z / 100;
-		if ( keyboard.ArrowUp ) camera.position.y += camera.position.z / 100;
-		if ( keyboard.ArrowDown ) camera.position.y -= camera.position.z / 100;
+		if ( keyboard.ArrowLeft || keyboard.a ) camera.position.x -= camera.position.z / 100;
+		if ( keyboard.ArrowRight || keyboard.d ) camera.position.x += camera.position.z / 100;
+		if ( keyboard.ArrowUp || keyboard.w ) camera.position.y += camera.position.z / 100;
+		if ( keyboard.ArrowDown || keyboard.s ) camera.position.y -= camera.position.z / 100;
 
 		updateLight();
 
