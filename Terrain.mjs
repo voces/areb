@@ -29,7 +29,8 @@ export default class Terrain {
 		tilemap = empty2d( 0 ),
 		tileTypes = [ { name: "Grass", color: "#608038" } ],
 		flagmap = empty2d( {} ),
-		heightmap = empty2d( 0 )
+		heightmap = empty2d( 0 ),
+		watermap = empty2d( 0 )
 	} ) {
 
 		this._zHeight = memoize( this._zHeight );
@@ -37,6 +38,7 @@ export default class Terrain {
 		this._cliffmap = cliffmap;
 		this._heightmap = heightmap;
 		this._flagmap = flagmap;
+		this._watermap = watermap;
 
 		const height = cliffmap.length - 1;
 		const width = Math.min( ...cliffmap.map( row => row.length ) ) - 1;
@@ -96,12 +98,14 @@ export default class Terrain {
 
 					if ( flagmap[ y ][ x ].water ) {
 
+						const waterHeight = this._waterHeight( x, y );
+
 						const index = waterGeometry.vertices.length;
 						waterGeometry.vertices.push(
-							new Vector3( x, - y, cliffmap[ y ][ x ] + topLeft + 3 / 8 ),
-							new Vector3( x + 1, - y, cliffmap[ y ][ x ] + topRight + 3 / 8 ),
-							new Vector3( x, - y - 1, cliffmap[ y ][ x ] + botLeft + 3 / 8 ),
-							new Vector3( x + 1, - y - 1, cliffmap[ y ][ x ] + botRight + 3 / 8 )
+							new Vector3( x, - y, cliffmap[ y ][ x ] + waterHeight.topLeft ),
+							new Vector3( x + 1, - y, cliffmap[ y ][ x ] + waterHeight.topRight ),
+							new Vector3( x, - y - 1, cliffmap[ y ][ x ] + waterHeight.botLeft ),
+							new Vector3( x + 1, - y - 1, cliffmap[ y ][ x ] + waterHeight.botRight )
 						);
 						waterGeometry.faces.push( new Face3( index + 1, index, index + 2 ) );
 						waterGeometry.faces.push( new Face3( index + 1, index + 2, index + 3 ) );
@@ -381,7 +385,7 @@ export default class Terrain {
 
 	_zHeight( x, y ) {
 
-		const parts = zHeightConsts
+		const [ topLeft, topRight, botRight, botLeft ] = zHeightConsts
 			.map( corner => corner.map( ( { x: xOffset, y: yOffset } ) => {
 
 				const finalX = x + xOffset;
@@ -391,13 +395,41 @@ export default class Terrain {
 				if ( ! row ) return;
 				return row[ finalX ];
 
-			} ) );
-
-		const [ topLeft, topRight, botRight, botLeft ] = parts
+			} ) )
 			.map( heights => heights.filter( height => ! isNaN( height ) ) )
 			.map( heights => heights.reduce( ( sum, part ) => isNaN( part ) ? sum : sum + part, 0 ) / heights.length );
 
 		return { topLeft, topRight, botLeft, botRight };
+
+	}
+
+	_waterHeight( x, y ) {
+
+		const [ waterTopLeft, waterTopRight, waterBotRight, waterBotLeft ] = zHeightConsts
+			.map( corner => corner.map( ( { x: xOffset, y: yOffset } ) => {
+
+				const finalX = x + xOffset;
+				const finalY = y + yOffset;
+				if ( finalX < 0 || finalX >= this.width || finalY < 0 || finalY >= this.height )
+					return;
+
+				return this._watermap[ finalY ][ finalX ];
+
+			} ) )
+			.map( heights => heights.filter( height => ! isNaN( height ) ) )
+			.map( heights => heights.reduce( ( sum, part ) => isNaN( part ) ? sum : sum + part, 0 ) / heights.length );
+
+		const groundHeight = this._zHeight( x, y );
+
+		// 3 / 8 is the water level
+		const cliffHeight = this._cliffmap[ y ][ x ] - 3 / 8;
+
+		return {
+			topLeft: waterTopLeft - groundHeight.topLeft - cliffHeight,
+			topRight: waterTopRight - groundHeight.topRight - cliffHeight,
+			botRight: waterBotRight - groundHeight.botRight - cliffHeight,
+			botLeft: waterBotLeft - groundHeight.botLeft - cliffHeight
+		};
 
 	}
 

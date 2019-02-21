@@ -1,5 +1,7 @@
 
 // http://www.wc3c.net/showthread.php?t=937
+// https://github.com/stijnherfst/HiveWE/wiki/war3map.w3e-Terrain
+// https://github.com/flowtsohg/mdx-m3-viewer/blob/master/src/parsers/w3x/w3e/corner.js
 // Ldrt", "Ldro", "Ldrg", "Lrok", "Lgrs", "Lgrd"
 const tileMap = {
 	Ldrt: { name: "Lordaeron Dirt", color: "#474632" },
@@ -111,7 +113,7 @@ export default reader => {
 		const index = w3eIndexToEbIndex( width, height, i );
 
 		rawCliffmap[ index ] = data[ i ].layerHeight;
-		rawWatermap[ index ] = data[ i ].water;// / 512 - 16;
+		rawWatermap[ index ] = data[ i ].water / 512 - 19;
 		rawHeightmap[ index ] = data[ i ].height / 512 - 16;
 
 		rawTilemap[ index ] =
