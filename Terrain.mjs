@@ -102,10 +102,10 @@ export default class Terrain {
 
 						const index = waterGeometry.vertices.length;
 						waterGeometry.vertices.push(
-							new Vector3( x, - y, cliffmap[ y ][ x ] + waterHeight.topLeft ),
-							new Vector3( x + 1, - y, cliffmap[ y ][ x ] + waterHeight.topRight ),
-							new Vector3( x, - y - 1, cliffmap[ y ][ x ] + waterHeight.botLeft ),
-							new Vector3( x + 1, - y - 1, cliffmap[ y ][ x ] + waterHeight.botRight )
+							new Vector3( x, - y, waterHeight.topLeft ),
+							new Vector3( x + 1, - y, waterHeight.topRight ),
+							new Vector3( x, - y - 1, waterHeight.botLeft ),
+							new Vector3( x + 1, - y - 1, waterHeight.botRight )
 						);
 						waterGeometry.faces.push( new Face3( index + 1, index, index + 2 ) );
 						waterGeometry.faces.push( new Face3( index + 1, index + 2, index + 3 ) );
@@ -421,14 +421,12 @@ export default class Terrain {
 
 		const groundHeight = this._zHeight( x, y );
 
-		// 3 / 8 is the water level
-		const cliffHeight = this._cliffmap[ y ][ x ] - 3 / 8;
-
+		// 5 / 8 is the water level
 		return {
-			topLeft: waterTopLeft - groundHeight.topLeft - cliffHeight,
-			topRight: waterTopRight - groundHeight.topRight - cliffHeight,
-			botRight: waterBotRight - groundHeight.botRight - cliffHeight,
-			botLeft: waterBotLeft - groundHeight.botLeft - cliffHeight
+			topLeft: waterTopLeft - groundHeight.topLeft + 5 / 8,
+			topRight: waterTopRight - groundHeight.topRight + 5 / 8,
+			botRight: waterBotRight - groundHeight.botRight + 5 / 8,
+			botLeft: waterBotLeft - groundHeight.botLeft + 5 / 8
 		};
 
 	}

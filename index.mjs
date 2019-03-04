@@ -1,8 +1,9 @@
 #!/usr/bin/env node --experimental-modules --no-warnings
 
 import fs from "fs";
+import arToEb from "./arToEb.mjs";
 
-import w3e2png from "./w3e2png.mjs";
+// import w3e2png from "./w3e2png.mjs";
 
 if ( process.argv.length < 3 ) {
 
@@ -22,7 +23,9 @@ fs.readFile( filePath, ( err, res ) => {
 
 	}
 
-	const png = w3e2png( res );
-	png.pack().pipe( fs.createWriteStream( "out.png" ) );
+	const eb = arToEb( res.buffer );
+	console.log( eb );
+	// const png = w3e2png( res );
+	// png.pack().pipe( fs.createWriteStream( "out.png" ) );
 
 } );

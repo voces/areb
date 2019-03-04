@@ -10,9 +10,8 @@ import {
 	FogExp2
 } from "./node_modules/three/build/three.module.js";
 
-import DataReader from "./DataReader.mjs";
-import w3eToEb from "./w3eToEb.mjs";
-import Terrain from "./Terrain.mjs";
+// import Terrain from "./Terrain.mjs";
+import arToEb from "./arToEb.mjs";
 
 // import exampleTerrain from "./exampleTerrain.mjs";
 
@@ -21,24 +20,27 @@ document.querySelector( "input" ).addEventListener( "change", e => {
 	const reader = new FileReader();
 	reader.onload = evt => {
 
-		const view = new DataView( evt.target.result );
-		const reader = new DataReader( view );
-		const terrainDef = w3eToEb( reader );
-		console.log( terrainDef );
-		const terrain = new Terrain( {
-			cliffmap: terrainDef.cliffmap,
-			tilemap: terrainDef.tilemap,
-			tileTypes: terrainDef.tileTypes,
-			flagmap: terrainDef.flagmap,
-			heightmap: terrainDef.heightmap,
-			watermap: terrainDef.watermap
-		} );
-		scene.add( terrain.mesh );
-		scene.add( terrain.waterMesh );
+		// const view =  evt.target.result ;
+		const map = arToEb( evt.target.result );
+		console.log( window.map = map );
 
-		camera.position.z = terrainDef.width * 0.4;
-		camera.position.y = terrainDef.height * - 0.6;
-		updateLight();
+		// const reader = new DataReader( view );
+		// const terrainDef = w3eToEb( reader );
+		// console.log( terrainDef );
+		// const terrain = new Terrain( {
+		// 	cliffmap: terrainDef.cliffmap,
+		// 	tilemap: terrainDef.tilemap,
+		// 	tileTypes: terrainDef.tileTypes,
+		// 	flagmap: terrainDef.flagmap,
+		// 	heightmap: terrainDef.heightmap,
+		// 	watermap: terrainDef.watermap
+		// } );
+		// scene.add( terrain.mesh );
+		// scene.add( terrain.waterMesh );
+
+		// camera.position.z = terrainDef.width * 0.4;
+		// camera.position.y = terrainDef.height * - 0.6;
+		// updateLight();
 
 	};
 	reader.readAsArrayBuffer( e.target.files[ 0 ] );
