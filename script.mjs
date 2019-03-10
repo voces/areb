@@ -10,7 +10,7 @@ import {
 	FogExp2
 } from "./node_modules/three/build/three.module.js";
 
-// import Terrain from "./Terrain.mjs";
+import Terrain from "./Terrain.mjs";
 import arToEb from "./arToEb.mjs";
 
 // import exampleTerrain from "./exampleTerrain.mjs";
@@ -27,15 +27,8 @@ document.querySelector( "input" ).addEventListener( "change", e => {
 		// const reader = new DataReader( view );
 		// const terrainDef = w3eToEb( reader );
 		// console.log( terrainDef );
-		// const terrain = new Terrain( {
-		// 	cliffmap: terrainDef.cliffmap,
-		// 	tilemap: terrainDef.tilemap,
-		// 	tileTypes: terrainDef.tileTypes,
-		// 	flagmap: terrainDef.flagmap,
-		// 	heightmap: terrainDef.heightmap,
-		// 	watermap: terrainDef.watermap
-		// } );
-		// scene.add( terrain.mesh );
+		const terrain = new Terrain( map.terrain );
+		scene.add( terrain.mesh );
 		// scene.add( terrain.waterMesh );
 
 		// camera.position.z = terrainDef.width * 0.4;

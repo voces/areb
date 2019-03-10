@@ -1,49 +1,71 @@
 
+// https://github.com/mrdoob/three.js/blob/master/examples/js/objects/Water2.js
+
 import { Geometry, Mesh, MeshPhongMaterial, FaceColors, Vector3, Face3, Color } from "./node_modules/three/build/three.module.js";
 import { memoize } from "./util.mjs";
-// https://github.com/mrdoob/three.js/blob/master/examples/js/objects/Water2.js
+import NDArray from ".util/NDArray.mjs";
 
 const memoizedColor = memoize( hex => new Color( hex ) );
 
-const empty2d = val => {
+class Tile {
 
-	const innerProxy = new Proxy( {}, { get: () => val } );
-	const outerProxy = new Proxy( {}, { get: () => innerProxy } );
-	return outerProxy;
+	constructor( { terrain, terrainDef, geometry, x, y } ) {
 
-};
+		this.terrain = terrain;
+		this.x = x;
+		this.y = y;
 
-// const get = ( obj, ...path ) => {
+		this.buildGeometry( { terrainDef, x, y } );
 
-// 	let cur = obj;
-// 	while ( cur && path.length ) cur = cur[ path.shift() ];
+		const index = geometry.vertices.length;
+		geometry.vertices.push(
+			new Vector3( x, - y, map.maps.cliff[ y ][ x ] + topLeft ),
+			new Vector3( x + 1, - y, map.maps.cliff[ y ][ x ] + topRight ),
+			new Vector3( x, - y - 1, map.maps.cliff[ y ][ x ] + botLeft ),
+			new Vector3( x + 1, - y - 1, map.maps.cliff[ y ][ x ] + botRight )
+		);
+		geometry.faces.push( new Face3( index + 1, index, index + 2, undefined, color( x, y ) ) );
+		geometry.faces.push( new Face3( index + 1, index + 2, index + 3, undefined, color( x, y ) ) );
 
-// 	return cur;
+	}
 
-// };
+	buildGeometry( { terrainDef, geometry, x, y } ) {
+
+		const topLeft = terrainDef.maps.height[ y ][ x ];
+		const topRight = terrainDef.maps.height[ y ][ x + 1 ];
+		const botLeft = terrainDef.maps.height[ y + 1 ][ x ];
+		const botRight = terrainDef.maps.height[ y + 1 ][ x + 1 ];
+
+		const z = terrainDef.maps.cliff[ y ][ x ];
+
+		const newVertices = [];
+		const newVertex = ( x, y, z ) => {
+
+			const vertex = new Vector3( x, y, z );
+			geometry.vert;
+
+		};
+
+		this.vertices = [
+			this.terrain._vertices.getOrSet( () => new Vector3( x, - y, z + topLeft ), x, y, z ),
+			this.terrain._vertices.getOrSet( () => new Vector3( x + 1, - y, z + topRight ), x + 1, y, z ),
+			this.terrain._vertices.getOrSet( () => new Vector3( x, - y - 1, z + botLeft ), x, y + 1, z ),
+			this.terrain._vertices.getOrSet( () => new Vector3( x, - y, z + topLeft ), x, y, z )
+		];
+
+	}
+
+	getOrSetVertexIndex( x, y, z, geometry ) {
+
+	}
+
+}
 
 export default class Terrain {
 
-	constructor( {
-		cliffmap,
-		tilemap = empty2d( 0 ),
-		tileTypes = [ { name: "Grass", color: "#608038" } ],
-		flagmap = empty2d( {} ),
-		heightmap = empty2d( 0 ),
-		watermap = empty2d( 0 )
-	} ) {
+	constructor( map ) {
 
-		this._zHeight = memoize( this._zHeight );
-
-		this._cliffmap = cliffmap;
-		this._heightmap = heightmap;
-		this._flagmap = flagmap;
-		this._watermap = watermap;
-
-		const height = cliffmap.length - 1;
-		const width = Math.min( ...cliffmap.map( row => row.length ) ) - 1;
-
-		this.dimensions = { width, height };
+		this._map = map;
 
 		const geometry = new Geometry();
 		const material = new MeshPhongMaterial( {
@@ -51,6 +73,14 @@ export default class Terrain {
 			flatShading: true,
 			shininess: 5
 		} );
+
+		const { width, height } = map.size;
+		this.width = width;
+		this.height = height;
+
+		this._tiles = new NDArray();
+		this._vertices = new NDArray();
+		this._water = new NDArray();
 
 		const waterGeometry = new Geometry();
 		const waterMaterial = new MeshPhongMaterial( {
@@ -64,12 +94,12 @@ export default class Terrain {
 
 			try {
 
-				const hex = tileTypes[ tilemap[ y ][ x ] ].color.toUpperCase();
+				const hex = map.tiles[ map.maps.groundTile[ y ][ x ] ].color.toUpperCase();
 				return memoizedColor( hex );
 
 			} catch ( err ) {
 
-				throw new Error( `Tile ( ${x}, ${y} ) uses undefined color ${tilemap[ y ][ x ]}.` );
+				throw new Error( `Tile ( ${x}, ${y} ) uses undefined color ${map.maps.groundTile[ y ][ x ]}.` );
 
 			}
 
@@ -78,27 +108,30 @@ export default class Terrain {
 
 		const rampWalls = [];
 
-		for ( let y = height; y >= 0; y -- )
-			for ( let x = 0; x <= width; x ++ ) {
+		for ( let y = map.size.height - 1; y >= 0; y -- )
+			for ( let x = 0; x < map.size.width; x ++ ) {
 
-				const { topLeft, topRight, botLeft, botRight } = this._zHeight( x, y );
+				const topLeft = map.maps.height[ y ][ x ];
+				const topRight = map.maps.height[ y ][ x + 1 ];
+				const botLeft = map.maps.height[ y + 1 ][ x ];
+				const botRight = map.maps.height[ y + 1 ][ x + 1 ];
 
-				if ( ! isNaN( cliffmap[ y ][ x ] ) ) {
+				if ( ! isNaN( map.maps.cliff[ y ][ x ] ) ) {
 
 					// Floor
 					const index = geometry.vertices.length;
 					geometry.vertices.push(
-						new Vector3( x, - y, cliffmap[ y ][ x ] + topLeft ),
-						new Vector3( x + 1, - y, cliffmap[ y ][ x ] + topRight ),
-						new Vector3( x, - y - 1, cliffmap[ y ][ x ] + botLeft ),
-						new Vector3( x + 1, - y - 1, cliffmap[ y ][ x ] + botRight )
+						new Vector3( x, - y, map.maps.cliff[ y ][ x ] + topLeft ),
+						new Vector3( x + 1, - y, map.maps.cliff[ y ][ x ] + topRight ),
+						new Vector3( x, - y - 1, map.maps.cliff[ y ][ x ] + botLeft ),
+						new Vector3( x + 1, - y - 1, map.maps.cliff[ y ][ x ] + botRight )
 					);
 					geometry.faces.push( new Face3( index + 1, index, index + 2, undefined, color( x, y ) ) );
 					geometry.faces.push( new Face3( index + 1, index + 2, index + 3, undefined, color( x, y ) ) );
 
-					if ( flagmap[ y ][ x ].water ) {
+					if ( map.maps.water[ y ][ x ] ) {
 
-						const waterHeight = this._waterHeight( x, y );
+						// const waterHeight = this._waterHeight( x, y );
 
 						const index = waterGeometry.vertices.length;
 						waterGeometry.vertices.push(
@@ -115,10 +148,10 @@ export default class Terrain {
 					// Left wall (next gets right)
 					if ( x > 0 ) {
 
-						const altHeight = this._tileHeight( x - 1, y );
-						const currentIsLow = cliffmap[ y ][ x ] < altHeight;
-						const low = currentIsLow ? cliffmap[ y ][ x ] : altHeight;
-						const high = currentIsLow ? altHeight : cliffmap[ y ][ x ];
+						const altHeight = this._tileHeight( map.maps.cliff, x - 1, y );
+						const currentIsLow = map.maps.cliff[ y ][ x ] < altHeight;
+						const low = currentIsLow ? map.maps.cliff[ y ][ x ] : altHeight;
+						const high = currentIsLow ? altHeight : map.maps.cliff[ y ][ x ];
 
 						for ( let z = low; z < high; z ++ ) {
 
@@ -149,10 +182,10 @@ export default class Terrain {
 					// Top wall (next gets bottom)
 					if ( y > 0 ) {
 
-						const altHeight = this._tileHeight( x, y - 1 );
-						const currentIsLow = cliffmap[ y ][ x ] < altHeight;
-						const low = currentIsLow ? cliffmap[ y ][ x ] : altHeight;
-						const high = currentIsLow ? altHeight : cliffmap[ y ][ x ];
+						const altHeight = this._tileHeight( map.maps.cliff, x, y - 1 );
+						const currentIsLow = map.maps.cliff[ y ][ x ] < altHeight;
+						const low = currentIsLow ? map.maps.cliff[ y ][ x ] : altHeight;
+						const high = currentIsLow ? altHeight : map.maps.cliff[ y ][ x ];
 
 						for ( let z = low; z < high; z ++ ) {
 
@@ -180,17 +213,17 @@ export default class Terrain {
 
 					}
 
-				} else if ( cliffmap[ y ][ x ].toLowerCase() === "r" ) {
+				} else if ( map.maps.cliff[ y ][ x ].toLowerCase() === "r" ) {
 
 					const nearRaw = [
-						y > 0 && x > 0 ? cliffmap[ y - 1 ][ x - 1 ] : undefined,
-						y > 0 ? cliffmap[ y - 1 ][ x ] : undefined,
-						y > 0 && x < width ? cliffmap[ y - 1 ][ x + 1 ] : undefined,
-						x > 0 ? cliffmap[ y ][ x - 1 ] : undefined,
-						x < width ? cliffmap[ y ][ x + 1 ] : undefined,
-						y < height && x > 0 ? cliffmap[ y + 1 ][ x - 1 ] : undefined,
-						y < height ? cliffmap[ y + 1 ][ x ] : undefined,
-						y < height && x < width ? cliffmap[ y + 1 ][ x + 1 ] : undefined
+						y > 0 && x > 0 ? map.maps.cliff[ y - 1 ][ x - 1 ] : undefined,
+						y > 0 ? map.maps.cliff[ y - 1 ][ x ] : undefined,
+						y > 0 && x < width ? map.maps.cliff[ y - 1 ][ x + 1 ] : undefined,
+						x > 0 ? map.maps.cliff[ y ][ x - 1 ] : undefined,
+						x < width ? map.maps.cliff[ y ][ x + 1 ] : undefined,
+						y < height && x > 0 ? map.maps.cliff[ y + 1 ][ x - 1 ] : undefined,
+						y < height ? map.maps.cliff[ y + 1 ][ x ] : undefined,
+						y < height && x < width ? map.maps.cliff[ y + 1 ][ x + 1 ] : undefined
 					];
 
 					const near = nearRaw.map( tile => isNaN( tile ) ? - Infinity : tile );
@@ -223,8 +256,8 @@ export default class Terrain {
 						// Don't put triangles where they won't be seen
 						if ( y + walls[ i ].neighbor.y < 0 || y + walls[ i ].neighbor.y > height ||
 							x + walls[ i ].neighbor.x < 0 || x + walls[ i ].neighbor.x > width ||
-								typeof cliffmap[ y + walls[ i ].neighbor.y ][ x + walls[ i ].neighbor.x ] === "string" &&
-								cliffmap[ y + walls[ i ].neighbor.y ][ x + walls[ i ].neighbor.x ].toLowerCase() === "r" )
+								typeof map.maps.cliff[ y + walls[ i ].neighbor.y ][ x + walls[ i ].neighbor.x ] === "string" &&
+								map.maps.cliff[ y + walls[ i ].neighbor.y ][ x + walls[ i ].neighbor.x ].toLowerCase() === "r" )
 
 							continue;
 
@@ -249,9 +282,9 @@ export default class Terrain {
 					// Left wall (next gets right)
 					if ( topLeftHeight !== botLeftHeight && x > 0 ) {
 
-						const currentIsLow = minHeight < cliffmap[ y ][ x - 1 ];
-						const low = currentIsLow ? minHeight : cliffmap[ y ][ x - 1 ];
-						const high = currentIsLow ? cliffmap[ y ][ x - 1 ] : minHeight;
+						const currentIsLow = minHeight < map.maps.cliff[ y ][ x - 1 ];
+						const low = currentIsLow ? minHeight : map.maps.cliff[ y ][ x - 1 ];
+						const high = currentIsLow ? map.maps.cliff[ y ][ x - 1 ] : minHeight;
 
 						for ( let z = low; z < high; z ++ ) {
 
@@ -282,9 +315,9 @@ export default class Terrain {
 					// Top wall (next gets bottom)
 					if ( topLeftHeight !== topRightHeight && y > 0 ) {
 
-						const currentIsLow = minHeight < cliffmap[ y - 1 ][ x ];
-						const low = currentIsLow ? minHeight : cliffmap[ y - 1 ][ x ];
-						const high = currentIsLow ? cliffmap[ y - 1 ][ x ] : minHeight;
+						const currentIsLow = minHeight < map.maps.cliff[ y - 1 ][ x ];
+						const low = currentIsLow ? minHeight : map.maps.cliff[ y - 1 ][ x ];
+						const high = currentIsLow ? map.maps.cliff[ y - 1 ][ x ] : minHeight;
 
 						for ( let z = low; z < high; z ++ ) {
 
@@ -333,7 +366,7 @@ export default class Terrain {
 		geometry.computeBoundingBox();
 		const offset = geometry.boundingBox.getCenter().negate();
 		geometry.translate( offset.x, offset.y, 0 );
-		waterGeometry.translate( offset.x, offset.y, 0 );
+		// waterGeometry.translate( offset.x, offset.y, 0 );
 
 		// Randomly move vertices a bit (so we don't have completely flat surfaces)
 		for ( let i = 0; i < geometry.vertices.length; i ++ ) {
@@ -348,30 +381,39 @@ export default class Terrain {
 		geometry.computeVertexNormals();
 
 		this.mesh = new Mesh( geometry, material );
-		this.waterMesh = new Mesh( waterGeometry, waterMaterial );
+		// this.waterMesh = new Mesh( waterGeometry, waterMaterial );
 
 		this.mesh.castShadow = true;
 		this.mesh.receiveShadow = true;
 
+		delete this._map;
+
 	}
 
-	_tileHeight( x, y ) {
+	tile( x, y ) {
 
-		if ( ! isNaN( this._cliffmap[ y ][ x ] ) ) return this._cliffmap[ y ][ x ];
+		if ( x < 0 || x >= this.width || y < 0 || y >= this.height ) return;
+		return this._tiles.getOrSet( () => new Tile( { terrain: this, terrainDef: this._map, x, y } ), y, x );
 
-		if ( this._cliffmap[ y ][ x ].toLowerCase() !== "r" ) return;
+	}
 
-		const { width, height } = this.dimensions;
+	_tileHeight( cliffmap, x, y ) {
+
+		if ( ! isNaN( cliffmap[ y ][ x ] ) ) return cliffmap[ y ][ x ];
+
+		if ( cliffmap[ y ][ x ].toLowerCase() !== "r" ) return;
+
+		const { width, height } = this;
 
 		const [ topLeft, top, topRight, left, right, botLeft, bot, botRight ] = [
-			y > 0 && x > 0 ? this._cliffmap[ y - 1 ][ x - 1 ] : undefined,
-			y > 0 ? this._cliffmap[ y - 1 ][ x ] : undefined,
-			y > 0 && x < width ? this._cliffmap[ y - 1 ][ x + 1 ] : undefined,
-			x > 0 ? this._cliffmap[ y ][ x - 1 ] : undefined,
-			x < width ? this._cliffmap[ y ][ x + 1 ] : undefined,
-			y < height && x > 0 ? this._cliffmap[ y + 1 ][ x - 1 ] : undefined,
-			y < height ? this._cliffmap[ y + 1 ][ x ] : undefined,
-			y < height && x < width ? this._cliffmap[ y + 1 ][ x + 1 ] : undefined
+			y > 0 && x > 0 ? cliffmap[ y - 1 ][ x - 1 ] : NaN,
+			y > 0 ? cliffmap[ y - 1 ][ x ] : NaN,
+			y > 0 && x < width ? cliffmap[ y - 1 ][ x + 1 ] : NaN,
+			x > 0 ? cliffmap[ y ][ x - 1 ] : NaN,
+			x < width ? cliffmap[ y ][ x + 1 ] : NaN,
+			y < height && x > 0 ? cliffmap[ y + 1 ][ x - 1 ] : NaN,
+			y < height ? cliffmap[ y + 1 ][ x ] : NaN,
+			y < height && x < width ? cliffmap[ y + 1 ][ x + 1 ] : NaN
 		].map( tile => isNaN( tile ) ? - Infinity : tile );
 
 		const topLeftHeight = Math.max( topLeft, top, left );
@@ -380,26 +422,6 @@ export default class Terrain {
 		const botRightHeight = Math.max( botRight, bot, right );
 
 		return Math.min( topLeftHeight, topRightHeight, botLeftHeight, botRightHeight );
-
-	}
-
-	_zHeight( x, y ) {
-
-		const [ topLeft, topRight, botRight, botLeft ] = zHeightConsts
-			.map( corner => corner.map( ( { x: xOffset, y: yOffset } ) => {
-
-				const finalX = x + xOffset;
-				const finalY = y + yOffset;
-				if ( finalX < 0 || finalY < 0 ) return;
-				const row = this._heightmap[ finalY ];
-				if ( ! row ) return;
-				return row[ finalX ];
-
-			} ) )
-			.map( heights => heights.filter( height => ! isNaN( height ) ) )
-			.map( heights => heights.reduce( ( sum, part ) => isNaN( part ) ? sum : sum + part, 0 ) / heights.length );
-
-		return { topLeft, topRight, botLeft, botRight };
 
 	}
 

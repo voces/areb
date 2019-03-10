@@ -4,15 +4,14 @@ import War3Map from "./node_modules/w3x-parser/dist/bundle.mjs";
 import tiles from "./resources/tiles.mjs";
 
 import mapToCharGradiant from "./util/mapToCharGradiant.mjs";
-
 window.mapToCharGradiant = mapToCharGradiant;
 
 // WC3 describes heights by tile, but we want heights by tile corner
 // https://docs.google.com/drawings/d/1lPw4KP92Bjea6GlovjH61MPClK3Csw9b44ts-H_WxSU/edit?usp=sharing
-const heightTilesToHeightMap = tiles => {
+const heightTilesToHeightMap = ( heights, enabled ) => {
 
-	const height = tiles.length;
-	const width = tiles[ 0 ].length;
+	const height = heights.length;
+	const width = heights[ 0 ].length;
 
 	const map = [];
 	for ( let y = - 1; y < height; y ++ ) {
@@ -21,10 +20,10 @@ const heightTilesToHeightMap = tiles => {
 		for ( let x = - 1; x < width; x ++ )
 			row.push(
 				[
-					y >= 0 ? tiles[ y ][ x ] : NaN,
-					y >= 0 ? tiles[ y ][ x + 1 ] : NaN,
-					y + 1 < height ? tiles[ y + 1 ][ x ] : NaN,
-					y + 1 < height ? tiles[ y + 1 ][ x + 1 ] : NaN
+					y >= 0 && ( ! enabled || enabled[ y ][ x ] ) ? heights[ y ][ x ] : NaN,
+					y >= 0 && ( ! enabled || enabled[ y ][ x + 1 ] ) ? heights[ y ][ x + 1 ] : NaN,
+					y + 1 < height && ( ! enabled || enabled[ y + 1 ][ x ] ) ? heights[ y + 1 ][ x ] : NaN,
+					y + 1 < height && ( ! enabled || enabled[ y + 1 ][ x + 1 ] ) ? heights[ y + 1 ][ x + 1 ] : NaN
 				]
 					.filter( h => ! isNaN( h ) )
 					.reduce( ( sum, height, index, arr ) => sum + height / arr.length, 0 )
@@ -38,6 +37,13 @@ const heightTilesToHeightMap = tiles => {
 
 };
 
+const isRamp = ( x, y, corners ) =>
+	corners[ y ][ x ].ramp &&
+	corners[ y ][ x - 1 ].ramp &&
+	corners[ y ][ x + 1 ].ramp &&
+	corners[ y - 1 ][ x ].ramp &&
+	corners[ y + 1 ][ x ].ramp;
+
 export const terrain = war3Map => {
 
 	const environment = war3Map.readEnvironment();
@@ -47,6 +53,10 @@ export const terrain = war3Map => {
 	const groundTiles = environment.groundTilesets.map( tile => tiles[ tile ] );
 	const cliffTiles = environment.cliffTilesets.map( tile => tiles[ tile ] );
 
+	const corners = environment.corners.reverse();
+
+	const water = corners.map( row => row.map( corner => corner.water ) );
+
 	return {
 		size: {
 			height: environment.mapSize[ 1 ],
@@ -54,12 +64,12 @@ export const terrain = war3Map => {
 		},
 		tiles: [ ...groundTiles, ...cliffTiles ],
 		maps: {
-			cliff: environment.corners.map( row => row.map( corner => corner.layerHeight ) ),
-			height: heightTilesToHeightMap( environment.corners.map( row => row.map( corner => corner.groundHeight ) ) ),
-			groundTiles: environment.corners.map( row => row.map( corner => corner.groundTexture ) ),
-			cliffTiles: environment.corners.map( row => row.map( corner => groundTiles.length + ( corner.cliffTexture === 15 ? 0 : corner.cliffTexture ) ) ),
-			water: environment.corners.map( row => row.map( corner => corner.water ) ),
-			waterHeight: heightTilesToHeightMap( environment.corners.map( row => row.map( corner => corner.waterHeight ) ) )
+			cliff: corners.map( ( row, y ) => row.map( ( corner, x ) => isRamp( x, y, corners ) ? "r" : corner.layerHeight ) ),
+			height: heightTilesToHeightMap( corners.map( row => row.map( corner => corner.groundHeight ) ) ),
+			groundTile: corners.map( row => row.map( corner => corner.groundTexture ) ),
+			cliffTile: corners.map( row => row.map( corner => groundTiles.length + ( corner.cliffTexture === 15 ? 0 : corner.cliffTexture ) ) ),
+			water,
+			waterHeight: heightTilesToHeightMap( corners.map( row => row.map( corner => corner.waterHeight ) ), water )
 		}
 	};
 
