@@ -1,6 +1,7 @@
 
 import {
 	Scene,
+	Mesh,
 	PerspectiveCamera,
 	WebGLRenderer,
 	DirectionalLight,
@@ -10,43 +11,55 @@ import {
 	FogExp2
 } from "./node_modules/three/build/three.module.js";
 
-import Terrain from "./Terrain.mjs";
+// import PineTree from "./resources/meshes/PineTree.mjs";
 import arToEb from "./arToEb.mjs";
 
-// import exampleTerrain from "./exampleTerrain.mjs";
+import Map from "./webcraft/Map.mjs";
+
+import exampleMap from "./exampleMap.mjs";
 
 document.querySelector( "input" ).addEventListener( "change", e => {
 
 	const reader = new FileReader();
 	reader.onload = evt => {
 
-		// const view =  evt.target.result ;
-		const map = arToEb( evt.target.result );
-		console.log( window.map = map );
+		const json = window.json = arToEb( evt.target.result );
 
-		// const reader = new DataReader( view );
-		// const terrainDef = w3eToEb( reader );
-		// console.log( terrainDef );
-		const terrain = new Terrain( map.terrain );
-		scene.add( terrain.mesh );
-		// scene.add( terrain.waterMesh );
-
-		// camera.position.z = terrainDef.width * 0.4;
-		// camera.position.y = terrainDef.height * - 0.6;
-		// updateLight();
+		const map = window.map = new Map( json );
+		loadMap( map );
 
 	};
 	reader.readAsArrayBuffer( e.target.files[ 0 ] );
 
 } );
 
-const scene = new Scene();
+const loadMap = map => {
+
+	// Remove meshes
+	scene.children.forEach( child => child instanceof Mesh ? scene.remove( child ) : null );
+	scene.add( map.terrain.mesh );
+	scene.add( map.terrain.waterMesh );
+	map.doodads.forEach( doodad => scene.add( doodad ) );
+
+};
+
+const scene = window.scene = new Scene();
 const camera = new PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 10000 );
 camera.position.z = 10;
 camera.position.y = - 12.5;
 camera.rotation.x = 0.6;
 
-// scene.add( exampleTerrain.mesh );
+loadMap( exampleMap );
+
+// const spread = 1;
+// for ( let y = - 13; y <= 5; y ++ )
+// 	for ( let x = - 7; x <= 7; x ++ ) {
+
+// 		const tree = new PineTree();
+// 		tree.position.set( x * spread, y * spread, 0 );
+// 		scene.add( tree );
+
+// 	}
 
 const renderer = new WebGLRenderer( { antialias: true } );
 renderer.setSize( window.innerWidth, window.innerHeight );
