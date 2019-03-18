@@ -11,11 +11,9 @@ import {
 	FogExp2
 } from "./node_modules/three/build/three.module.js";
 
-// import PineTree from "./resources/meshes/PineTree.mjs";
 import arToEb from "./arToEb.mjs";
 
 import Map from "./webcraft/Map.mjs";
-
 import exampleMap from "./exampleMap.mjs";
 
 document.querySelector( "input" ).addEventListener( "change", e => {
@@ -50,16 +48,6 @@ camera.position.y = - 12.5;
 camera.rotation.x = 0.6;
 
 loadMap( exampleMap );
-
-// const spread = 1;
-// for ( let y = - 13; y <= 5; y ++ )
-// 	for ( let x = - 7; x <= 7; x ++ ) {
-
-// 		const tree = new PineTree();
-// 		tree.position.set( x * spread, y * spread, 0 );
-// 		scene.add( tree );
-
-// 	}
 
 const renderer = new WebGLRenderer( { antialias: true } );
 renderer.setSize( window.innerWidth, window.innerHeight );

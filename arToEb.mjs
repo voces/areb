@@ -39,19 +39,33 @@ const heightTilesToHeightMap = ( heights, enabled ) => {
 };
 
 const isRamp = ( x, y, corners ) =>
-	x > 0 && y > 0 && y < corners.length - 1 && x < corners[ 0 ].length - 1 &&
+
+	// Self must be a ramp
 	corners[ y ][ x ].ramp &&
-	corners[ y ][ x - 1 ].ramp &&
-	corners[ y ][ x + 1 ].ramp &&
-	corners[ y - 1 ][ x ].ramp &&
-	corners[ y + 1 ][ x ].ramp &&
-	[
-		corners[ y ][ x ].layerHeight,
-		corners[ y ][ x - 1 ].layerHeight,
-		corners[ y ][ x + 1 ].layerHeight,
-		corners[ y - 1 ][ x ].layerHeight,
-		corners[ y + 1 ][ x ].layerHeight
-	].filter( ( v, i, arr ) => arr.indexOf( v ) === i ).length > 1;
+	// Protection against ramps on edges (not real!)
+	x > 0 && y > 0 && y < corners.length - 1 && x < corners[ 0 ].length - 1 &&
+	// General rule for a ramp:
+	// - Both ends of the ramp are also ramps
+	// - Both ends should have a different height
+	// - The center of the ramp's height should be the same as the min
+	(
+		// Horizontal
+		corners[ y ][ x - 1 ].ramp && corners[ y ][ x + 1 ].ramp &&
+		corners[ y ][ x - 1 ].layerHeight !== corners[ y ][ x + 1 ].layerHeight &&
+		corners[ y ][ x ].layerHeight === Math.min( corners[ y ][ x - 1 ].layerHeight, corners[ y ][ x + 1 ].layerHeight ) ||
+		// Vertical
+		corners[ y - 1 ][ x ].ramp && corners[ y + 1 ][ x ].ramp &&
+		corners[ y - 1 ][ x ].layerHeight !== corners[ y + 1 ][ x ].layerHeight &&
+		corners[ y ][ x ].layerHeight === Math.min( corners[ y - 1 ][ x ].layerHeight, corners[ y + 1 ][ x ].layerHeight ) ||
+		// Corner \
+		corners[ y - 1 ][ x - 1 ].ramp && corners[ y + 1 ][ x + 1 ].ramp &&
+		corners[ y - 1 ][ x - 1 ].layerHeight !== corners[ y + 1 ][ x + 1 ].layerHeight &&
+		corners[ y ][ x ].layerHeight === Math.min( corners[ y - 1 ][ x - 1 ].layerHeight, corners[ y + 1 ][ x + 1 ].layerHeight ) ||
+		// Corner /
+		corners[ y + 1 ][ x - 1 ].ramp && corners[ y - 1 ][ x + 1 ].ramp &&
+		corners[ y + 1 ][ x - 1 ].layerHeight !== corners[ y - 1 ][ x + 1 ].layerHeight &&
+		corners[ y ][ x ].layerHeight === Math.min( corners[ y + 1 ][ x - 1 ].layerHeight, corners[ y - 1 ][ x + 1 ].layerHeight )
+	);
 
 const tilesArr = Object.values( tiles );
 const warnAndRandom = tile => {
@@ -89,18 +103,20 @@ export const terrain = war3Map => {
 		z: - 2
 	};
 
+	const boundaryIndex = groundTiles.length + cliffTiles.length;
+
 	return {
 		size: { height, width },
-		tiles: [ ...groundTiles, ...cliffTiles ],
+		tiles: [ ...groundTiles, ...cliffTiles, tiles.Bdry ],
 		masks: {
 			// Per tile
 			cliff: corners.map( ( row, y ) => row.map( ( corner, x ) => isRamp( x, y, corners ) ? "r" : corner.layerHeight ) ),
 			// Per vertex
 			height: heightTilesToHeightMap( corners.map( row => row.map( corner => corner.groundHeight ) ) ),
+			// Per tile (TODO: boundaries are phase shifted, so do NOT work as per-vertex (or even per-face))
+			groundTile: corners.map( row => row.map( corner => corner.boundary || corner.mapEdge ? boundaryIndex : corner.groundTexture ) ),
 			// Per tile
-			groundTile: corners.map( row => row.map( corner => corner.groundTexture ) ),
-			// Per tile
-			cliffTile: corners.map( row => row.map( corner => groundTiles.length + ( corner.cliffTexture === 15 ? 0 : corner.cliffTexture ) ) ),
+			cliffTile: corners.map( row => row.map( corner => corner.boundary || corner.mapEdge ? boundaryIndex : groundTiles.length + ( corner.cliffTexture === 15 ? 0 : corner.cliffTexture ) ) ),
 			// Per tile
 			water,
 			// Per vertex
@@ -115,7 +131,16 @@ export const doodads = war3Map => {
 
 	const doo = war3Map.readDoodads();
 
-	return doo.doodads.filter( doodad => doodadTypes[ doodad.id ] ).map( doodad => ( {
+	const skippedDoodads = {};
+	const markSkipped = doodad => {
+
+		if ( ! skippedDoodads[ doodad.id ] ) skippedDoodads[ doodad.id ] = 0;
+		skippedDoodads[ doodad.id ] ++;
+		return false;
+
+	};
+
+	const doodads = doo.doodads.filter( doodad => doodadTypes[ doodad.id ] || markSkipped( doodad ) ).map( doodad => ( {
 		id: doodad.editorId,
 		mesh: doodadTypes[ doodad.id ].mesh,
 		position: {
@@ -124,8 +149,15 @@ export const doodads = war3Map => {
 			z: doodad.location[ 2 ] / 128
 		},
 		scale: ( doodad.scale[ 0 ] + doodad.scale[ 1 ] + doodad.scale[ 2 ] ) / 3,
+		angle: doodad.angle,
 		life: doodad.life
 	} ) );
+
+	if ( Object.keys( skippedDoodads ).length )
+		console.warn( `Skipped unknown doodads (${Object.entries( skippedDoodads ).map( ( [ key, value ] ) =>
+			`${key}: ${value}` ).join( ", " )})` );
+
+	return doodads;
 
 };
 

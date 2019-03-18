@@ -74,16 +74,13 @@ const minNotNegInfinity = ( ...arr ) => {
 
 };
 
-// const findLast = ( arr, cb, fromIndex = arr.length - 1 ) =>
-// 	arr[ findLastIndex( arr, cb, fromIndex ) ];
-
 export default class Terrain {
 
 	constructor( terrain ) {
 
 		this._vertices = new NDArray();
 
-		this.color = ( x, y ) => {
+		this.groundColor = memoize( ( x, y ) => {
 
 			try {
 
@@ -96,8 +93,22 @@ export default class Terrain {
 
 			}
 
-		};
-		this.color.colors = {};
+		} );
+
+		this.cliffColor = memoize( ( x, y ) => {
+
+			try {
+
+				const hex = terrain.tiles[ terrain.masks.cliffTile[ y ][ x ] ].color.toUpperCase();
+				return memoizedColor( hex );
+
+			} catch ( err ) {
+
+				throw new Error( `Tile ( ${x}, ${y} ) uses undefined color ${terrain.masks.cliffTile[ y ][ x ]}.` );
+
+			}
+
+		} );
 
 		const { width, height } = terrain.size;
 		this.width = width;
@@ -146,8 +157,8 @@ export default class Terrain {
 						vertex( x + 1, y + 1, cliffMask[ y ][ x ], botRight )
 					];
 					geometry.faces.push(
-						new Face3( ...tileFaceVertices( vertices, true ), undefined, this.color( x, y ) ),
-						new Face3( ...tileFaceVertices( vertices, false ), undefined, this.color( x, y ) ),
+						new Face3( ...tileFaceVertices( vertices, true ), undefined, this.groundColor( x, y ) ),
+						new Face3( ...tileFaceVertices( vertices, false ), undefined, this.groundColor( x, y ) ),
 					);
 
 					// Left wall (next gets right)
@@ -167,8 +178,8 @@ export default class Terrain {
 								vertex( x, y + 1, z + 1, botLeft )
 							];
 							geometry.faces.push(
-								new Face3( ...wallVertices( vertices, true, currentIsLow, true ) ),
-								new Face3( ...wallVertices( vertices, true, currentIsLow, false ) )
+								new Face3( ...wallVertices( vertices, true, currentIsLow, true ), undefined, this.cliffColor( x, y ) ),
+								new Face3( ...wallVertices( vertices, true, currentIsLow, false ), undefined, this.cliffColor( x, y ) )
 							);
 
 						}
@@ -192,8 +203,8 @@ export default class Terrain {
 								vertex( x + 1, y, z + 1, topRight )
 							];
 							geometry.faces.push(
-								new Face3( ...wallVertices( vertices, false, currentIsLow, true ) ),
-								new Face3( ...wallVertices( vertices, false, currentIsLow, false ) )
+								new Face3( ...wallVertices( vertices, false, currentIsLow, true ), undefined, this.cliffColor( x, y ) ),
+								new Face3( ...wallVertices( vertices, false, currentIsLow, false ), undefined, this.cliffColor( x, y ) )
 							);
 
 						}
@@ -228,8 +239,8 @@ export default class Terrain {
 						vertex( x + 1, y + 1, botRightHeight, botRight )
 					];
 					geometry.faces.push(
-						new Face3( ...tileFaceVertices( vertices, true ), undefined, this.color( x, y ) ),
-						new Face3( ...tileFaceVertices( vertices, false ), undefined, this.color( x, y ) ),
+						new Face3( ...tileFaceVertices( vertices, true ), undefined, this.groundColor( x, y ) ),
+						new Face3( ...tileFaceVertices( vertices, false ), undefined, this.groundColor( x, y ) ),
 					);
 
 					const walls = [
@@ -241,8 +252,8 @@ export default class Terrain {
 					for ( let i = 0; i < walls.length; i ++ ) {
 
 						// Don't put triangles on the edge
-						if ( y + walls[ i ].neighbor.y <= 0 || y + walls[ i ].neighbor.y >= this.height ||
-							x + walls[ i ].neighbor.x <= 0 || x + walls[ i ].neighbor.x >= this.width ||
+						if ( y + walls[ i ].neighbor.y < 0 || y + walls[ i ].neighbor.y >= this.height ||
+							x + walls[ i ].neighbor.x < 0 || x + walls[ i ].neighbor.x >= this.width ||
 								typeof cliffMask[ y + walls[ i ].neighbor.y ][ x + walls[ i ].neighbor.x ] === "string" &&
 								cliffMask[ y + walls[ i ].neighbor.y ][ x + walls[ i ].neighbor.x ].toLowerCase() === "r" )
 
@@ -256,11 +267,11 @@ export default class Terrain {
 						if ( a.z !== b.z && ( a.x === b.x || a.y === b.y ) ) {
 
 							const height = Math.min( a.z, b.z );
-							const { x, y } = a.z === height ? b : a;
+							const { x: vX, y: vY } = a.z === height ? b : a;
 							// vertex inverts y, so we invert it first...
-							const v = vertex( x, - y, z, height - z );
+							const v = vertex( vX, - vY, z, height - z );
 
-							rampWalls.push( new Face3( a._geoIndex, b._geoIndex, v._geoIndex ) );
+							rampWalls.push( new Face3( a._geoIndex, b._geoIndex, v._geoIndex, undefined, this.cliffColor( x, y ) ) );
 
 						}
 
@@ -269,7 +280,7 @@ export default class Terrain {
 					const minHeight = minNotNegInfinity( topLeftHeight, topRightHeight, botLeftHeight, botRightHeight );
 					if ( isNaN( minHeight ) ) console.warn( "Got a NaN!" );
 
-					// Left wall (next gets right)
+					// Left wall (next gets right; ONLY for squares, not triangle its)
 					if ( topLeftHeight !== botLeftHeight && x > 0 ) {
 
 						const currentIsLow = minHeight < cliffMask[ y ][ x - 1 ];
@@ -285,15 +296,15 @@ export default class Terrain {
 								vertex( x, y + 1, z + 1, botLeft )
 							];
 							geometry.faces.push(
-								new Face3( ...wallVertices( vertices, true, currentIsLow, true ) ),
-								new Face3( ...wallVertices( vertices, true, currentIsLow, false ) )
+								new Face3( ...wallVertices( vertices, true, currentIsLow, true ), undefined, this.cliffColor( x, y ) ),
+								new Face3( ...wallVertices( vertices, true, currentIsLow, false ), undefined, this.cliffColor( x, y ) )
 							);
 
 						}
 
 					}
 
-					// Top wall (next gets bottom)
+					// Top wall (next gets bottom; ONLY for squares, not triangle its)
 					if ( topLeftHeight !== topRightHeight && y > 0 ) {
 
 						const currentIsLow = minHeight < cliffMask[ y - 1 ][ x ];
@@ -309,8 +320,8 @@ export default class Terrain {
 								vertex( x + 1, y, z + 1, topRight )
 							];
 							geometry.faces.push(
-								new Face3( ...wallVertices( vertices, false, currentIsLow, true ) ),
-								new Face3( ...wallVertices( vertices, false, currentIsLow, false ) )
+								new Face3( ...wallVertices( vertices, false, currentIsLow, true ), undefined, this.cliffColor( x, y ) ),
+								new Face3( ...wallVertices( vertices, false, currentIsLow, false ), undefined, this.cliffColor( x, y ) )
 							);
 
 						}
