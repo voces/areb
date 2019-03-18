@@ -16,8 +16,8 @@ const COLOR = new Color( 0x3b2507 );
 const createPost = ( { height, width, color } ) => {
 
 	const post = new CylinderGeometry(
-		width + Math.random() / 16,
-		width + Math.random() / 16,
+		width + Math.random() / 24,
+		width + Math.random() / 24,
 		height + Math.random() / 16 );
 
 	for ( let i = 0; i < post.faces.length; i ++ )
@@ -36,7 +36,7 @@ const createPosts = ( { length, width, height, angle, color } ) => {
 
 	const geometry = new Geometry();
 
-	const postDisplacement = length / 2 - width + Math.random() / 16;
+	const postDisplacement = length / 2 - Math.random() / 16;
 
 	const leftPost = createPost( { height, width, color } );
 	leftPost.translate( Math.cos( angle + Math.PI / 2 ) * - postDisplacement, Math.sin( angle + Math.PI / 2 ) * - postDisplacement, 0 );
@@ -55,7 +55,7 @@ const createRail = ( { width, length, color } ) => {
 	const rail = new CylinderGeometry(
 		width + Math.random() / 24,
 		width + Math.random() / 24,
-		( length + 1 / 4 + width + Math.random() / 4 ) * length / 2 );
+		length + width + Math.random() / 4 );
 
 	for ( let i = 0; i < rail.faces.length; i ++ )
 		rail.faces[ i ].color = color.clone().offsetHSL( random( 1 / 72 ), 0, 0 );
@@ -87,17 +87,13 @@ const createRails = ( { length, height, width, angle, color } ) => {
 
 export default class Fence extends Mesh {
 
-	// Think of length, width, height as the bounding box of the fence
 	constructor( {
 		length = 2 - 1 / 4,
+		width = 1 / 24,
+		height = 1 / 2,
 		angle = 0,
-		color = COLOR.clone().offsetHSL( random( 1 / 64 ), 0, 0 ),
-		width,
-		height
+		color = COLOR.clone().offsetHSL( random( 1 / 64 ), 0, 0 )
 	} = {} ) {
-
-		if ( width === undefined ) width = length / 48;
-		if ( height === undefined ) height = length / 4;
 
 		const geometry = new Geometry();
 		const material = new MeshPhongMaterial( {

@@ -141,8 +141,8 @@ export const doodads = war3Map => {
 	};
 
 	const doodads = doo.doodads.filter( doodad => doodadTypes[ doodad.id ] || markSkipped( doodad ) ).map( doodad => ( {
+		...doodadTypes[ doodad.id ],
 		id: doodad.editorId,
-		mesh: doodadTypes[ doodad.id ].mesh,
 		position: {
 			x: doodad.location[ 0 ] / 128,
 			y: doodad.location[ 1 ] / 128,

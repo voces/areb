@@ -18,7 +18,7 @@ export default class Map {
 
 		this.doodads = doodads.map( doodad => {
 
-			const mesh = new doodad.mesh( { angle: doodad.angle || 0 } );
+			const mesh = new doodad.mesh( doodad );
 			mesh.position.copy( doodad.position );
 			return mesh;
 
