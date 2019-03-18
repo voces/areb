@@ -3,18 +3,12 @@ import {
 	Math as Math2,
 	Mesh,
 	Geometry,
-	CylinderGeometry,
 	MeshPhongMaterial,
-	Color,
 	FaceColors,
 	PlaneGeometry
 } from "../../node_modules/three/build/three.module.js";
 
 import { box } from "./shared.mjs";
-
-import { linear as random } from "../../util/random.mjs";
-
-const COLOR = new Color( 0x3b2507 );
 
 const wall = ( { thickness, length, height } ) => {
 
@@ -43,10 +37,17 @@ export default class Trough extends Mesh {
 	} = {} ) {
 
 		const geometry = new Geometry();
-		const material = new MeshPhongMaterial( {
+		const woodMaterial = new MeshPhongMaterial( {
 			vertexColors: FaceColors,
 			flatShading: true
 		} );
+		const waterMaterial = new MeshPhongMaterial( {
+			color: 0x182190,
+			flatShading: true,
+			opacity: 0.75,
+			transparent: true
+		} );
+		const materials = [ woodMaterial, waterMaterial ];
 
 		const left = wall( { thickness, length: length + thickness, height } );
 		left.rotateY( - Math2.randFloat( 1 / 5, 1 / 3 ) );
@@ -98,10 +99,17 @@ export default class Trough extends Mesh {
 		bottomRight.translate( width / 2 - thickness / 2, - length / 2 + thickness / 2, 0 );
 		geometry.merge( bottomRight );
 
+		for ( let i = 0; i < geometry.faces.length; i ++ )
+			geometry.faces[ i ].materialIndex = 0;
+
 		const water = new PlaneGeometry( width, length );
 		water.translate( 0, 0, height * 3 / 4 );
 		water.faces[ 0 ].color.set( 0x182190 );
 		water.faces[ 1 ].color.set( 0x182190 );
+
+		for ( let i = 0; i < water.faces.length; i ++ )
+			water.faces[ i ].materialIndex = 1;
+
 		geometry.merge( water );
 
 		geometry.rotateZ( angle - Math.PI / 4 );
@@ -109,7 +117,7 @@ export default class Trough extends Mesh {
 		geometry.computeFaceNormals();
 		geometry.computeVertexNormals();
 
-		super( geometry, material );
+		super( geometry, materials );
 
 		this.castShadow = true;
 		this.receiveShadow = true;

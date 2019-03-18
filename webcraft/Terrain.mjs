@@ -74,6 +74,7 @@ const minNotNegInfinity = ( ...arr ) => {
 
 };
 
+// Make this extend Mesh
 export default class Terrain {
 
 	constructor( terrain ) {
