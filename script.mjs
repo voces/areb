@@ -35,8 +35,7 @@ const loadMap = map => {
 
 	// Remove meshes
 	scene.children.forEach( child => child instanceof Mesh ? scene.remove( child ) : null );
-	scene.add( map.terrain.mesh );
-	scene.add( map.terrain.waterMesh );
+	scene.add( map.terrain );
 	map.doodads.forEach( doodad => scene.add( doodad ) );
 
 };

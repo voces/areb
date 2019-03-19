@@ -1,9 +1,9 @@
 
 // https://github.com/mrdoob/three.js/blob/master/examples/js/objects/Water2.js
 
-import { Geometry, Mesh, MeshPhongMaterial, FaceColors, Vector3, Face3, Color } from "../node_modules/three/build/three.module.js";
-import { memoize } from "../util.mjs";
-import NDArray from "../util/NDArray.mjs";
+import { Geometry, Group, Mesh, MeshPhongMaterial, FaceColors, Vector3, Face3, Color } from "../../node_modules/three/build/three.module.js";
+import { memoize } from "../../util.mjs";
+import NDArray from "../../util/NDArray.mjs";
 
 const memoizedColor = memoize( hex => new Color( hex ) );
 
@@ -74,10 +74,12 @@ const minNotNegInfinity = ( ...arr ) => {
 
 };
 
-// Make this extend Mesh
-export default class Terrain {
+// Extends Group instead so water doesn't cast/receive Shadows
+export default class Terrain extends Group {
 
 	constructor( terrain ) {
+
+		super();
 
 		this._vertices = new NDArray();
 
@@ -115,8 +117,10 @@ export default class Terrain {
 		this.width = width;
 		this.height = height;
 
-		this._computeGround( { height: terrain.masks.height, cliff: terrain.masks.cliff, offset: terrain.offset } );
-		this._computeWater( { water: terrain.masks.water, waterHeight: terrain.masks.waterHeight, offset: terrain.offset } );
+		this.add(
+			this._computeGround( { height: terrain.masks.height, cliff: terrain.masks.cliff, offset: terrain.offset } ),
+			this._computeWater( { water: terrain.masks.water, waterHeight: terrain.masks.waterHeight, offset: terrain.offset } )
+		);
 
 	}
 
@@ -343,9 +347,11 @@ export default class Terrain {
 
 		noise( geometry );
 
-		this.mesh = new Mesh( geometry, material );
-		this.mesh.castShadow = true;
-		this.mesh.receiveShadow = true;
+		const mesh = new Mesh( geometry, material );
+		mesh.castShadow = true;
+		mesh.receiveShadow = true;
+
+		return mesh;
 
 	}
 
@@ -414,7 +420,7 @@ export default class Terrain {
 
 		rotate( geometry );
 
-		this.waterMesh = new Mesh( geometry, material );
+		return new Mesh( geometry, material );
 
 	}
 

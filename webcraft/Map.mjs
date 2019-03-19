@@ -1,5 +1,5 @@
 
-import Terrain from "./Terrain.mjs";
+import Terrain from "../resources/meshes/Terrain.mjs";
 
 export default class Map {
 
