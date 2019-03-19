@@ -2,6 +2,7 @@
 import Map from "./webcraft/Map.mjs";
 import tiles from "./resources/tiles.mjs";
 import PineTree from "./resources/meshes/PineTree.mjs";
+import RockChunks from "./resources/meshes/RockChunks.mjs";
 import Fence from "./resources/meshes/Fence.mjs";
 
 const clean = ( [ str ] ) => str.split( "\n" ).slice( 1 ).map( row => row.trim().split( "" ).map( cell => isNaN( cell ) ? cell : parseFloat( cell ) ) );
@@ -62,7 +63,8 @@ const json = {
 	},
 	doodads: [
 		{ mesh: PineTree, position: { x: 0, y: 0, z: 1.5 } },
-		{ mesh: Fence, position: { x: 1, y: 2, z: 1.5 } }
+		{ mesh: Fence, position: { x: 1, y: 2, z: 1.5 } },
+		{ mesh: RockChunks, position: { x: - 1.5, y: - 1.5, z: 0 } }
 	]
 };
 

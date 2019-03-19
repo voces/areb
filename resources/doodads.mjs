@@ -2,7 +2,7 @@
 import Fence from "./meshes/Fence.mjs";
 import PineTree from "./meshes/PineTree.mjs";
 import Trough from "./meshes/Trough.mjs";
-import RockChuncks from "./meshes/RockChuncks.mjs";
+import RockChunks from "./meshes/RockChunks.mjs";
 
 export default {
 	VOfl: { name: "Fence Long", mesh: Fence },
@@ -13,7 +13,7 @@ export default {
 	_NOfp: { name: "Fire Pit" }, // https://i.imgur.com/JIu534i.png
 	_LSsb: { name: "Barn Scorched" }, // https://i.imgur.com/t8PCJXJ.jpg
 	_LOwr: { name: "Wheelbarrow Broken" }, // https://i.imgur.com/8kKkSQb.png
-	LTrc: { name: "Rock Chuncks", mesh: RockChuncks }, // https://i.imgur.com/k7QVcch.png
+	LTrc: { name: "Rock Chunks", mesh: RockChunks }, // https://i.imgur.com/k7QVcch.png
 	_LOcb: { name: "Hay Cart Broken" }, // https://i.imgur.com/a81UHEe.png
 	_AObd: { name: "Birds" }, // https://i.imgur.com/Q92xnKP.jpg
 	_NObt: { name: "Bats" }, // https://i.imgur.com/8xpkZ3r.png

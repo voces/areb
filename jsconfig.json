@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "target": "es6"
+    },
+    "include": [
+        "!(node_modules)/**/*",
+        "node_modules/three/**/*"
+    ]
+}
