@@ -5,13 +5,10 @@ import {
 	Geometry,
 	CylinderGeometry,
 	MeshPhongMaterial,
-	Color,
 	FaceColors
 } from "../../node_modules/three/build/three.module.js";
-
 import { linear as random } from "../../util/random.mjs";
-
-const COLOR = new Color( 0x3b2507 );
+import { WOOD } from "../colors.mjs";
 
 const createPost = ( { height, width, color } ) => {
 
@@ -92,7 +89,7 @@ export default class Fence extends Mesh {
 		width = 1 / 24,
 		height = 1 / 2,
 		angle = 0,
-		color = COLOR.clone().offsetHSL( random( 1 / 64 ), 0, 0 )
+		color = WOOD.clone().offsetHSL( random( 1 / 64 ), 0, 0 )
 	} = {} ) {
 
 		const geometry = new Geometry();

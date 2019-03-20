@@ -4,13 +4,10 @@ import {
 	Mesh,
 	Geometry,
 	MeshPhongMaterial,
-	FaceColors,
-	Color
+	FaceColors
 } from "../../node_modules/three/build/three.module.js";
-
+import { STONE } from "../colors.mjs";
 import { dodecahedron, tetrahedron, randColor } from "./shared.mjs";
-
-const COLOR = new Color( 0x596566 );
 
 export default class RockChunks extends Mesh {
 
@@ -19,7 +16,7 @@ export default class RockChunks extends Mesh {
 		colorVariation = 1 / 8
 	} = {} ) {
 
-		if ( color === undefined ) color = randColor( COLOR, colorVariation );
+		if ( color === undefined ) color = randColor( STONE, colorVariation );
 
 		const geometry = new Geometry();
 		const material = new MeshPhongMaterial( {
@@ -43,7 +40,7 @@ export default class RockChunks extends Mesh {
 			const chunk = tetrahedron( {
 				radius: 1 / 3,
 				detail: Math2.randInt( 0, 1 ),
-				color: COLOR,
+				color: randColor( color, colorVariation ),
 				positionVariation: 1 / 2
 			} );
 			const angle = Math2.randFloatSpread( 2 * Math.PI );

@@ -14,15 +14,24 @@ export const randColor = ( color, colorVariation = 1 / 24 ) =>
 		Math.randFloatSpread( colorVariation ),
 	);
 
+export const nudge = ( base, range ) => 					base * ( 1 + Math.randFloatSpread( range ) );
+
+export const randomizeColor = ( geometry, color, colorVariation = 1 / 24 ) => {
+
+	for ( let i = 0; i < geometry.faces.length; i ++ )
+		geometry.faces[ i ].color = randColor( color, colorVariation );
+
+	return geometry;
+
+};
+
 export const randomize = ( geometry, {
 	color,
 	colorVariation = 1 / 24,
 	positionVariation = 1 / 8
 } = {} ) => {
 
-	if ( color )
-		for ( let i = 0; i < geometry.faces.length; i ++ )
-			geometry.faces[ i ].color = randColor( color, colorVariation );
+	if ( color ) randomizeColor( geometry, color, colorVariation );
 
 	if ( positionVariation !== 0 )
 		for ( let i = 0; i < geometry.vertices.length; i ++ ) {
