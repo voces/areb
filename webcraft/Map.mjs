@@ -19,7 +19,7 @@ export default class Map {
 		this.doodads = doodads.map( doodad => {
 
 			const mesh = new doodad.mesh( doodad );
-			mesh.position.copy( doodad.position );
+			if ( doodad.position ) mesh.position.copy( doodad.position );
 			return mesh;
 
 		} );

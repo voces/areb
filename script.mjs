@@ -43,7 +43,7 @@ const loadMap = map => {
 const scene = window.scene = new Scene();
 const camera = new PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 10000 );
 camera.position.z = 10;
-camera.position.y = - 12.5;
+camera.position.y = - 5;
 camera.rotation.x = 0.6;
 
 loadMap( exampleMap );

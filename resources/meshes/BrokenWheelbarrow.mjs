@@ -12,7 +12,7 @@ import { dodecahedron, tetrahedron, randColor } from "./shared.mjs";
 
 const COLOR = new Color( 0x596566 );
 
-export default class RockChunks extends Mesh {
+export default class BrokenWheelbarrow extends Mesh {
 
 	constructor( {
 		color,

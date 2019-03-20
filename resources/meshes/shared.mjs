@@ -2,12 +2,17 @@
 import {
 	Math,
 	CylinderGeometry,
-	Color,
 	BoxGeometry,
-	TetrahedronGeometry
+	TetrahedronGeometry,
+	DodecahedronGeometry
 } from "../../node_modules/three/build/three.module.js";
 
-export const WOOD = new Color( 0x663300 );
+export const randColor = ( color, colorVariation = 1 / 24 ) =>
+	color.clone().offsetHSL(
+		Math.randFloatSpread( colorVariation ),
+		Math.randFloatSpread( colorVariation ),
+		Math.randFloatSpread( colorVariation ),
+	);
 
 export const randomize = ( geometry, {
 	color,
@@ -17,8 +22,7 @@ export const randomize = ( geometry, {
 
 	if ( color )
 		for ( let i = 0; i < geometry.faces.length; i ++ )
-			geometry.faces[ i ].color = color.clone()
-				.offsetHSL( Math.randFloatSpread( colorVariation ), 0, 0 );
+			geometry.faces[ i ].color = randColor( color, colorVariation );
 
 	if ( positionVariation !== 0 )
 		for ( let i = 0; i < geometry.vertices.length; i ++ ) {
@@ -56,5 +60,8 @@ export const box = ( {
 	...rest
 } = {} ) => randomize( new BoxGeometry( width, height, depth ), rest );
 
-export const tetrahedron = ( { radius = 1, detail = 0 } = {} ) =>
-	randomize( new TetrahedronGeometry( radius, detail ) );
+export const tetrahedron = ( { radius = 1, detail = 0, ...rest } = {} ) =>
+	randomize( new TetrahedronGeometry( radius, detail ), rest );
+
+export const dodecahedron = ( { radius = 1, detail = 0, ...rest } = {} ) =>
+	randomize( new DodecahedronGeometry( radius, detail ), rest );

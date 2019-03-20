@@ -5,14 +5,22 @@ import {
 	Geometry,
 	MeshPhongMaterial,
 	FaceColors,
-	PlaneGeometry
+	PlaneGeometry,
+	Color
 } from "../../node_modules/three/build/three.module.js";
 
-import { box } from "./shared.mjs";
+import { box, randColor } from "./shared.mjs";
+
+export const COLOR = new Color( 0x663300 );
 
 const wall = ( { thickness, length, height } ) => {
 
-	const wall = box( { width: thickness, height: length, depth: height } );
+	const wall = box( {
+		width: thickness,
+		height: length,
+		depth: height,
+		color: randColor( COLOR )
+	} );
 	wall.translate( 0, 0, height / 2 );
 	return wall;
 
@@ -20,7 +28,12 @@ const wall = ( { thickness, length, height } ) => {
 
 const spoke = ( { thickness, height } ) => {
 
-	const spoke = box( { width: thickness * 1.25, height: thickness * 2, depth: height * 1.25 } );
+	const spoke = box( {
+		width: thickness * 1.25,
+		height: thickness * 2,
+		depth: height * 1.25,
+		color: randColor( COLOR )
+	} );
 	spoke.translate( 0, 0, height / 2 * 1.25 );
 	return spoke;
 
