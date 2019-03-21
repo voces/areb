@@ -7,7 +7,7 @@ import {
 	FaceColors
 } from "../../node_modules/three/build/three.module.js";
 import { WOOD } from "../colors.mjs";
-import { box, cylinder, randColor, nudge, randomizeColor } from "./shared.mjs";
+import { box, cylinder, randColor, nudge } from "./shared.mjs";
 
 export default class BrokenWheelbarrow extends Mesh {
 
@@ -24,41 +24,54 @@ export default class BrokenWheelbarrow extends Mesh {
 			flatShading: true
 		} );
 
-		const leftWheel = cylinder( { length: 1 / 32, radius: 1 / 8, color } );
+		const leftWheel = cylinder( { length: 1 / 16, radius: 1 / 4, color } );
 		leftWheel.rotateX( nudge( Math.PI / 2, 1.00 ) );
-		leftWheel.translate( nudge( - 3 / 8, 0.50 ), Math2.randFloatSpread( 1 / 2 ), 1 / 64 );
+		leftWheel.translate( nudge( - 3 / 5, 0.50 ), Math2.randFloatSpread( 1 / 2 ), 1 / 64 );
 		geometry.merge( leftWheel );
 
-		const rightWheel = cylinder( { length: 1 / 32, radius: 1 / 8, color } );
+		const rightWheel = cylinder( { length: 1 / 16, radius: 1 / 4, color } );
 		rightWheel.rotateX( nudge( Math.PI / 2, 1.00 ) );
-		rightWheel.translate( nudge( 3 / 8, 0.50 ), Math2.randFloatSpread( 1 / 2 ), 1 / 64 );
+		rightWheel.translate( nudge( 3 / 5, 0.50 ), Math2.randFloatSpread( 1 / 2 ), 1 / 64 );
 		geometry.merge( rightWheel );
 
 		// Cage
 		{
 
-			const corner = box( { width: 1 / 16, height: 1 / 2, depth: 2 / 16 } );
-			corner.rotateX( Math.PI / 2 );
-			corner.translate( 0, 0, 1 / 4 );
+			const corner = ( x, y ) =>
+				box( { width: 1 / 16, height: 1 / 2, depth: 2 / 16, color: randColor( color ) } )
+					.rotateX( Math.PI / 2 )
+					.translate( x, y, 1 / 4 );
 
-			geometry.merge( randomizeColor( corner.clone().translate( - 3 / 8, 1 / 2, 0 ), randColor( color ) ) );
-			geometry.merge( randomizeColor( corner.clone().translate( 3 / 8, 1 / 2, 0 ), randColor( color ) ) );
-			geometry.merge( randomizeColor( corner.clone().translate( - 3 / 8, - 1 / 2, 0 ), randColor( color ) ) );
-			geometry.merge( randomizeColor( corner.clone().translate( 3 / 8, - 1 / 2, 0 ), randColor( color ) ) );
+			geometry.merge( corner( - 3 / 8, 1 / 2 ) );
+			geometry.merge( corner( 3 / 8, 1 / 2 ) );
+			geometry.merge( corner( - 3 / 8, - 1 / 2 ) );
+			geometry.merge( corner( 3 / 8, - 1 / 2 ) );
 
-			const support = box( { width: 1 / 16, height: 1 / 2, depth: 1 / 16 } );
-			support.rotateX( Math.PI / 2 );
-			support.translate( 0, 0, 1 / 4 );
+			const support = x =>
+				box( { width: 1 / 16, height: 1 / 2, depth: 1 / 16, color: randColor( color ) } )
+					.rotateX( Math.PI / 2 )
+					.translate( x, 0, 1 / 4 );
 
-			geometry.merge( randomizeColor( support.clone().translate( - 3 / 8, 0, 0 ), randColor( color ) ) );
-			geometry.merge( randomizeColor( support.clone().translate( 3 / 8, 0, 0 ), randColor( color ) ) );
+			geometry.merge( support( - 3 / 8, 0, 0 ) );
+			geometry.merge( support( 3 / 8, 0, 0 ) );
 
-			const plank = box( { width: 2 / 16, height: 1, depth: 1 / 16 } );
+			const plank = ( x = 0, y = 0, z = 0 ) => {
 
-			geometry.merge( randomizeColor( plank.clone().translate( - 2.5 / 8, 0, 0 ), randColor( color ) ) );
-			geometry.merge( randomizeColor( plank.clone().translate( - 0.75 / 8, 0, 0 ), randColor( color ) ) );
-			geometry.merge( randomizeColor( plank.clone().translate( 0.75 / 8, 0, 0 ), randColor( color ) ) );
-			geometry.merge( randomizeColor( plank.clone().translate( 2.5 / 8, 0, 0 ), randColor( color ) ) );
+				const plank = box( { width: 2 / 16, height: 1, depth: 1 / 16, color: randColor( color ) } )
+					.rotateZ( Math2.randFloatSpread( 1 / 12 ) )
+					.translate( x, y, z );
+
+				return plank;
+
+			};
+
+			geometry.merge( plank( - 3 / 9 ) );
+			geometry.merge( plank( - 1 / 9 ) );
+			geometry.merge( plank( 1 / 9 ) );
+			geometry.merge( plank( 3 / 9 ) );
+
+			geometry.merge( plank().rotateY( Math.PI / 2 ).translate( - 3 / 9, 0, 3 / 16 ) );
+			geometry.merge( plank().rotateY( Math.PI / 2 ).translate( - 3 / 9, 0, 7 / 16 ) );
 
 		}
 
