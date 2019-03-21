@@ -4,19 +4,24 @@ import {
 	CylinderGeometry,
 	BoxGeometry,
 	TetrahedronGeometry,
-	DodecahedronGeometry
+	DodecahedronGeometry,
+	Color,
+	Vector3
 } from "../../node_modules/three/build/three.module.js";
+import { randomizer } from "../../util/random.mjs";
 
-export const randColor = ( color, colorVariation = 1 / 24 ) =>
-	color.clone().offsetHSL(
-		Math.randFloatSpread( colorVariation ),
-		Math.randFloatSpread( colorVariation ),
-		Math.randFloatSpread( colorVariation ),
-	);
+export const nudge = randomizer( 1 / 16, 1 / 4 );
 
-export const nudge = ( base, range ) => 					base * ( 1 + Math.randFloatSpread( range ) );
+// We expect to ALWAYS have a base color
+export const colorNudge = randomizer( 0, 1 / 24 );
 
-export const randomizeColor = ( geometry, color, colorVariation = 1 / 24 ) => {
+// We should clamp rgb to [0, 1]
+export const randColor = ( color, colorVariation = colorNudge ) =>
+	new Color( colorVariation( color.r ), colorVariation( color.g ), colorVariation( color.b ) );
+
+export const randomizeColor = ( geometry, color, colorVariation ) => {
+
+	color = randColor( color, colorVariation );
 
 	for ( let i = 0; i < geometry.faces.length; i ++ )
 		geometry.faces[ i ].color = randColor( color, colorVariation );
@@ -27,20 +32,42 @@ export const randomizeColor = ( geometry, color, colorVariation = 1 / 24 ) => {
 
 export const randomize = ( geometry, {
 	color,
-	colorVariation = 1 / 24,
-	positionVariation = 1 / 8
+	colorVariation,
+	// The position of the entire geometry
+	position = new Vector3( 0, 0, 0 ),
+	positionVariation = nudge,
+	// The position of each vertex
+	vertexVariation,
+	// The rotation of the entire geometry
+	rotation,
+	rotationVariation = nudge
 } = {} ) => {
 
-	if ( color ) randomizeColor( geometry, color, colorVariation );
+	if ( color )
+		randomizeColor( geometry, color, colorVariation );
 
-	if ( positionVariation !== 0 )
+	if ( vertexVariation )
 		for ( let i = 0; i < geometry.vertices.length; i ++ ) {
 
-			geometry.vertices[ i ].x *= 1 + Math.randFloatSpread( positionVariation );
-			geometry.vertices[ i ].y *= 1 + Math.randFloatSpread( positionVariation );
-			geometry.vertices[ i ].z *= 1 + Math.randFloatSpread( positionVariation );
+			geometry.vertices[ i ].x = vertexVariation( geometry.vertices[ i ].x );
+			geometry.vertices[ i ].y = vertexVariation( geometry.vertices[ i ].y );
+			geometry.vertices[ i ].z = vertexVariation( geometry.vertices[ i ].z );
 
 		}
+
+	if ( rotation )
+		geometry.lookAt( new Vector3(
+			rotationVariation( rotation.x || 0 ),
+			rotationVariation( rotation.y || 0 ),
+			rotationVariation( rotation.z || 0 )
+		) );
+
+	if ( position )
+		geometry.position = new Vector3(
+			positionVariation( position.x || 0 ),
+			positionVariation( position.y || 0 ),
+			positionVariation( position.z || 0 )
+		);
 
 	return geometry;
 

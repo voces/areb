@@ -13,7 +13,7 @@ export default class BrokenWheelbarrow extends Mesh {
 
 	constructor( {
 		color,
-		colorVariation = 1 / 8
+		colorVariation = nudge
 	} = {} ) {
 
 		if ( color === undefined ) color = randColor( WOOD, colorVariation );
@@ -55,15 +55,10 @@ export default class BrokenWheelbarrow extends Mesh {
 			geometry.merge( support( - 3 / 8, 0, 0 ) );
 			geometry.merge( support( 3 / 8, 0, 0 ) );
 
-			const plank = ( x = 0, y = 0, z = 0 ) => {
-
-				const plank = box( { width: 2 / 16, height: 1, depth: 1 / 16, color: randColor( color ) } )
+			const plank = ( x = 0, long = true ) =>
+				box( { width: 2 / 16, height: long ? 1 : 3 / 4, depth: 1 / 16, color: randColor( color ) } )
 					.rotateZ( Math2.randFloatSpread( 1 / 12 ) )
-					.translate( x, y, z );
-
-				return plank;
-
-			};
+					.translate( x, 0, 0 );
 
 			geometry.merge( plank( - 3 / 9 ) );
 			geometry.merge( plank( - 1 / 9 ) );
@@ -72,6 +67,15 @@ export default class BrokenWheelbarrow extends Mesh {
 
 			geometry.merge( plank().rotateY( Math.PI / 2 ).translate( - 3 / 9, 0, 3 / 16 ) );
 			geometry.merge( plank().rotateY( Math.PI / 2 ).translate( - 3 / 9, 0, 7 / 16 ) );
+			geometry.merge( plank().rotateY( Math.PI / 2 ).translate( 3 / 9, 0, 3 / 16 ) );
+			geometry.merge( plank().rotateY( Math.PI / 2 ).translate( 3 / 9, 0, 7 / 16 ) );
+
+			geometry.merge( plank( 0, false ).rotateY( Math.PI / 2 ).rotateZ( Math.PI / 2 ).translate( 0, 1 / 2, 0 ) );
+			geometry.merge( plank( 0, false ).rotateY( Math.PI / 2 ).rotateZ( Math.PI / 2 ).translate( 0, 1 / 2, 3 / 16 ) );
+			geometry.merge( plank( 0, false ).rotateY( Math.PI / 2 ).rotateZ( Math.PI / 2 ).translate( 0, 1 / 2, 7 / 16 ) );
+			geometry.merge( plank( 0, false ).rotateY( Math.PI / 2 ).rotateZ( Math.PI / 2 ).translate( 0, - 1 / 2, 0 ) );
+			geometry.merge( plank( 0, false ).rotateY( Math.PI / 2 ).rotateZ( Math.PI / 2 ).translate( 0, - 1 / 2, 3 / 16 ) );
+			geometry.merge( plank( 0, false ).rotateY( Math.PI / 2 ).rotateZ( Math.PI / 2 ).translate( 0, - 1 / 2, 7 / 16 ) );
 
 		}
 
@@ -80,7 +84,7 @@ export default class BrokenWheelbarrow extends Mesh {
 
 		super( geometry, material );
 
-		this.scale.multiplyScalar( 5 );
+		// this.scale.multiplyScalar( 5 );
 
 		this.castShadow = true;
 		this.receiveShadow = true;
