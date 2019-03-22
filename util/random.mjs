@@ -10,3 +10,4 @@ export const random = ( base, flat = 0, percent = 0 ) =>
 
 export const randomizer = ( flat, percent ) =>
 	v => random( v, flat, percent );
+
