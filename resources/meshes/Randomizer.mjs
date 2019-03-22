@@ -122,9 +122,9 @@ export default class Randomizer {
 	}
 
 	// Rotates the entire geometry
-	static lookAt( geometry, rotation = {}, variation = this.spread() ) {
+	static rotate( geometry, rotation = {}, variation = this.spread() ) {
 
-		return geometry.lookAt(
+		return geometry.rotate(
 			variation( rotation.x || 0 ),
 			variation( rotation.y || 0 ),
 			variation( rotation.z || 0 )
@@ -132,19 +132,19 @@ export default class Randomizer {
 
 	}
 
-	lookAt( rotation, variation ) {
+	rotate( rotation, variation ) {
 
-		this.constructor.lookAt( this.geometry, rotation, variation );
+		this.constructor.rotate( this.geometry, rotation, variation );
 		return this;
 
 	}
 
-	static randomize( geometry, { colorize, translate, blur, lookAt } = {} ) {
+	static randomize( geometry, { colorize, translate, blur, rotate } = {} ) {
 
 		if ( colorize ) this.colorize( geometry, colorize.color, colorize.variation );
 		if ( translate ) this.translate( geometry, translate.position, translate.variation );
 		if ( blur ) this.blur( geometry, blur );
-		if ( lookAt ) this.lookAt( geometry, lookAt.rotation, lookAt.variation );
+		if ( rotate ) this.rotate( geometry, rotate.rotation, rotate.variation );
 
 		return this;
 

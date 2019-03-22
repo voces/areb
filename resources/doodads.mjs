@@ -12,7 +12,7 @@ export default {
 	LOtr: { name: "Trough", mesh: Trough },
 	_LOsm: { name: "Smoke Smudge" }, // https://i.imgur.com/p4NdFy9.png
 	_NOfp: { name: "Fire Pit" }, // https://i.imgur.com/JIu534i.png
-	_LSsb: { name: "Barn Scorched" }, // https://i.imgur.com/t8PCJXJ.jpg
+	LSsb: { name: "Scorched Barn" }, // https://i.imgur.com/t8PCJXJ.jpg
 	LOwr: { name: "Broken Wheelbarrow", mesh: BrokenWheelbarrow }, // https://i.imgur.com/8kKkSQb.png
 	LTrc: { name: "Rock Chunks", mesh: RockChunks }, // https://i.imgur.com/k7QVcch.png
 	_LOcb: { name: "Broken Hay Cart" }, // https://i.imgur.com/a81UHEe.png
