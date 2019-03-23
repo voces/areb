@@ -13,31 +13,31 @@ export default class Randomizer {
 
 	}
 
-	static flatSpread( value, spread = 1 ) {
+	static flatSpread( value, spread = 1 / 16 ) {
 
 		return value + ( Math.random() - 0.5 ) * 2 * spread;
 
 	}
 
-	static flatSpreader( spread = 1 ) {
+	static flatSpreader( spread = 1 / 16 ) {
 
 		return v => v + ( Math.random() - 0.5 ) * 2 * spread;
 
 	}
 
-	static percentSpread( value, spread = 1 ) {
+	static percentSpread( value, spread = 1 / 32 ) {
 
 		return value * ( 1 + ( Math.random() - 0.5 ) * 2 * spread );
 
 	}
 
-	static percentSpreader( spread = 1 ) {
+	static percentSpreader( spread = 1 / 32 ) {
 
 		return v => v * ( 1 + ( Math.random() - 0.5 ) * 2 * spread );
 
 	}
 
-	static spread( value, flat = 1, percent = 1 ) {
+	static spread( value, flat = 1 / 16, percent = 1 / 32 ) {
 
 		return ( value +
 			( Math.random() - 0.5 ) * 2 * flat ) *
@@ -45,7 +45,7 @@ export default class Randomizer {
 
 	}
 
-	static spreader( flat = 1, percent = 1 ) {
+	static spreader( flat = 1 / 16, percent = 1 / 32 ) {
 
 		return v => (
 			// Base
@@ -85,7 +85,7 @@ export default class Randomizer {
 	// Nudges the entire geometry
 	static translate( geometry, position = {}, variation = this.spreader() ) {
 
-		return geometry.position = new Vector3(
+		return geometry.translate(
 			variation( position.x || 0 ),
 			variation( position.y || 0 ),
 			variation( position.z || 0 )
@@ -124,11 +124,10 @@ export default class Randomizer {
 	// Rotates the entire geometry
 	static rotate( geometry, rotation = {}, variation = this.spread() ) {
 
-		return geometry.rotate(
-			variation( rotation.x || 0 ),
-			variation( rotation.y || 0 ),
-			variation( rotation.z || 0 )
-		);
+		Object.keys( rotation ).forEach( ( [ axis, value ] ) =>
+			geometry[ `rotate${axis.toUpperCase()}` ]( variation( value ) ) );
+
+		return geometry;
 
 	}
 
