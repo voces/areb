@@ -1,13 +1,11 @@
 
 import {
 	Mesh,
-	Geometry,
 	MeshPhongMaterial,
-	FaceColors,
-	BoxGeometry
+	FaceColors
 } from "../../node_modules/three/build/three.module.js";
 import { WOOD } from "../colors.mjs";
-import Builder from "./Builder2.mjs";
+import Builder from "./Builder.mjs";
 import Randomizer from "./Randomizer.mjs";
 
 export default class Barn extends Mesh {
@@ -19,29 +17,50 @@ export default class Barn extends Mesh {
 			flatShading: true
 		} );
 		const color = Randomizer.colorSpread( WOOD );
+		const paneling = color.clone();
+		const roof = color.clone().offsetHSL( 0, - 0.05, 0.05 );
+		const door = color.clone().offsetHSL( 0, 0.1, - 0.1 );
+
+		const length = 15;
+		const width = 11;
+		const thickness = 1 / 32;
 
 		const geometry = new Builder()
-			.box( 1 / 8, 1 / 32, 1 ).parent
-			.box( 1 / 8, 1 / 32, 1 ).translate( { x: 1 / 4 } ).parent
-			.translate( 1 / 2 )
+			// Front and back
+			.repeat( 2, ( b, y ) => b.repeat( width, ( b, x, _0, mid ) => {
+
+				const angle = Math.acos( x / mid );
+				const height = 1 / 2 + Math.sin( angle ) * 8 / length;
+				return b.box( 1 / 8, thickness, height )
+					.translate( x / 8, y * length / 8, height / 2 )
+					.color( paneling )
+					.randomize( 1 / 2 );
+
+			} ) )
+			// Sides
+			.repeat( 2, ( b, x ) => b.repeat( length, ( b, y ) =>
+				b.box( thickness, 1 / 8, 1 / 2 )
+					.translate( x * width / 8, y / 8, 1 / 4 )
+					.color( paneling )
+					.randomize() ) )
+			// Top
+			.repeat( width, ( b, x, _0, mid ) => b.repeat( length + 1, ( b, y ) =>{
+
+				const width = Math.PI / 2 * x / mid;
+				return b.box( thickness, 1 / 8, ( 1 / 8 + thickness ) * Math.PI / 2 )
+					.translate(
+						Math.sin( width ) * ( ( mid + 0.5 ) / 8 + thickness ),
+						y / 8,
+						1 / 4 + 2 * thickness + Math.abs( Math.cos( width ) * ( ( mid + 0.5 ) / 8 + thickness ) ) )
+					.rotateY( - Math.acos( Math.sin( width ) ) )
+					.color( roof )
+					.randomize();
+
+			} ) )
+			// Door
+			.box( 1 / 2, thickness, 3 / 4 ).translate( 0, - length / 2 / 8 - thickness / 2, 3 / 8 ).color( door ).randomize().parent
+			.rotateZ( - Math.PI / 4 )
 			.geometry();
-
-		// builder.map( - 5 / 8, 5 / 8, 1 / 8, i => new BoxGeometry( 1 / 8, 1 / 32, 1 ).translate( i * 1.5, 0, 1 ) );
-
-		// const plank = ( length = 1 ) => Builder.colorize( new BoxGeometry( 1 / 8, 1 / 32, length ), color );
-
-		// builder.map( {
-		// 	start: - 5 / 8,
-		// 	step: 1 / 8,
-		// 	end: 5 / 8,
-		// 	handler: i => plank().translate( i * 1.5, 0, 1 )
-		// } );
-
-		// Roof
-		// for ( let x = - 1; x <= 1; x += 1 / 8 )
-		// 	geometry.merge( new BoxGeometry( 1 / 8, 1 / 32, 1 ).translate( x, 0, 1 ) );
-
-		// geometry.merge( new ParametricGeometry( ( a, b, v ) => v.set( a * width, b * length, Math.sin( a * Math.PI ) * height / 2 ), 5, 1 ).center().translate( 0, 0, 1 ) );
 
 		super( geometry, material );
 

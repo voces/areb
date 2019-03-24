@@ -1,8 +1,5 @@
 
-import {
-	Color,
-	Vector3
-} from "../../node_modules/three/build/three.module.js";
+import { Color } from "../../node_modules/three/build/three.module.js";
 
 export default class Randomizer {
 
@@ -13,7 +10,7 @@ export default class Randomizer {
 
 	}
 
-	static flatSpread( value, spread = 1 / 16 ) {
+	static flatSpread( value = 0, spread = 1 / 16 ) {
 
 		return value + ( Math.random() - 0.5 ) * 2 * spread;
 
@@ -57,7 +54,7 @@ export default class Randomizer {
 
 	}
 
-	static colorSpread( color, variation = this.flatSpreader( 1 / 24 ) ) {
+	static colorSpread( color, variation = this.flatSpreader( 1 / 32 ) ) {
 
 		return new Color( variation( color.r ), variation( color.g ), variation( color.b ) );
 
@@ -100,13 +97,24 @@ export default class Randomizer {
 
 	}
 
-	static blur( geometry, variation = this.spreader() ) {
+	static blur( geometry, degree = 0.01 ) {
+
+		geometry.computeBoundingBox();
 
 		for ( let i = 0; i < geometry.vertices.length; i ++ ) {
 
-			geometry.vertices[ i ].x = variation( geometry.vertices[ i ].x );
-			geometry.vertices[ i ].y = variation( geometry.vertices[ i ].y );
-			geometry.vertices[ i ].z = variation( geometry.vertices[ i ].z );
+			geometry.vertices[ i ].x = this.flatSpread(
+				geometry.vertices[ i ].x,
+				( geometry.boundingBox.max.x - geometry.boundingBox.min.x ) * degree
+			);
+			geometry.vertices[ i ].y = this.flatSpread(
+				geometry.vertices[ i ].y,
+				( geometry.boundingBox.max.y - geometry.boundingBox.min.y ) * degree
+			);
+			geometry.vertices[ i ].z = this.flatSpread(
+				geometry.vertices[ i ].z,
+				( geometry.boundingBox.max.z - geometry.boundingBox.min.z ) * degree
+			);
 
 		}
 
@@ -124,7 +132,7 @@ export default class Randomizer {
 	// Rotates the entire geometry
 	static rotate( geometry, rotation = {}, variation = this.spread() ) {
 
-		Object.keys( rotation ).forEach( ( [ axis, value ] ) =>
+		Object.entries( rotation ).filter( ( [ key ] ) => "xyz".includes( key ) ).forEach( ( [ axis, value ] ) =>
 			geometry[ `rotate${axis.toUpperCase()}` ]( variation( value ) ) );
 
 		return geometry;
