@@ -2,7 +2,7 @@
 import Map from "./webcraft/Map.mjs";
 import tiles from "./resources/tiles.mjs";
 
-import Mesh from "./resources/meshes/BrokenHayCart.mjs";
+import Mesh from "./resources/meshes/PileOfJunk.mjs";
 
 const clean = ( [ str ] ) => str.split( "\n" ).slice( 1 ).map( row => row.trim().split( "" ).map( cell => isNaN( cell ) ? cell : parseFloat( cell ) ) );
 

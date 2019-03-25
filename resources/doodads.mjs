@@ -2,6 +2,7 @@
 import BrokenHayCart from "./meshes/BrokenHayCart.mjs";
 import BrokenWheelbarrow from "./meshes/BrokenWheelbarrow.mjs";
 import Fence from "./meshes/Fence.mjs";
+import PileOfJunk from "./meshes/PileOfJunk.mjs";
 import PineTree from "./meshes/PineTree.mjs";
 import RockChunks from "./meshes/RockChunks.mjs";
 import ScorchedBarn from "./meshes/ScorchedBarn.mjs";
@@ -20,5 +21,5 @@ export default {
 	LOcb: { name: "Broken Hay Cart", mesh: BrokenHayCart }, // https://i.imgur.com/a81UHEe.png
 	_AObd: { name: "Birds" }, // https://i.imgur.com/Q92xnKP.jpg
 	_NObt: { name: "Bats" }, // https://i.imgur.com/8xpkZ3r.png
-	_DOjp: { name: "Pile of Junk" } // https://i.imgur.com/J7Sytkh.jpg
+	DOjp: { name: "Pile of Junk", mesh: PileOfJunk } // https://i.imgur.com/J7Sytkh.jpg
 };
