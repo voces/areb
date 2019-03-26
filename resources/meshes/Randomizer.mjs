@@ -146,6 +146,21 @@ export default class Randomizer {
 
 	}
 
+	static scale( geometry, scale = {}, variation = this.spread() ) {
+
+		geometry.scale( variation( scale.x || 1 ), variation( scale.y || 1 ), variation( scale.z || 1 ) );
+
+		return geometry;
+
+	}
+
+	scale( scale, variation ) {
+
+		this.constructor.scale( this.geometry, scale, variation );
+		return this;
+
+	}
+
 	static randomize( geometry, { colorize, translate, blur, rotate } = {} ) {
 
 		if ( colorize ) this.colorize( geometry, colorize.color, colorize.variation );

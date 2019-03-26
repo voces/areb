@@ -44,6 +44,15 @@ export default class Builder {
 
 	// Child builders
 
+	group() {
+
+		const group = new Builder( undefined, this );
+		this.children.push( group );
+
+		return group;
+
+	}
+
 	box( ...args ) {
 
 		const box = new Builder( new BoxGeometry( ...args ), this );
@@ -224,19 +233,66 @@ export default class Builder {
 
 	}
 
-	// scale(x, y, z) {
+	scale( scale = 1, y = 1, z = 1, variation ) {
 
-	// }
+		let x;
+		if ( typeof rotation === "object" ) {
+
+			variation = typeof y === "function" ? y : undefined;
+			x = scale.x || 1;
+			y = scale.y || 1;
+			z = scale.z || 1;
+
+		} else x = scale;
+
+		if ( this._scale ) this._scale.multiply( { x, y, z } );
+		else this._scale = new Vector3( x, y, z );
+
+		if ( variation )
+			if ( this._scaleVariation ) this._scaleVariation.push( variation );
+			else this._scaleVariation = [ variation ];
+
+		return this;
+
+	}
+
+	scaleX( x ) {
+
+		if ( this._scale ) this._scale.x += x;
+		else this._scale = new Vector3( x, 0, 0 );
+
+		return this;
+
+	}
+
+	scaleY( y ) {
+
+		if ( this._scale ) this._scale.y += y;
+		else this._scale = new Vector3( 0, y, 0 );
+
+		return this;
+
+	}
+
+	scaleZ( z ) {
+
+		if ( this._scale ) this._scale.z += z;
+		else this._scale = new Vector3( 0, 0, z );
+
+		return this;
+
+	}
 
 	// Some random translation, rotation, and blurring
 	randomize( props = {
 		color: Randomizer.flatSpreader( 1 / 24 ),
 		position: Randomizer.percentSpreader(),
 		rotation: Randomizer.flatSpreader(),
+		scale: Randomizer.percentSpreader(),
 		blur: 0.01
 	} ) {
 
-		let color, position, rotation, blur;
+		let color, position, rotation, scale, blur;
 		if ( typeof props === "number" ) {
 
 			color = Randomizer.flatSpreader( 1 / 24 * props );
@@ -244,7 +300,7 @@ export default class Builder {
 			rotation = Randomizer.flatSpreader( 1 / 16 * props );
 			blur = 0.01 * props;
 
-		} else ( { color, props, rotation, blur } = props );
+		} else ( { color, props, rotation, scale, blur } = props );
 
 		if ( color ) {
 
@@ -267,6 +323,14 @@ export default class Builder {
 			if ( typeof rotation === "number" ) rotation = Randomizer.flatSpreader( rotation );
 			if ( this._rotationVariation ) this._rotationVariation.push( rotation );
 			else this._rotationVariation = [ rotation ];
+
+		}
+
+		if ( scale ) {
+
+			if ( typeof scale === "number" ) scale = Randomizer.percentSpreader( scale );
+			if ( this._scaleVariation ) this._scaleVariation.push( scale );
+			else this._scaleVariation = [ scale ];
 
 		}
 
@@ -352,6 +416,9 @@ export default class Builder {
 
 		if ( this._position || this._positionVariation )
 			Randomizer.translate( geometry, this._position, compose( this._positionVariation ) || IDENTITY );
+
+		if ( this._scale || this._scaleVariation )
+			Randomizer.scale( geometry, this._scale, compose( this._scaleVariation ) || IDENTITY );
 
 		if ( this._blur )
 			Randomizer.blur( geometry, this._blur );

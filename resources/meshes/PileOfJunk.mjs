@@ -10,6 +10,7 @@ import {
 } from "../../node_modules/three/build/three.module.js";
 import Builder from "./Builder.mjs";
 import Randomizer from "./Randomizer.mjs";
+import { WOOD, STONE } from "../colors.mjs";
 
 const BAG_COLOR = new Color( "#493113" );
 
@@ -36,18 +37,21 @@ const nearPoint = ( objects, min ) => {
 
 };
 
-// const rot = Math.PI * 25 / 100;
 const spear = {
 	radius: 1 / 6,
 	builder: b => b
 		.cylinder( 1 / 96, 1 / 96, 1 )
 		.translateY( 1 / 2 )
+		.color( Randomizer.colorSpread( WOOD ) )
+		.blur( 0.01 )
 		.parent
-		.tetrahedron( 1 / 32 )
+		.octahedron( 1 / 32 )
+		.scale( 4 / 7, 0, 2 / 5 )
 		.translateY( 1 )
-		.rotateX( Math.acos( - 1 / 3 ) )
-		.rotateY( Math.acos( - 1 / 3 ) )
-		// .rotate( { x: rot, y: rot } )
+		.color( Randomizer.colorSpread( STONE ) )
+		.blur( 0.01 )
+		.parent
+		.rotate( Math2.randFloatSpread( 1 / 8 ), Math2.randFloatSpread( 1 / 8 ), Math2.randFloatSpread( 1 / 8 ) )
 };
 
 const vaseContentTypes = [ spear ];
@@ -75,12 +79,9 @@ const vase = {
 				const type = vaseContentTypes[ Math.floor( Math.random() * vaseContentTypes.length ) ];
 				const center2 = nearPoint( objects, type.radius );
 				const center3 = new Vector3( center2.x, 0, center2.y );
-				console.log( center3 );
 				objects.push( { point: center2, radius: type.radius } );
-				type.builder( b )
-					// .translateY( i / 10 )
-					// .translate( center3 )
-					.do( console.log );
+				type.builder( b.group() )
+					.translate( center3 );
 
 			} );
 
