@@ -4,7 +4,9 @@ import {
 	CylinderGeometry,
 	Geometry,
 	LatheGeometry,
+	OctahedronGeometry,
 	SphereGeometry,
+	TetrahedronGeometry,
 	Vector3,
 	Vector2
 } from "../../node_modules/three/build/three.module.js";
@@ -60,12 +62,30 @@ export default class Builder {
 
 	}
 
+	octahedron( ...args ) {
+
+		const octahedron = new Builder( new OctahedronGeometry( ...args ), this );
+		this.children.push( octahedron );
+
+		return octahedron;
+
+	}
+
 	sphere( ...args ) {
 
 		const sphere = new Builder( new SphereGeometry( ...args ), this );
 		this.children.push( sphere );
 
 		return sphere;
+
+	}
+
+	tetrahedron( ...args ) {
+
+		const tetrahedron = new Builder( new TetrahedronGeometry( ...args ), this );
+		this.children.push( tetrahedron );
+
+		return tetrahedron;
 
 	}
 
@@ -112,13 +132,13 @@ export default class Builder {
 		if ( typeof position === "object" ) {
 
 			variation = typeof y === "function" ? y : undefined;
-			x = position.x || 0;
-			y = position.y || 0;
-			z = position.z || 0;
+			position.x = x || 0;
+			position.y = y || 0;
+			position.z = z || 0;
 
-		} else x = position || 0;
+		} else position = new Vector3( x || 0, y || 0, z || 0 );
 
-		this._position = this._position ? this._position.add( x, y, z ) : new Vector3( x, y, z );
+		this._position = this._position ? this._position.add( position ) : position;
 		if ( variation )
 			if ( this._positionVariation ) this._positionVariation.push( variation );
 			else this._positionVariation = [ variation ];
@@ -129,14 +149,16 @@ export default class Builder {
 
 	translateX( x ) {
 
-		this._position = this._position ? this._position.add( x, 0, 0 ) : new Vector3( x, 0, 0 );
+		if ( this._position ) this._position.x += x;
+		else this._position = new Vector3( x, 0, 0 );
 		return this;
 
 	}
 
 	translateY( y ) {
 
-		this._position = this._position ? this._position.add( 0, y, 0 ) : new Vector3( 0, y, 0 );
+		if ( this._position ) this._position.y += y;
+		else this._position = new Vector3( 0, y, 0 );
 		return this;
 
 	}
@@ -150,19 +172,23 @@ export default class Builder {
 
 	}
 
-	rotate( rotation = 0, y = 0, z = 0, variation ) {
+	rotate( rotation, y = 0, z = 0, variation ) {
 
 		let x;
 		if ( typeof rotation === "object" ) {
 
-			variation = y;
-			x = rotation.x || 0;
-			y = rotation.y || 0;
-			z = rotation.z || 0;
+			variation = typeof y === "function" ? y : undefined;
+			if ( rotation instanceof Vector3 ) {
 
-		} else x = rotation;
+				rotation.x = x || 0;
+				rotation.y = y || 0;
+				rotation.z = z || 0;
 
-		this._rotation = this._rotation ? this._rotation.add( x, y, z ) : new Vector3( x, y, z );
+			} else rotation = new Vector3( rotation.x || 0, rotation.y || 0, rotation.z || 0 );
+
+		} else rotation = new Vector3( x || 0, y || 0, z || 0 );
+
+		this._rotation = this._rotation ? this._rotation.add( rotation ) : rotation;
 		if ( variation )
 			if ( this._rotationVariation ) this._rotationVariation.push( variation );
 			else this._rotationVariation = [ variation ];
@@ -198,43 +224,9 @@ export default class Builder {
 
 	}
 
-	repeat( count, fn ) {
+	// scale(x, y, z) {
 
-		const mid = ( count - 1 ) / 2;
-
-		for ( let i = 0; i < count; i ++ )
-			fn( this, i - mid, mid - Math.abs( i - mid ), mid, i, count );
-
-		return this;
-
-	}
-
-	for( count, fn ) {
-
-		const mid = ( count - 1 ) / 2;
-
-		for ( let i = 0; i < count; i ++ )
-			fn( this, i, count, i - mid, mid - Math.abs( i - mid ), mid, );
-
-		return this;
-
-	}
-
-	map( fn, centered = true ) {
-
-		const mid = ( this.children.length - 1 ) / 2;
-
-		if ( centered )
-			for ( let i = 0; i < this.children.length; i ++ )
-				fn( this.children[ i ], i - mid, mid - Math.abs( i - mid ), mid, i, this.children.length );
-
-		else
-			for ( let i = 0; i < this.children.length; i ++ )
-				fn( this.children[ i ], i, this.children.length, i - mid, mid - Math.abs( i - mid ), mid, );
-
-		return this;
-
-	}
+	// }
 
 	// Some random translation, rotation, and blurring
 	randomize( props = {
@@ -291,6 +283,51 @@ export default class Builder {
 
 	// Finalizers
 
+	repeat( count, fn ) {
+
+		const mid = ( count - 1 ) / 2;
+
+		for ( let i = 0; i < count; i ++ )
+			fn( this, i - mid, mid - Math.abs( i - mid ), mid, i, count );
+
+		return this;
+
+	}
+
+	for( count, fn ) {
+
+		const mid = ( count - 1 ) / 2;
+
+		for ( let i = 0; i < count; i ++ )
+			fn( this, i, count, i - mid, mid - Math.abs( i - mid ), mid, );
+
+		return this;
+
+	}
+
+	do( fn ) {
+
+		fn( this );
+		return this;
+
+	}
+
+	map( fn, centered = true ) {
+
+		const mid = ( this.children.length - 1 ) / 2;
+
+		if ( centered )
+			for ( let i = 0; i < this.children.length; i ++ )
+				fn( this.children[ i ], i - mid, mid - Math.abs( i - mid ), mid, i, this.children.length );
+
+		else
+			for ( let i = 0; i < this.children.length; i ++ )
+				fn( this.children[ i ], i, this.children.length, i - mid, mid - Math.abs( i - mid ), mid, );
+
+		return this;
+
+	}
+
 	root() {
 
 		let cur = this;
@@ -302,7 +339,7 @@ export default class Builder {
 
 	geometry() {
 
-		const geometry = this._geometry && this._geometry.clone() || new Geometry();
+		const geometry = this._geometry ? this._geometry.clone() : new Geometry();
 
 		for ( let i = 0; i < this.children.length; i ++ )
 			geometry.merge( this.children[ i ].geometry() );
