@@ -7,8 +7,8 @@ import {
 	DodecahedronGeometry,
 	Color,
 	Vector3
-} from "../../node_modules/three/build/three.module.js";
-import { randomizer } from "../../util/random.mjs";
+} from "../../../node_modules/three/build/three.module.js";
+import { randomizer } from "../../../util/random.mjs";
 
 export const nudge = randomizer( 1 / 16, 1 / 4 );
 

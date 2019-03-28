@@ -5,8 +5,8 @@ import {
 	FaceColors
 } from "../../node_modules/three/build/three.module.js";
 import { WOOD } from "../colors.mjs";
-import Builder from "./Builder.mjs";
-import Randomizer from "./Randomizer.mjs";
+import Builder from "./util/Builder.mjs";
+import Randomizer from "./util/Randomizer.mjs";
 
 export default class Barn extends Mesh {
 

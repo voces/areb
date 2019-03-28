@@ -8,7 +8,7 @@ import {
 } from "../../node_modules/three/build/three.module.js";
 import { randomizer } from "../../util/random.mjs";
 import { STONE } from "../colors.mjs";
-import { dodecahedron, tetrahedron, randColor, colorNudge } from "./shared.mjs";
+import { dodecahedron, tetrahedron, randColor, colorNudge } from "./util/shared.mjs";
 
 export default class RockChunks extends Mesh {
 

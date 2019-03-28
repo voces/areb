@@ -11,7 +11,7 @@ import {
 	TubeGeometry,
 	Vector3,
 	Vector2
-} from "../../node_modules/three/build/three.module.js";
+} from "../../../node_modules/three/build/three.module.js";
 import Randomizer from "./Randomizer.mjs";
 
 const compose = arr => {

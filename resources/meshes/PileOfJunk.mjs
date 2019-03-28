@@ -9,8 +9,8 @@ import {
 	Vector2,
 	Vector3
 } from "../../node_modules/three/build/three.module.js";
-import Builder from "./Builder.mjs";
-import Randomizer from "./Randomizer.mjs";
+import Builder from "./util/Builder.mjs";
+import Randomizer from "./util/Randomizer.mjs";
 import { CLOTH, ROPE, WOOD, STONE } from "../colors.mjs";
 
 // TODO: This has a lot of smaller geometries; we should pull them out to be reusable

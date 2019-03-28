@@ -8,7 +8,7 @@ import {
 	PlaneGeometry
 } from "../../node_modules/three/build/three.module.js";
 import { WOOD } from "../colors.mjs";
-import { box, randColor } from "./shared.mjs";
+import { box, randColor } from "./util/shared.mjs";
 
 const wall = ( { thickness, length, height } ) => {
 

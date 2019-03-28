@@ -7,8 +7,8 @@ import {
 	FaceColors
 } from "../../node_modules/three/build/three.module.js";
 import { WOOD } from "../colors.mjs";
-import { box, cylinder, randColor, nudge } from "./shared.mjs";
-import Randomizer from "./Randomizer.mjs";
+import { box, cylinder, randColor, nudge } from "./util/shared.mjs";
+import Randomizer from "./util/Randomizer.mjs";
 
 export default class BrokenWheelbarrow extends Mesh {
 
