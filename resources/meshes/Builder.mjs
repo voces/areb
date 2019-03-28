@@ -1,12 +1,14 @@
 
 import {
 	BoxGeometry,
+	ConeGeometry,
 	CylinderGeometry,
 	Geometry,
 	LatheGeometry,
 	OctahedronGeometry,
 	SphereGeometry,
 	TetrahedronGeometry,
+	TubeGeometry,
 	Vector3,
 	Vector2
 } from "../../node_modules/three/build/three.module.js";
@@ -62,6 +64,15 @@ export default class Builder {
 
 	}
 
+	cone( ...args ) {
+
+		const cone = new Builder( new ConeGeometry( ...args ), this );
+		this.children.push( cone );
+
+		return cone;
+
+	}
+
 	cylinder( ...args ) {
 
 		const cylinder = new Builder( new CylinderGeometry( ...args ), this );
@@ -95,6 +106,15 @@ export default class Builder {
 		this.children.push( tetrahedron );
 
 		return tetrahedron;
+
+	}
+
+	tube( ...args ) {
+
+		const tube = new Builder( new TubeGeometry( ...args ), this );
+		this.children.push( tube );
+
+		return tube;
 
 	}
 
@@ -137,15 +157,14 @@ export default class Builder {
 
 	translate( position, y = 0, z = 0, variation ) {
 
-		let x;
 		if ( typeof position === "object" ) {
 
 			variation = typeof y === "function" ? y : undefined;
-			position.x = x || 0;
-			position.y = y || 0;
-			position.z = z || 0;
+			position.x = position.x || 0;
+			position.y = position.y || 0;
+			position.z = position.z || 0;
 
-		} else position = new Vector3( x || 0, y || 0, z || 0 );
+		} else position = new Vector3( position || 0, y || 0, z || 0 );
 
 		this._position = this._position ? this._position.add( position ) : position;
 		if ( variation )
@@ -388,6 +407,13 @@ export default class Builder {
 			for ( let i = 0; i < this.children.length; i ++ )
 				fn( this.children[ i ], i, this.children.length, i - mid, mid - Math.abs( i - mid ), mid, );
 
+		return this;
+
+	}
+
+	add( builder ) {
+
+		this.children.push( builder );
 		return this;
 
 	}
