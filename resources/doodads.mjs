@@ -1,13 +1,14 @@
 
-import BrokenHayCart from "./meshes/BrokenHayCart.mjs";
-import BrokenWheelbarrow from "./meshes/BrokenWheelbarrow.mjs";
-import Fence from "./meshes/Fence.mjs";
-import PileOfJunk from "./meshes/PileOfJunk.mjs";
-import PineTree from "./meshes/PineTree.mjs";
-import RockChunks from "./meshes/RockChunks.mjs";
-import ScorchedBarn from "./meshes/ScorchedBarn.mjs";
-import Trough from "./meshes/Trough.mjs";
+import BrokenHayCart from "../node_modules/notextures/src/meshes/BrokenHayCart.mjs";
+import BrokenWheelbarrow from "../node_modules/notextures/src/meshes/BrokenWheelbarrow.mjs";
+import Fence from "../node_modules/notextures/src/meshes/Fence.mjs";
+import PileOfJunk from "../node_modules/notextures/src/meshes/PileOfJunk.mjs";
+import PineTree from "../node_modules/notextures/src/meshes/PineTree.mjs";
+import RockChunks from "../node_modules/notextures/src/meshes/RockChunks.mjs";
+import ScorchedBarn from "../node_modules/notextures/src/meshes/ScorchedBarn.mjs";
+import Trough from "../node_modules/notextures/src/meshes/Trough.mjs";
 
+// TODO: names should be baked into the model
 export default {
 	VOfl: { name: "Fence Long", mesh: Fence },
 	VOfs: { name: "Fence Short", mesh: Fence, length: 1 },
