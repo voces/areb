@@ -1,3 +1,4 @@
+/data
+/bin
 node_modules
-data
 .DS_STORE

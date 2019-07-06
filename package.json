@@ -4,19 +4,28 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "chevrotain": "^4.8.1",
+    "fast-glob": "^2.2.6",
+    "jass-to-ast": "^1.2.0",
+    "ncp": "^2.0.0",
+    "notextures": "^1.0.0",
     "pngjs": "^3.3.3",
     "three": "^0.101.1",
     "w3x-parser": "^1.0.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
+    "chai": "^4.2.0",
     "eslint": "^5.13.0",
     "eslint-config-mdcs": "^4.2.3",
-    "eslint-config-verit": "^1.0.2"
+    "eslint-config-verit": "^1.0.2",
+    "verit-test": "^3.1.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node --experimental-modules index.js data/\\(2\\)BootyBay.w3m",
+    "test": "vt **/*.test.js"
   },
   "author": "verit",
-  "license": "ISC"
+  "license": "ISC",
+  "type": "module"
 }

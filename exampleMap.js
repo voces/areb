@@ -1,6 +1,6 @@
 
-import Map from "./webcraft/Map.mjs";
-import tiles from "./resources/tiles.mjs";
+import Map from "./webcraft/Map.js";
+import tiles from "./resources/tiles.js";
 
 import Mesh from "./node_modules/notextures/src/meshes/PileOfJunk.mjs";
 

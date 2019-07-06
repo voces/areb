@@ -1,5 +1,5 @@
 
-import charGradient from "./charGradiant.mjs";
+import charGradient from "./charGradiant.js";
 
 export default map => {
 

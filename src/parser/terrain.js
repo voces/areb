@@ -1,11 +1,5 @@
 
-import War3Map from "./node_modules/w3x-parser/dist/bundle.mjs";
-
-import tiles from "./resources/tiles.mjs";
-import doodadTypes from "./resources/doodads.mjs";
-
-import mapToCharGradiant from "./util/mapToCharGradiant.mjs";
-window.mapToCharGradiant = mapToCharGradiant;
+import tiles from "../../resources/tiles.js";
 
 // WC3 describes heights by tile, but we want heights by tile corner
 // https://docs.google.com/drawings/d/1lPw4KP92Bjea6GlovjH61MPClK3Csw9b44ts-H_WxSU/edit?usp=sharing
@@ -76,7 +70,7 @@ const warnAndRandom = tile => {
 
 };
 
-export const terrain = war3Map => {
+export default war3Map => {
 
 	const environment = war3Map.readEnvironment();
 
@@ -123,51 +117,6 @@ export const terrain = war3Map => {
 			waterHeight: heightTilesToHeightMap( corners.map( row => row.map( corner => corner.waterHeight + 1 ) ), water )
 		},
 		offset
-	};
-
-};
-
-export const doodads = war3Map => {
-
-	const doo = war3Map.readDoodads();
-
-	const skippedDoodads = {};
-	const markSkipped = doodad => {
-
-		if ( ! skippedDoodads[ doodad.id ] ) skippedDoodads[ doodad.id ] = 0;
-		skippedDoodads[ doodad.id ] ++;
-		return false;
-
-	};
-
-	const doodads = doo.doodads.filter( doodad => doodadTypes[ doodad.id ] || markSkipped( doodad ) ).map( doodad => ( {
-		...doodadTypes[ doodad.id ],
-		id: doodad.editorId,
-		position: {
-			x: doodad.location[ 0 ] / 128,
-			y: doodad.location[ 1 ] / 128,
-			z: doodad.location[ 2 ] / 128
-		},
-		scale: ( doodad.scale[ 0 ] + doodad.scale[ 1 ] + doodad.scale[ 2 ] ) / 3,
-		angle: doodad.angle,
-		life: doodad.life
-	} ) );
-
-	if ( Object.keys( skippedDoodads ).length )
-		console.warn( `Skipped unknown doodads (${Object.entries( skippedDoodads ).map( ( [ key, value ] ) =>
-			`${key}: ${value}` ).join( ", " )})` );
-
-	return doodads;
-
-};
-
-export default buffer => {
-
-	const war3Map = window.war3Map = new War3Map( buffer );
-
-	return {
-		terrain: terrain( war3Map ),
-		doodads: doodads( war3Map )
 	};
 
 };
