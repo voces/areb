@@ -1,6 +1,8 @@
 
-export default ( () => {
+export default ( /* {{natives}} */ ) => {
 
 	t( "source" );
 
-} )();
+	return main;
+
+};

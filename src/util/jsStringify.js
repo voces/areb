@@ -1,7 +1,7 @@
 
 // This functionality is meant for object literals as a JS-version of JSON.stringify
 
-const stringifyArray = ( arr, space, level, curLength, spaceWidth, { wrapping, replacer } ) => {
+const stringifyArray = ( arr, space, level, curLength, spaceWidth, { wrapping, replacer, trailingComma } ) => {
 
 	// A minimum; "[ 0 ]".length = 5, "{ 0, 1 }".length = 8, etc
 	let tryingCompact = curLength + arr.length * 3 + 2 < wrapping;
@@ -29,13 +29,15 @@ const stringifyArray = ( arr, space, level, curLength, spaceWidth, { wrapping, r
 				space.repeat( level + 1 ) +
 						replacer( element, level + 1, ( level + 1 ) * spaceWidth )
 			)
-			.join( ",\n" ),
-		space.repeat( level ) + "]"
+			.join( ",\n" ) + ( trailingComma ? "," : "" ),
+		space.repeat( level ) + "]",
 	].join( "\n" );
 
 };
 
-const stringifyObject = ( obj, space, level, curLength, spaceWidth, { wrapping, replacer } ) => {
+const escapeKey = key => key.match( /^[_a-zA-Z][_0-9a-zA-Z]*$/ ) ? key : `"${key.replace( /"/g, "\\" )}"`;
+
+const stringifyObject = ( obj, space, level, curLength, spaceWidth, { wrapping, replacer, trailingComma } ) => {
 
 	const entries = Object.entries( obj );
 	// A minimum; "{ a: 0 }".length = 8, "{ a: 0, b: 1 }".length = 14, etc
@@ -48,7 +50,7 @@ const stringifyObject = ( obj, space, level, curLength, spaceWidth, { wrapping, 
 
 			const [ key, value ] = entries[ i ];
 
-			compact += key + ": " +
+			compact += escapeKey( key ) + ": " +
 					replacer( value, level + 1, curLength + compact.length ) +
 					( i < entries.length - 1 ? ", " : "" );
 
@@ -70,7 +72,7 @@ const stringifyObject = ( obj, space, level, curLength, spaceWidth, { wrapping, 
 		entries
 			.map( ( [ key, value ] ) => {
 
-				const prefix = key + ": ";
+				const prefix = escapeKey( key ) + ": ";
 				return space.repeat( level + 1 ) +
 					prefix +
 					replacer(
@@ -80,8 +82,8 @@ const stringifyObject = ( obj, space, level, curLength, spaceWidth, { wrapping, 
 					);
 
 			} )
-			.join( ",\n" ),
-		space.repeat( level ) + "}"
+			.join( ",\n" ) + ( trailingComma ? "," : "" ),
+		space.repeat( level ) + "}",
 	].join( "\n" );
 
 };
@@ -94,6 +96,7 @@ const jsStringify = (
 
 	if ( ! ( "wrapping" in options ) ) options.wrapping = 80;
 	if ( ! ( "tabWidth" in options ) ) options.tabWidth = 4;
+	if ( ! ( "trailingComma" in options ) ) options.trailingComma = true;
 	const { tabWidth } = options;
 
 	if ( typeof space === "number" ) space = " ".repeat( space );
@@ -114,7 +117,7 @@ const jsStringify = (
 
 		// Strings are pretty safe, just escape their definer
 		if ( typeof obj === "string" )
-			return `"${obj.replace( /"/g, "\\\"" )}"`;
+			return `"${obj.replace( /"/g, "\\\"" ).replace( /\\/g, "\\\\" )}"`;
 
 		if ( typeof obj === "number" )
 			if ( obj < 0 ) return `- ${Math.abs( obj )}`;

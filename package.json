@@ -1,28 +1,29 @@
 {
   "name": "areb",
   "version": "1.0.0",
-  "description": "",
+  "description": "Converts W(ar)Craft maps to W(eb)Craft maps",
   "main": "index.js",
   "dependencies": {
-    "chevrotain": "^4.8.1",
-    "fast-glob": "^2.2.6",
-    "jass-to-ast": "^1.2.0",
+    "fast-glob": "^3.0.4",
+    "jass-to-ast": "^1.4.0",
     "ncp": "^2.0.0",
     "notextures": "^1.0.0",
-    "pngjs": "^3.3.3",
-    "three": "^0.101.1",
-    "w3x-parser": "^1.0.0"
+    "three": "^0.106.2",
+    "w3x-parser": "^2.0.0",
+    "yargs": "^13.3.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
     "chai": "^4.2.0",
-    "eslint": "^5.13.0",
+    "eslint": "^5.16.0",
     "eslint-config-mdcs": "^4.2.3",
     "eslint-config-verit": "^1.0.2",
     "verit-test": "^3.1.0"
   },
   "scripts": {
     "start": "node --experimental-modules index.js data/\\(2\\)BootyBay.w3m",
+    "fixus": "node --experimental-modules --loader ./loader.js index.js data/Ultimate\\ Sheep\\ Tag\\ Fixus\\ 1.12.w3x",
+    "fixus-debug": "node --inspect-brk --experimental-modules --loader ./loader.js index.js data/Ultimate\\ Sheep\\ Tag\\ Fixus\\ 1.12.w3x",
     "test": "vt **/*.test.js"
   },
   "author": "verit",

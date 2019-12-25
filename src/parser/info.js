@@ -5,14 +5,14 @@ const playerTypes = {
 	1: "Human",
 	2: "Computer",
 	3: "Neutral",
-	4: "Rescuable"
+	4: "Rescuable",
 };
 
 const playerRaces = {
 	1: "Human",
 	2: "Orc",
 	3: "Undead",
-	4: "Night Elf"
+	4: "Night Elf",
 };
 
 export default war3Map => {
@@ -31,14 +31,20 @@ export default war3Map => {
 				.split( "" )
 				.map( ( v, i ) => v === "1" ? war3Map.maxPlayers - 1 - i : - 1 )
 				.filter( v => v >= 0 )
-				.sort( ( a, b ) => a - b )
+				.sort( ( a, b ) => a - b ),
 		} ) ),
 		slots: info.players.map( p => ( {
 			type: playerTypes[ p.type ], // TODO: Should be a reference
 			race: playerRaces[ p.race ], // TODO: Should be a reference
 			name: strings( p.name ),
-			startLocation: p.startLocation
-		} ) )
+			startLocation: p.startLocation,
+		} ) ),
+		camera: {
+			minX: Math.min( ...info.cameraBounds.filter( ( _, i ) => i % 2 === 0 ) ),
+			maxX: Math.max( ...info.cameraBounds.filter( ( _, i ) => i % 2 === 0 ) ),
+			minY: Math.min( ...info.cameraBounds.filter( ( _, i ) => i % 2 === 1 ) ),
+			maxY: Math.max( ...info.cameraBounds.filter( ( _, i ) => i % 2 === 1 ) ),
+		},
 	};
 
 };

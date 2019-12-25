@@ -31,11 +31,11 @@ export default war3Map => {
 		position: {
 			x: doodad.location[ 0 ] / 128,
 			y: doodad.location[ 1 ] / 128,
-			z: doodad.location[ 2 ] / 128
+			z: doodad.location[ 2 ] / 128,
 		},
 		scale: ( doodad.scale[ 0 ] + doodad.scale[ 1 ] + doodad.scale[ 2 ] ) / 3,
 		angle: doodad.angle,
-		life: doodad.life
+		life: doodad.life,
 	} ) );
 
 	if ( Object.keys( skippedDoodads ).length )
@@ -45,7 +45,7 @@ export default war3Map => {
 	return {
 		doodads,
 		doodadImports: [ ...imports ].map( i =>
-			`import ${extractMeshClassName( i )} from "${i}";` ).join( "\n" )
+			`import ${extractMeshClassName( i )} from "${i}";` ).join( "\n" ),
 	};
 
 };

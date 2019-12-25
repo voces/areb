@@ -1,5 +1,5 @@
 
-import { Color } from "../node_modules/three/build/three.module.js";
+import { Color } from "../node_modules/webcraft/node_modules/three/build/three.module.js";
 
 export default [
 	new Color( 0xFF0000 ),

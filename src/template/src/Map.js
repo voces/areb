@@ -1,6 +1,7 @@
 
 import Game from "../../node_modules/webcraft/src/Game.js";
 import Force from "../../node_modules/webcraft/src/Force.js";
+import collector from "../../node_modules/webcraft/src/systems/collector.js";
 import Graphics from "../../node_modules/webcraft/src/systems/Graphics.js";
 import Players from "../../node_modules/webcraft/src/systems/Players.js";
 import CameraControls from "../../node_modules/webcraft/src/mechanisms/CameraControls.js";
@@ -10,10 +11,14 @@ import forces from "../../data/forces.js";
 import slots from "../../data/slots.js";
 import colors from "./colors.js";
 import Player from "./Player.js";
+import natives from "./natives.js";
+import source from "./source.js";
 
 export default class /* {{meta.name.class}} */ extends Game {
 
 	name = ts( "meta.name.plain" );
+	main;
+	constants = tj( "constants", 1 );
 
 	constructor() {
 
@@ -21,6 +26,7 @@ export default class /* {{meta.name.class}} */ extends Game {
 
 		this.addSystem( new Graphics() );
 		this.addSystem( new Players() );
+		this.addSystem( collector( "units", "isUnit" ) );
 		this.addMechanism( new CameraControls( { camera: this.camera } ) );
 
 		this.forces = forces.map( spec =>
@@ -32,12 +38,12 @@ export default class /* {{meta.name.class}} */ extends Game {
 					const player = new Player( {
 						...slots[ slot ],
 						id: slot,
-						color: colors[ slot ]
+						color: colors[ slot ],
 					} );
 					this.add( player );
 					return player;
 
-				} )
+				} ),
 			} )
 
 		);
@@ -48,6 +54,9 @@ export default class /* {{meta.name.class}} */ extends Game {
 		// this.loadDoodads();
 
 		this.loadUI();
+
+		this.main = source( natives( this ) );
+		this.main();
 
 	}
 
@@ -79,7 +88,7 @@ export default class /* {{meta.name.class}} */ extends Game {
 			slots,
 			localPlayer: this.localPlayer,
 			handleLocalPlayerChange: player => this.localPlayer = player,
-			onStart: () => console.log( "start" )
+			onStart: () => this.onStartGame(),
 		} ) );
 
 	}
@@ -89,6 +98,8 @@ export default class /* {{meta.name.class}} */ extends Game {
 		const terrain = await import( "../../data/terrain.js" ).then( i => i.default );
 
 		this.terrain = new Terrain( terrain );
+		this.terrain.receiveShadow = true;
+		this.terrain.castShadow = true;
 		this.add( this.terrain );
 
 	}
@@ -98,7 +109,7 @@ export default class /* {{meta.name.class}} */ extends Game {
 		const doodads = await import( "../../data/doodads.js" ).then( i => i.default );
 
 		doodads
-			.filter( doodad => doodad.name !== "Summer Tree Wall" )
+			.slice( 0, 1 )
 			.forEach( async doodad => {
 
 				const mesh = new doodad.mesh( doodad );
@@ -106,6 +117,13 @@ export default class /* {{meta.name.class}} */ extends Game {
 				this.add( mesh );
 
 			} );
+
+	}
+
+	onStartGame() {
+
+		this.ui.innerHTML = "";
+		this.main();
 
 	}
 

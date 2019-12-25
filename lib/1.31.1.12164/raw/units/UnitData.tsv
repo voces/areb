@@ -1,0 +1,837 @@
+unitID	sort	comment(s)	race	prio	threat	valid	deathType	death	canSleep	cargoSize	movetp	moveHeight	moveFloor	turnRate	propWin	orientInterp	formation	targType	pathTex	fatLOS	points	buffType	buffRadius	nameCount	canFlee	requireWaterRadius	isBuildOn	canBuildOn	InBeta	version
+Hamg	a1	HeroArchMage	human	9	1	1	2	2.8	0	1	foot	0	0	0.5	60	4	2	ground	_	0	100	_	-	13	1	0	0	0	1	0
+Hblm	a1	HeroBloodMage	human	9	1	1	2	3	0	1	foot	0	0	0.5	60	4	2	ground	_	0	100	_	-	9	1	0	0	0	1	1
+Hmkg	a1	HeroMountainKing	human	9	1	1	2	2.5	0	1	foot	0	0	0.6	60	5	0	ground	_	0	100	_	-	13	1	0	0	0	1	0
+Hpal	a1	HeroPaladin	human	9	1	1	2	1.5	0	1	foot	0	0	0.6	60	5	0	ground	_	0	100	_	-	15	1	0	0	0	1	0
+hbot	a2	transport ship	human	2	1	1	0	3.73	0	-	float	0	0	0.4	15	3	3	ground	_	0	100	_	-	-	1	0	0	0	0	1
+hbsh	a2	battleship	human	2	1	1	0	3.73	0	-	float	0	0	0.1	15	3	3	ground	_	0	100	_	-	-	1	0	0	0	0	1
+hdes	a2	destroyer	human	2	1	1	0	3.73	0	-	float	0	0	0.2	15	3	3	ground	_	0	100	_	-	-	1	0	0	0	0	1
+hdhw	a2	blood elf dragon hawk	human	4	1	1	0	2.13	1	-	fly	240	90	0.4	61	1	2	air	_	0	100	_	-	-	1	0	0	0	1	1
+hfoo	a2	Footman	human	6	1	1	3	3.04	0	1	foot	0	0	0.6	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+hgry	a2	GryphonRider	human	2	1	1	0	1.67	0	-	fly	240	90	0.4	61	1	2	air	_	0	100	_	-	-	1	0	0	0	1	0
+hgyr	a2	Flying Machine	human	2	1	1	0	2.67	0	-	fly	280	90	0.5	61	2	2	air	_	0	100	_	-	-	1	0	0	0	1	0
+hkni	a2	Knight	human	3	1	1	3	5.1	0	1	horse	0	0	0.5	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+hmil	a2	Militia	human	1	1	1	3	3.34	0	1	foot	0	0	0.6	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+hmpr	a2	Priest	human	7	1	1	3	2	0	1	foot	0	0	0.6	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+hmtm	a2	MortarTeam	human	5	1	1	3	1.5	0	2	foot	0	0	0.5	60	1	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+hmtt	a2	Siege Engine	human	3	1	1	2	3	0	4	foot	0	0	0.4	30	1	3	ground	_	0	100	_	-	-	1	0	0	0	1	0
+hpea	a2	Peasant	human	1	1	1	3	3.34	0	1	foot	0	0	0.6	60	0	4	ground	_	0	100	_	-	-	1	0	0	0	1	0
+hphx	a2	Phoenix	human	2	1	1	0	0.7	0	-	fly	240	90	0.4	61	1	2	air	_	0	100	_	-	-	1	0	0	0	1	1
+hpxe	a2	Phoenix Egg	human	1	1	1	0	1.33	0	-	foot	0	0	-	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	1
+hrif	a2	Rifleman	human	2	1	1	3	1.7	0	1	foot	0	0	0.6	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+hrtt	a2	siege engine upgraded	human	3	1	1	2	3	0	4	foot	0	0	0.4	30	1	3	ground	_	0	100	_	-	-	1	0	0	0	1	1
+hsor	a2	Sorceress	human	8	1	1	3	1.87	0	1	hover	0	0	0.6	60	2	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+hspt	a2	Blood Elf Spell Breaker	human	7	1	1	3	2	0	1	foot	0	0	0.6	60	0	1	ground	_	0	100	_	-	-	1	0	0	0	1	1
+hwat	a2	WaterElemental	human	1	1	1	0	1.5	0	1	foot	0	0	0.5	60	2	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+hwt2	a2	WaterElemental level 2	human	1	1	1	0	1.5	0	1	foot	0	0	0.5	60	2	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+hwt3	a2	WaterElemental level 3	human	1	1	1	0	1.5	0	1	foot	0	0	0.5	60	2	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nlv1	a2	LavaSpawn1	other	1	1	1	0	6	0	1	foot	0	0	0.5	60	2	2	ground	_	0	100	_	-	-	1	0	0	0	1	1
+nlv2	a2	LavaSpawn2	other	1	1	1	0	6	0	1	foot	0	0	0.5	60	2	2	ground	_	0	100	_	-	-	1	0	0	0	1	1
+nlv3	a2	LavaSpawn3	other	1	1	1	0	6	0	1	foot	0	0	0.5	60	2	2	ground	_	0	100	_	-	-	1	0	0	0	1	1
+halt	a3	AltarofKings	human	5	1	1	2	2.335	0	-	_	0	0	-	60	0	0	structure	PathTextures\10x10Simple.tga	0	100	factory	9	-	1	0	0	0	1	0
+harm	a3	Workshop	human	5	1	1	2	2.335	0	-	_	0	0	-	60	0	0	structure	PathTextures\12x12Simple.tga	0	100	factory	9	-	1	0	0	0	1	0
+hars	a3	ArcaneSanctum	human	5	1	1	2	2.34	0	-	_	0	0	-	60	0	0	structure	PathTextures\12x12Simple.tga	0	100	factory	9	-	1	0	0	0	1	0
+hatw	a3	Arcane Tower	human	2	1	1	2	2.67	0	-	_	0	0	-	60	0	0	structure	PathTextures\4x4SimpleSolid.tga	0	100	buffer	15	-	1	0	0	0	1	1
+hbar	a3	HumanBarracks	human	9	1	1	2	2.34	0	-	_	0	0	-	60	0	0	structure	PathTextures\12x12Simple.tga	0	100	factory	9	-	1	0	0	0	1	0
+hbla	a3	Blacksmith	human	4	1	1	2	2.34	0	-	_	0	0	-	60	0	0	structure	PathTextures\8x8SimpleSolid.tga	0	100	_	-	-	1	0	0	0	1	0
+hcas	a3	Castle	human	8	1	1	2	3.17	0	-	_	0	0	-	60	0	0	structure	PathTextures\16x16Simple.tga	0	100	townhall	8	-	1	0	0	0	1	0
+hctw	a3	CannonTower	human	3	1	1	2	2.34	0	-	_	0	0	-	60	0	0	structure	PathTextures\4x4SimpleSolid.tga	0	100	buffer	15	-	1	0	0	0	1	0
+hgra	a3	GryphonAviary	human	5	1	1	2	2.34	0	-	_	0	0	-	60	0	0	structure	PathTextures\8x8SimpleSolid.tga	0	100	_	-	-	1	0	0	0	1	0
+hgtw	a3	GuardTower	human	2	1	1	2	2.34	0	-	_	0	0	-	60	0	0	structure	PathTextures\4x4SimpleSolid.tga	0	100	buffer	15	-	1	0	0	0	1	0
+hhou	a3	Farm	human	1	1	1	2	2.34	0	-	_	0	0	-	60	0	0	structure	PathTextures\4x4SimpleSolid.tga	0	100	_	-	-	1	0	0	0	1	0
+hkee	a3	Keep	human	7	1	1	2	3.17	0	-	_	0	0	-	60	0	0	structure	PathTextures\16x16Simple.tga	0	100	townhall	8	-	1	0	0	0	1	0
+hlum	a3	LumberMill	human	4	1	1	2	2.34	0	-	_	0	0	-	60	0	0	structure	PathTextures\10x10SimpleSolid.tga	0	100	_	-	-	1	0	0	0	1	0
+hshy	a3	human shipyard	human	1	1	1	0	2.33	0	-	float	0	0	-	60	0	0	structure	PathTextures\6x6SimpleSolid.tga	0	100	_	-	-	1	384	0	0	0	1
+htow	a3	TownHall	human	6	1	1	2	3.17	0	-	_	0	0	-	60	0	0	structure	PathTextures\16x16Simple.tga	0	100	townhall	8	-	1	0	0	0	1	0
+hvlt	a3	Arcane Vault	human	1	1	1	2	2.33	0	-	_	0	0	-	60	0	0	structure	PathTextures\12x12Simple.tga	0	100	_	-	-	1	0	0	0	1	1
+hwtw	a3	Scout Tower	human	1	1	1	2	2.34	0	-	_	0	0	-	60	0	0	structure	PathTextures\4x4SimpleSolid.tga	0	100	buffer	15	-	1	0	0	0	1	0
+Obla	b1	HeroBladeMaster	orc	9	1	1	2	1.9	0	1	foot	0	0	0.6	60	5	0	ground	_	0	100	_	-	14	1	0	0	0	1	0
+Ofar	b1	HeroFarSeer	orc	9	1	1	2	2.1	0	1	horse	0	0	0.4	60	4	2	ground	_	0	100	_	-	11	1	0	0	0	1	0
+Oshd	b1	HeroShadowHunter	orc	9	1	1	2	3.77	0	1	foot	0	0	0.4	60	1	2	ground	_	0	100	_	-	9	1	0	0	0	1	1
+Otch	b1	HeroTaurenChieftain	orc	9	1	1	2	2	0	1	foot	0	0	0.4	60	1	0	ground	_	0	100	_	-	10	1	0	0	0	1	0
+ncat	b2	Demolisher(Draenei)	creeps	2	1	1	2	3.34	0	2	foot	0	0	0.4	30	1	3	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nsw1	b2	spirit beast level 1	creeps	1	1	1	0	1.75	0	1	foot	0	0	0.6	60	4	2	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nsw2	b2	spirit beast level 2	creeps	1	1	1	0	1.75	0	1	foot	0	0	0.6	60	4	2	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nsw3	b2	spirit beast level 3	creeps	5	1	1	0	1.75	0	1	foot	0	0	0.6	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nwad	b2	WatcherWard	orc	1	1	1	0	0.94	0	-	foot	0	0	-	60	0	0	ward	_	0	100	_	-	-	1	0	0	0	1	1
+obot	b2	orcish transport	orc	2	1	1	0	3.73	0	-	float	0	0	0.4	15	3	3	ground	_	0	100	_	-	-	1	0	0	0	0	1
+ocat	b2	Demolisher	orc	2	1	1	2	3.34	0	2	foot	0	0	0.4	30	1	3	ground	_	0	100	_	-	-	1	0	0	0	1	0
+odes	b2	orcish destroyer	orc	2	1	1	0	3.73	0	-	float	0	0	0.2	15	3	3	ground	_	0	100	_	-	-	1	0	0	0	0	1
+odoc	b2	WitchDoctor	orc	7	1	1	3	1.97	0	1	foot	0	0	0.6	60	5	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+oeye	b2	SentryWard	orc	1	1	1	0	0.94	0	-	foot	0	0	-	60	0	0	ward	_	0	100	_	-	-	1	0	0	0	1	0
+ogru	b2	Grunt	orc	3	1	1	3	1.75	0	1	foot	0	0	0.6	60	5	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+ohun	b2	HeadHunter	orc	2	1	1	3	2.1	0	1	foot	0	0	0.6	60	5	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+ohwd	b2	Healing Ward	orc	1	1	1	0	0.94	0	-	foot	0	0	-	60	0	0	ward	_	0	100	_	-	-	1	0	0	0	1	0
+okod	b2	KodoBeast	orc	5	1	1	3	3	0	2	horse	0	0	0.5	60	1	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+opeo	b2	Peon	orc	1	1	1	3	2	0	1	foot	0	0	0.6	60	0	4	ground	_	0	100	_	-	-	1	0	0	0	1	0
+orai	b2	WolfRider	orc	6	1	1	3	1.87	0	1	horse	0	0	0.5	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+oshm	b2	Shaman	orc	8	1	1	3	3.37	0	1	foot	0	0	0.6	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+osp1	b2	Serpent Ward 1	orc	1	1	1	0	0.94	0	-	foot	0	0	-	60	0	0	ward	_	0	100	_	-	-	1	0	0	0	1	1
+osp2	b2	Serpent Ward 2	orc	1	1	1	0	0.94	0	-	foot	0	0	-	60	0	0	ward	_	0	100	_	-	-	1	0	0	0	1	1
+osp3	b2	Serpent Ward 3	orc	1	1	1	0	0.94	0	-	foot	0	0	-	60	0	0	ward	_	0	100	_	-	-	1	0	0	0	1	1
+osp4	b2	Serpent Ward 4	orc	1	1	1	0	0.94	0	-	foot	0	0	-	60	0	0	ward	_	0	100	_	-	-	1	0	0	0	1	1
+ospm	b2	spiritwalkermorph	orc	7	1	1	3	2	0	1	foot	0	0	0.5	60	4	2	ground	_	0	100	_	-	-	0	0	0	0	1	1
+ospw	b2	spiritwalker	orc	7	1	1	3	2	0	1	foot	0	0	0.5	60	4	2	ground	_	0	100	_	-	-	1	0	0	0	1	1
+osw1	b2	spirit wolf level 1	orc	1	1	1	0	1.75	0	1	foot	0	0	0.6	60	4	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+osw2	b2	spirit wolf level 2	orc	1	1	1	0	1.75	0	1	foot	0	0	0.6	60	4	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+osw3	b2	spirit wolf level 3	orc	1	1	1	0	1.75	0	1	foot	0	0	0.6	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+otau	b2	Tauren	orc	4	1	1	3	3.14	0	1	foot	0	0	0.5	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+otbk	b2	Berserker	orc	2	1	1	3	3	0	1	foot	0	0	0.6	60	5	2	ground	_	0	100	_	-	-	1	0	0	0	1	1
+otbr	b2	Troll Batrider	orc	2	1	1	0	2.33	0	-	fly	240	90	0.4	61	1	2	air	_	0	100	_	-	-	1	0	0	0	1	1
+otot	b2	StasisTrapward	orc	1	1	1	0	0.94	0	-	foot	0	0	-	60	0	0	ward	_	0	100	_	-	-	1	0	0	0	1	0
+owyv	b2	Wind Rider	orc	2	1	1	0	2.1	0	-	fly	240	90	0.4	61	1	2	air	_	0	100	_	-	-	1	0	0	0	1	0
+oalt	b3	AltarofStorms	orc	5	1	1	2	0.64	0	-	_	0	0	-	60	0	0	structure	PathTextures\10x10Simple.tga	0	100	factory	9	-	1	0	0	0	1	0
+obar	b3	Barracks	orc	9	1	1	2	0.64	0	-	_	0	0	-	60	0	0	structure	PathTextures\12x12Simple.tga	0	100	factory	9	-	1	0	0	0	1	0
+obea	b3	Beastiary	orc	5	1	1	2	0.64	0	-	_	0	0	-	60	0	0	structure	PathTextures\12x12Simple.tga	0	100	factory	9	-	1	0	0	0	1	0
+ofor	b3	Forge	orc	4	1	1	2	0.64	0	-	_	0	0	-	60	0	0	structure	PathTextures\6x6SimpleSolid.tga	0	100	_	-	-	1	0	0	0	1	0
+ofrt	b3	Fortress	orc	8	1	1	2	0.64	0	-	_	0	0	-	60	0	0	structure	PathTextures\16x16Simple.tga	0	100	townhall	8	-	1	0	0	0	1	0
+ogre	b3	GreatHall	orc	6	1	1	2	0.64	0	-	_	0	0	-	60	0	0	structure	PathTextures\16x16Simple.tga	0	100	townhall	8	-	1	0	0	0	1	0
+oshy	b3	orc shipyard	orc	1	1	1	0	3	0	-	float	0	0	-	60	0	0	structure	PathTextures\8x8SimpleSolid.tga	0	100	_	-	-	1	384	0	0	0	1
+osld	b3	SpiritLodge	orc	5	1	1	2	0.64	0	-	_	0	0	-	60	0	0	structure	PathTextures\12x12Simple.tga	0	100	factory	9	-	1	0	0	0	1	0
+ostr	b3	Stronghold	orc	7	1	1	2	0.64	0	-	_	0	0	-	60	0	0	structure	PathTextures\16x16Simple.tga	0	100	townhall	8	-	1	0	0	0	1	0
+otrb	b3	OrcBurrow	orc	3	1	1	2	0.64	0	-	_	0	0	-	60	0	0	structure	PathTextures\6x6SimpleSolid.tga	0	100	buffer	9	-	1	0	0	0	1	0
+otto	b3	Tauren Totem	orc	4	1	1	2	0.64	0	-	_	0	0	-	60	0	0	structure	PathTextures\12x12Simple.tga	0	100	factory	9	-	1	0	0	0	1	0
+ovln	b3	Voodoo Lounge	orc	1	1	1	2	0.64	0	-	_	0	0	-	60	0	0	structure	PathTextures\12x12Simple.tga	0	100	_	-	-	1	0	0	0	1	1
+owtw	b3	WatchTower	orc	2	1	1	2	2.34	0	-	_	0	0	-	60	0	0	structure	PathTextures\4x4SimpleSolid.tga	0	100	buffer	15	-	1	0	0	0	1	0
+Edem	c1	HeroDemonHunter	nightelf	9	1	1	2	5	0	1	foot	0	0	0.5	60	5	0	ground	_	0	100	_	-	15	1	0	0	0	1	0
+Edmm	c1	HeroDemonHunterMorph	nightelf	9	1	1	2	3	0	1	foot	0	0	0.5	60	4	2	ground	_	0	100	_	-	15	1	0	0	0	1	0
+Ekee	c1	HeroKeeperoftheGrove	nightelf	9	1	1	2	3	0	1	horse	0	0	0.4	60	4	2	ground	_	0	100	_	-	13	1	0	0	0	1	0
+Emoo	c1	HeroMoonPriestess	nightelf	9	1	1	2	3	0	1	horse	0	0	0.4	60	4	2	ground	_	0	100	_	-	13	1	0	0	0	1	0
+Ewar	c1	HeroWarden	nightelf	9	1	1	2	1	0	1	foot	0	0	0.4	60	5	0	ground	_	0	100	_	-	9	1	0	0	0	1	1
+earc	c2	Archer	nightelf	2	1	1	3	3	0	1	foot	0	0	0.6	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+ebal	c2	Glaive Thrower	nightelf	2	1	1	2	3.34	0	2	foot	0	0	0.4	30	1	3	ground	_	0	100	_	-	-	1	0	0	0	1	0
+ebsh	c2	night elf battleship	nightelf	2	1	1	0	3.73	0	-	float	0	0	0.1	15	3	3	ground	_	0	100	_	-	-	1	0	0	0	0	1
+echm	c2	Chimaera	nightelf	3	1	1	0	3	0	-	fly	280	90	0.5	61	3	2	air	_	0	100	_	-	-	1	0	0	0	1	0
+edcm	c2	DruidoftheClawMorph	nightelf	6	1	1	3	3	0	1	foot	0	0	0.6	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+edes	c2	night elf destroyer	nightelf	2	1	1	0	3.73	0	-	float	0	0	0.2	15	3	3	ground	_	0	100	_	-	-	1	0	0	0	0	1
+edoc	c2	DruidoftheClaw	nightelf	7	1	1	3	5	0	1	foot	0	0	0.6	60	5	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+edot	c2	DruidoftheTalon	nightelf	5	1	1	3	4.335	0	1	foot	0	0	0.6	60	5	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+edry	c2	Dryad	nightelf	4	1	1	3	3	0	1	foot	0	0	0.5	60	5	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+edtm	c2	DruidoftheTalonMorph	nightelf	3	1	1	0	4.335	0	1	fly	240	90	0.6	61	1	2	air	_	0	100	_	-	-	1	0	0	0	1	0
+efdr	c2	faerie dragon	nightelf	8	1	1	0	2.13	0	1	fly	240	90	0.4	61	4	2	air	_	0	100	_	-	-	1	0	0	0	1	1
+efon	c2	Ent	nightelf	1	1	1	0	3.14	0	1	foot	0	0	0.5	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+ehip	c2	Hippogryph	nightelf	2	1	1	0	3	0	-	fly	240	90	0.4	61	1	2	air	_	0	100	_	-	-	1	0	0	0	1	0
+ehpr	c2	Hippogryph Rider	nightelf	2	1	1	0	3	0	-	fly	240	90	0.4	61	1	2	air	_	0	100	_	-	-	1	0	0	0	1	0
+emtg	c2	Mountain Giant	nightelf	8	1	1	2	3.34	0	4	foot	0	0	0.4	30	1	0	ground	_	0	100	_	-	-	1	0	0	0	1	1
+esen	c2	Huntress	nightelf	3	1	1	3	3	0	1	foot	0	0	0.6	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+espv	c2	spirit of vengeance	nightelf	1	1	1	0	1	0	1	foot	0	0	0.6	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	1
+even	c2	vengeance	nightelf	1	1	1	0	1.13	0	1	foot	0	0	0.6	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	1
+ewsp	c2	Wisp	nightelf	1	1	1	0	3	0	1	hover	0	0	0.6	60	0	4	ground	_	0	100	_	-	-	1	0	0	0	1	0
+eaoe	c3	AncientofLore	nightelf	4	1	1	2	6	0	-	foot	0	0	0.4	60	3	4	structure	PathTextures\12x12Simple.tga	0	100	factory	9	-	1	0	0	0	1	0
+eaom	c3	AncientofWar	nightelf	5	1	1	2	6	0	-	foot	0	0	0.4	60	3	4	structure	PathTextures\12x12Simple.tga	0	100	factory	9	-	1	0	0	0	1	0
+eaow	c3	AncientofWind	nightelf	3	1	1	2	6	0	-	foot	0	0	0.4	60	3	4	structure	PathTextures\12x12Simple.tga	0	100	factory	9	-	1	0	0	0	1	0
+eate	c3	AltarofElders	nightelf	6	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\10x10Simple.tga	0	100	factory	9	-	1	0	0	0	1	0
+eden	c3	Ancient of Wonders	nightelf	6	1	1	2	3.2	0	-	foot	0	0	0.4	60	3	4	structure	PathTextures\12x12Simple.tga	0	100	_	-	-	1	0	0	0	1	1
+edob	c3	HuntersHall	nightelf	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\8x8SimpleSolid.tga	0	100	_	-	-	1	0	0	0	1	0
+edos	c3	ChimaeraRoost	nightelf	2	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\8x8SimpleSolid.tga	0	100	_	-	-	1	0	0	0	1	0
+egol	c3	EntangledGoldMine	nightelf	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\16x16Goldmine.tga	0	100	resource	7	-	1	0	0	0	1	0
+emow	c3	MoonWell	nightelf	2	1	1	2	2.34	0	-	_	0	0	-	60	0	0	structure	PathTextures\6x6SimpleSolid.tga	0	100	buffer	9	-	1	0	0	0	1	0
+eshy	c3	nightelf shipyard	nightelf	1	1	1	0	3	0	-	float	0	0	-	60	0	0	structure	PathTextures\6x6SimpleSolid.tga	0	100	_	-	-	1	384	0	0	0	1
+etoa	c3	TreeofAges	nightelf	7	1	1	2	6	0	-	foot	0	0	0.4	60	3	4	structure	PathTextures\12x12TreeOfLife.tga	0	100	townhall	8	-	1	0	0	0	1	0
+etoe	c3	TreeofEternity	nightelf	8	1	1	2	6	0	-	foot	0	0	0.4	60	3	4	structure	PathTextures\12x12TreeOfLife.tga	0	100	townhall	8	-	1	0	0	0	1	0
+etol	c3	TreeofLife	nightelf	6	1	1	2	6	0	-	foot	0	0	0.4	60	3	4	structure	PathTextures\12x12TreeOfLife.tga	0	100	townhall	8	-	1	0	0	0	1	0
+etrp	c3	Ancient Protector	nightelf	4	1	1	0	3	0	-	foot	0	0	0.4	55	3	4	structure	PathTextures\6x6SimpleSolid.tga	0	100	buffer	15	-	1	0	0	0	1	0
+Ucrl	d1	HeroCryptLord	undead	9	1	1	2	3	0	1	foot	0	0	0.5	60	5	0	ground	_	0	100	_	-	9	1	0	0	0	1	1
+Udea	d1	HeroDeathKnight	undead	9	1	1	2	3	0	1	foot	0	0	0.5	60	4	0	ground	_	0	100	_	-	15	1	0	0	0	1	0
+Udre	d1	HeroDreadLord	undead	9	1	1	2	3	0	1	foot	0	0	0.5	60	4	0	ground	_	0	100	_	-	18	1	0	0	0	1	0
+Ulic	d1	HeroLich	undead	9	1	1	2	3	0	1	hover	30	0	0.5	60	3	2	ground	_	0	100	_	-	15	1	0	0	0	1	0
+uabo	d2	Abomination	undead	2	1	1	3	2.17	0	1	foot	0	0	0.4	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+uaco	d2	Acolyte	undead	1	1	1	3	3	0	1	foot	0	0	0.6	60	0	4	ground	_	0	100	_	-	-	1	0	0	0	1	0
+uban	d2	Banshee	undead	7	1	1	0	1.17	0	1	hover	50	0	0.6	61	2	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+ubsp	d2	destroyer	undead	8	1	1	0	1.67	0	-	fly	240	90	0.4	61	1	2	air	_	0	100	_	-	-	1	0	0	0	1	1
+ucrm	d2	CryptFiendMorph	undead	4	1	1	3	3.04	0	1	foot	0	0	0.5	60	5	2	ground	_	0	100	_	-	-	1	0	0	0	1	1
+ucry	d2	CryptFiend	undead	4	1	1	3	3.04	0	1	foot	0	0	0.5	60	5	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+ucs1	d2	carrion scarab level 1	undead	1	1	1	0	3.03	0	1	foot	0	0	0.6	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	1	1
+ucs2	d2	carrion scarab level 2	undead	2	1	1	0	3.03	0	1	foot	0	0	0.6	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	1	1
+ucs3	d2	carrion scarab level 3	undead	2	1	1	0	3.03	0	1	foot	0	0	0.6	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	1	1
+ucsB	d2	carrion scarab level 2 -burrowed	undead	2	1	1	0	3.03	0	1	foot	0	0	0.6	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	1	1
+ucsC	d2	carrion scarab level 3 -burrowed	undead	2	1	1	0	3.03	0	1	foot	0	0	0.6	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	1	1
+ufro	d2	FrostWyrm	undead	6	1	1	0	2	0	-	fly	240	90	0.4	61	3	2	air	_	0	100	_	-	-	1	0	0	0	1	0
+ugar	d2	Gargoyle	undead	3	1	1	0	2.5	0	-	fly	240	90	0.5	61	1	2	air	_	0	100	_	-	-	1	0	0	0	1	0
+ugho	d2	Ghoul	undead	5	1	1	3	1.67	0	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+ugrm	d2	GargoyleMorphed	undead	3	1	1	0	1	0	-	foot	0	0	0.5	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+uloc	d2	locust	undead	1	1	1	0	1	0	1	fly	150	45	0.2	170	0	0	air	_	0	100	_	-	-	1	0	0	0	1	1
+umtw	d2	MeatWagon	undead	3	1	1	2	1.7	0	2	foot	0	0	0.6	30	1	3	ground	_	0	100	_	-	-	1	0	0	0	1	0
+unec	d2	Necromancer	undead	8	1	1	3	1.5	0	1	foot	0	0	0.6	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+uobs	d2	Obsidian Statue	undead	1	1	1	0	0.94	0	1	foot	0	0	0.5	60	1	3	ground	_	0	100	_	-	-	0	0	0	0	1	1
+uplg	d2	PlagueWard	undead	0	1	1	0	0.94	0	-	amph	0	0	-	60	0	0	ward	_	0	100	_	-	-	1	0	0	0	1	0
+ushd	d2	Shade	undead	1	1	1	0	3	0	1	hover	30	0	0.6	61	3	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+uske	d2	SkeletonWarrior	undead	1	1	1	0	5.034	0	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+uskm	d2	Skeletal Mage	undead	1	1	1	0	5.034	0	1	foot	0	0	0.5	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	1	1
+uubs	d2	undead battleship	undead	2	1	1	0	3.73	0	-	float	0	0	0.1	15	3	3	ground	_	0	100	_	-	-	1	0	0	0	0	1
+uaod	d3	AltarofDarkness	undead	5	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\10x10Simple.tga	0	100	factory	9	-	1	0	0	0	1	0
+ubon	d3	Boneyard	undead	5	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\12x12Simple.tga	0	100	_	-	-	1	0	0	0	1	0
+ugol	d3	UndeadGoldMine	undead	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\16x16Goldmine.tga	0	100	resource	7	-	1	0	1	0	1	0
+ugrv	d3	Graveyard	undead	4	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\12x12Simple.tga	0	100	_	-	-	1	0	0	0	1	0
+unp1	d3	Halls of the Dead	undead	7	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\UndeadNecropolis.tga	0	100	townhall	8	-	1	0	0	0	1	0
+unp2	d3	Black Citadel	undead	8	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\UndeadNecropolis.tga	0	100	townhall	8	-	1	0	0	0	1	0
+unpl	d3	Necropolis	undead	6	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\UndeadNecropolis.tga	0	100	townhall	8	-	1	0	0	0	1	0
+usap	d3	SacrificialPit	undead	4	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\12x12Simple.tga	0	100	factory	9	-	1	0	0	0	1	0
+usep	d3	Crypt	undead	9	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\12x12Simple.tga	0	100	factory	9	-	1	0	0	0	1	0
+ushp	d3	undead shipyard	undead	1	1	1	0	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\12x12Simple.tga	0	100	_	-	-	1	384	0	0	0	1
+uslh	d3	Slaughterhouse	undead	5	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\12x12Simple.tga	0	100	factory	9	-	1	0	0	0	1	0
+utod	d3	TempleoftheDamned	undead	5	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\12x12Simple.tga	0	100	factory	9	-	1	0	0	0	1	0
+utom	d3	Tomb of Relics	undead	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\12x12Simple.tga	0	100	_	-	-	1	0	0	0	1	1
+uzg1	d3	Spirit Tower	undead	3	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\6x6SimpleSolid.tga	0	100	buffer	15	-	1	0	0	0	1	0
+uzg2	d3	Frost Tower	undead	3	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\6x6SimpleSolid.tga	0	100	buffer	15	-	1	0	0	0	1	1
+uzig	d3	Ziggurat	undead	2	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\6x6SimpleSolid.tga	0	100	buffer	15	-	1	0	0	0	1	0
+Nal2	n1	HeroAlchemistMorph2	creeps	9	1	1	2	3.67	0	1	foot	0	0	0.6	60	5	0	ground	_	0	100	_	-	6	1	0	0	0	1	1
+Nal3	n1	HeroAlchemistMorph3	creeps	9	1	1	2	3.67	0	1	foot	0	0	0.6	60	5	0	ground	_	0	100	_	-	6	1	0	0	0	1	1
+Nalc	n1	HeroAlchemist	creeps	9	1	1	2	3.67	0	1	foot	0	0	0.6	60	5	0	ground	_	0	100	_	-	6	1	0	0	0	1	1
+Nalm	n1	HeroAlchemistMorph	creeps	9	1	1	2	3.67	0	1	foot	0	0	0.6	60	5	0	ground	_	0	100	_	-	6	1	0	0	0	1	1
+Nbrn	n1	HeroBansheeRanger	creeps	9	1	1	2	3.23	0	1	foot	0	0	0.6	60	5	2	ground	_	0	100	_	-	9	1	0	0	0	1	1
+Nbst	n1	Beastmaster	creeps	9	1	1	2	3.67	0	1	foot	0	0	0.4	60	1	0	ground	_	0	100	_	-	7	1	0	0	0	1	1
+Nfir	n1	FireLord	creeps	9	1	1	2	1.5	0	1	foot	0	0	0.6	60	5	2	ground	_	0	100	_	-	9	1	0	0	0	1	1
+Nngs	n1	HeroNagaSorceror	creeps	9	1	1	2	1.5	0	1	foot	0	0	0.6	60	5	2	ground	_	0	100	_	-	9	1	0	0	0	1	1
+Npbm	n1	HeroPandarenBrewmaster	creeps	9	1	1	2	2.5	0	1	foot	0	0	0.6	60	5	0	ground	_	0	100	_	-	8	1	0	0	0	1	1
+Nplh	n1	neutral pit lord	creeps	9	1	1	2	2.67	0	1	foot	0	0	0.4	60	1	0	ground	_	0	100	_	-	5	1	0	0	0	1	1
+Nrob	n1	HeroTinkerMorph	creeps	9	1	1	2	2.5	0	1	foot	0	0	0.6	60	5	0	ground	_	0	100	_	-	6	1	0	0	0	1	1
+Ntin	n1	HeroTinker	creeps	9	1	1	2	2.5	0	1	foot	0	0	0.6	60	5	0	ground	_	0	100	_	-	6	1	0	0	0	1	1
+ncg1	n1a	Clockwerk Goblin(lvl 2)	other	3	1	1	2	2.5	0	-	foot	0	0	0.5	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	1	1
+ncg2	n1a	Clockwerk Goblin(lvl 3)	other	3	1	1	2	2.5	0	-	foot	0	0	0.5	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	1	1
+ncg3	n1a	Clockwerk Goblin(lvl 4)	other	3	1	1	2	2.5	0	-	foot	0	0	0.5	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	1	1
+ncgb	n1a	Clockwerk Goblin(lvl 1)	other	3	1	1	2	2.5	0	-	foot	0	0	0.5	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	1	1
+ndr1	n1a	DarkMinion1	other	1	1	1	0	5.034	0	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	1
+ndr2	n1a	DarkMinion2	other	1	1	1	0	5.034	0	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	1
+ndr3	n1a	DarkMinion3	other	1	1	1	0	5.034	0	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	1
+nfa1	n1a	Pocket Factory	other	1	1	1	2	0.64	0	-	foot	0	0	-	60	0	0	structure	_	0	100	buffer	9	-	1	0	0	0	1	1
+nfa2	n1a	Pocket Factory	other	1	1	1	2	0.64	0	-	foot	0	0	-	60	0	0	structure	_	0	100	buffer	9	-	1	0	0	0	1	1
+nfac	n1a	Pocket Factory	other	1	1	1	2	0.64	0	-	foot	0	0	-	60	0	0	structure	_	0	100	buffer	9	-	1	0	0	0	1	1
+ngz1	n1a	grizzly bear 1	creeps	1	1	1	0	1.9	0	1	foot	0	0	0.6	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	1	1
+ngz2	n1a	grizzly bear 2	creeps	1	1	1	0	1.9	0	1	foot	0	0	0.6	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	1	1
+ngz3	n1a	grizzly bear 3	creeps	1	1	1	0	1.9	0	1	foot	0	0	0.6	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	1	1
+ngz4	n1a	misha 4	other	1	1	1	0	1.9	0	1	foot	0	0	0.6	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+ngzc	n1a	misha 1	other	1	1	1	0	1.9	0	1	foot	0	0	0.6	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+ngzd	n1a	misha 2	other	1	1	1	0	1.9	0	1	foot	0	0	0.6	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+npn1	n1a	Fire pandaren split	creeps	4	1	1	2	2.5	0	-	foot	0	0	0.5	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	1	1
+npn2	n1a	Wind pandaren split	creeps	8	1	1	2	2.5	0	-	foot	0	0	0.5	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	1	1
+npn3	n1a	Earth pandaren split	creeps	6	1	1	2	2.5	0	-	foot	0	0	0.5	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	1	1
+npn4	n1a	Fire pandaren split2	creeps	4	1	1	2	2.5	0	-	foot	0	0	0.5	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	1	1
+npn5	n1a	Wind pandaren split2	creeps	8	1	1	2	2.5	0	-	foot	0	0	0.5	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	1	1
+npn6	n1a	Earth pandaren split2	creeps	6	1	1	2	2.5	0	-	foot	0	0	0.5	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	1	1
+nqb1	n1a	quillbeast 1	other	1	1	1	0	1.37	0	1	foot	0	0	0.6	60	4	2	ground	_	0	100	_	-	-	1	0	0	0	1	1
+nqb2	n1a	quillbeast 2	other	1	1	1	0	1.37	0	1	foot	0	0	0.6	60	4	2	ground	_	0	100	_	-	-	1	0	0	0	1	1
+nqb3	n1a	quillbeast 3	other	1	1	1	0	1.37	0	1	foot	0	0	0.6	60	4	2	ground	_	0	100	_	-	-	1	0	0	0	1	1
+nqb4	n1a	quillbeast 4	other	1	1	1	0	1.37	0	1	foot	0	0	0.6	60	4	2	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nwe1	n1a	war eagle 1	other	3	1	1	0	1	0	1	fly	240	90	0.6	61	1	2	air	_	0	100	_	-	-	1	0	0	0	1	1
+nwe2	n1a	war eagle 2	other	3	1	1	0	1	0	1	fly	240	90	0.6	61	1	2	air	_	0	100	_	-	-	1	0	0	0	1	1
+nwe3	n1a	war eagle 3	other	3	1	1	0	1	0	1	fly	240	90	0.6	61	1	2	air	_	0	100	_	-	-	1	0	0	0	1	1
+nadk	n2	blue drake	creeps	1	1	1	0	3	1	-	fly	280	90	0.1	61	3	2	air	_	0	100	_	-	-	1	0	0	0	1	0
+nadr	n2	blue dragon	creeps	2	1	1	0	3	0	-	fly	325	90	0.1	61	3	2	air	_	0	100	_	-	-	1	0	0	0	1	0
+nadw	n2	blue dragon whelp	creeps	1	1	1	0	3	1	-	fly	240	90	0.1	61	1	2	air	_	0	100	_	-	-	1	0	0	0	1	0
+nahy	n2	ancient hydra	creeps	1	1	1	3	2.33	1	1	amph	0	0	0.6	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	1	1
+nanb	n2	barbed arachnathid	creeps	2	1	1	3	3	1	1	foot	0	0	0.5	60	5	2	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nanc	n2	crystal arachnathid	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nane	n2	arachnathid earth-borer	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	5	2	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nanm	n2	barbed arachnathid(merc)	creeps	2	1	1	3	3	1	1	foot	0	0	0.5	60	5	2	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nano	n2	arachnathid overlord	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nanw	n2	arachnathid warrior	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+narg	n2	battle golem	creeps	1	1	1	2	3	0	1	foot	0	0	0.5	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nass	n2	assassin	creeps	1	1	1	3	3	0	1	foot	0	0	0.5	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nba2	n2	Doom Guard(summoned)	demon	8	1	1	3	3	0	1	foot	0	0	0.4	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nbal	n2	Doom Guard	demon	8	1	1	3	3	0	1	foot	0	0	0.4	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nban	n2	bandit	creeps	1	1	1	3	3	0	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nbda	n2	blue dragonspawn apprentice	creeps	7	1	1	3	3.33	1	1	foot	0	0	0.6	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nbdk	n2	black drake	creeps	1	1	1	0	3	1	-	fly	280	90	0.1	61	3	2	air	_	0	100	_	-	-	1	0	0	0	1	0
+nbdm	n2	blue dragonspawn meddler	creeps	1	1	1	3	3.33	1	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nbdo	n2	blue dragonspawn overseer	creeps	1	1	1	3	3.33	1	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nbdr	n2	black whelp	creeps	1	1	1	0	3	1	-	fly	240	90	0.1	61	1	2	air	_	0	100	_	-	-	1	0	0	0	1	0
+nbds	n2	blue dragonspawn sorceror	creeps	7	1	1	3	3.33	1	1	foot	0	0	0.6	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nbdw	n2	blue dragonspawn warrior	creeps	1	1	1	3	3.33	1	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nbld	n2	bandit lord	creeps	1	1	1	3	3	0	1	horse	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nbnb	n2	barbed arachnathid burrowed	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	5	2	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nbot	n2	transport ship	creeps	2	1	1	0	3.73	0	-	float	0	0	0.4	15	3	3	ground	_	0	100	_	-	-	1	0	0	0	1	1
+nbrg	n2	brigand	creeps	1	1	1	3	3	0	1	foot	0	0	0.5	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nbwm	n2	black dragon	creeps	2	1	1	0	3	0	-	fly	325	90	0.1	61	3	2	air	_	0	100	_	-	-	1	0	0	0	1	0
+nbzd	n2	bronze dragon	creeps	2	1	1	0	3	0	-	fly	325	90	0.1	61	3	2	air	_	0	100	_	-	-	1	0	0	0	1	0
+nbzk	n2	bronze drake	creeps	1	1	1	0	3	1	-	fly	280	90	0.1	61	3	2	air	_	0	100	_	-	-	1	0	0	0	1	0
+nbzw	n2	bronze dragon whelp	creeps	1	1	1	0	3	1	-	fly	240	90	0.1	61	1	2	air	_	0	100	_	-	-	1	0	0	0	1	0
+ncea	n2	CentaurArcher	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	4	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+ncen	n2	Centaur outrunner	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+ncer	n2	centaur drudge	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+ncfs	n2	watery minion cliffrunner	creeps	1	1	1	0	1.67	1	1	amph	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nchp	n2	chaplain	human	6	1	1	3	3	1	1	foot	0	0	0.5	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	0	1
+ncim	n2	Centaur impaler	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	4	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+ncks	n2	centaur sorceror	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+ncnk	n2	centaur khan	creeps	1	1	1	0	3	1	1	foot	0	0	0.5	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+ndqn	n2	succubus	creeps	6	1	1	3	3.23	0	1	foot	0	0	0.5	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+ndqp	n2	maiden of pain	creeps	6	1	1	3	3.23	0	1	foot	0	0	0.5	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+ndqs	n2	queen of suffering	creeps	6	1	1	3	3.23	0	1	foot	0	0	0.5	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+ndqt	n2	vile temptress	creeps	6	1	1	3	3.23	0	1	foot	0	0	0.5	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+ndqv	n2	vile tormentor	creeps	6	1	1	3	3.23	0	1	foot	0	0	0.5	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+ndrv	n2	revenant of the depths	creeps	7	1	1	0	9.2	1	1	hover	0	0	0.6	61	0	2	ground	_	0	100	_	-	-	1	0	0	0	1	1
+ndtb	n2	dark troll berserker	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	5	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+ndth	n2	dark troll high priest	creeps	7	1	1	3	3	1	1	foot	0	0	0.5	60	4	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+ndtp	n2	dark troll shadow priest	creeps	6	1	1	3	3	1	1	foot	0	0	0.5	60	4	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+ndtr	n2	darkTroll	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	5	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+ndtt	n2	darkTrollTrapper	creeps	5	1	1	3	3	1	1	foot	0	0	0.5	60	5	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+ndtw	n2	darkTrollwarlord	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	5	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nehy	n2	elder hydra	creeps	1	1	1	3	2.33	1	1	amph	0	0	0.6	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	1	1
+nelb	n2	berserk elemental	creeps	1	1	1	0	1.5	1	1	foot	0	0	0.5	60	1	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nele	n2	enraged elemental	creeps	1	1	1	0	1.5	1	1	foot	0	0	0.5	60	1	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nenc	n2	corrupted ent	creeps	1	1	1	2	3	0	1	foot	0	0	0.5	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nenf	n2	enforcer	creeps	1	1	1	3	3	0	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nenp	n2	poison ent	creeps	1	1	1	2	3	0	1	foot	0	0	0.5	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nepl	n2	plague ent	creeps	1	1	1	2	3	0	1	foot	0	0	0.5	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nerd	n2	eredar diabolist	creeps	1	1	1	2	2.33	0	1	foot	0	0	0.5	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	0	1
+ners	n2	eredar sorceror	creeps	1	1	1	2	2.33	0	1	foot	0	0	0.5	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nerw	n2	eredar warlock	creeps	1	1	1	2	2.33	0	1	foot	0	0	0.5	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nfel	n2	fel stalker	demon	1	1	1	3	3	1	1	foot	0	0	0.5	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nfgb	n2	bloodfiend	creeps	1	1	1	3	2.2	0	1	foot	0	0	0.6	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nfgo	n2	Forgotten One	creeps	1	1	1	3	0.97	1	1	_	0	0	-	60	0	0	ground	PathTextures\8x8Default.tga	0	100	_	-	-	1	0	0	0	0	1
+nfgt	n2	forgotten one tentacle	creeps	1	1	1	0	1.07	0	-	foot	0	0	-	60	0	0	ward	_	0	100	_	-	-	1	0	0	0	0	1
+nfgu	n2	felguard	creeps	1	1	1	3	2.2	0	1	foot	0	0	0.6	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nfod	n2	faceless one deathbringer	creeps	1	1	1	3	1.57	1	1	foot	0	0	0.5	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nfor	n2	faceless one trickster	creeps	1	1	1	3	1.57	1	1	foot	0	0	0.5	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nfot	n2	faceless one terror	creeps	1	1	1	3	1.57	1	1	foot	0	0	0.5	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nfov	n2	overlord	creeps	1	1	1	3	2.2	0	1	foot	0	0	0.6	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nfpc	n2	Polar Furbolg Champion	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nfpe	n2	Polar Furbolg Elder Shaman	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	4	2	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nfpl	n2	Polar Furbolg	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nfps	n2	Polar Furbolg Shaman	creeps	5	1	1	3	3	1	1	foot	0	0	0.5	60	4	2	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nfpt	n2	Polar Furbolg Tracker	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nfpu	n2	Polar Furbolg Ursa Warrior	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nfra	n2	Furbolg Ursa Warrior	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nfrb	n2	Furbolg Tracker	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nfre	n2	Furbolg Elder Shaman	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	4	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nfrg	n2	Furbolg Champion	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nfrl	n2	Furbolg	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nfrp	n2	Furbolg Panda	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nfrs	n2	Furbolg Shaman	creeps	6	1	1	3	3	1	1	foot	0	0	0.5	60	4	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nfsh	n2	forest troll high priest	creeps	7	1	1	3	3	1	1	foot	0	0	0.5	60	5	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nfsp	n2	forest troll shadow priest	creeps	6	1	1	3	3	1	1	foot	0	0	0.5	60	5	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nftb	n2	forest troll berserker	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	4	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nftk	n2	ForestTrollKing	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	5	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nftr	n2	ForestTroll	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	4	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nftt	n2	ForestTrollTrapper	creeps	5	1	1	3	3	1	1	foot	0	0	0.5	60	4	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+ngdk	n2	green drake	creeps	1	1	1	0	3	1	-	fly	280	90	0.1	61	3	2	air	_	0	100	_	-	-	1	0	0	0	1	0
+nggr	n2	granite golem	creeps	8	1	1	2	3	0	1	foot	0	0	0.5	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+ngh1	n2	ghost	creeps	7	1	1	0	1.17	0	1	hover	50	0	0.6	61	2	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+ngh2	n2	wraith	creeps	7	1	1	0	1.17	0	1	hover	50	0	0.6	61	2	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+ngir	n2	goblin shredder	creeps	1	1	1	0	3	0	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nglm	n2	goblin land mine	creeps	1	1	1	0	0.94	0	-	foot	0	0	-	60	0	0	ward	_	0	100	_	-	-	1	0	0	0	1	0
+ngna	n2	Gnoll Poacher	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+ngnb	n2	gnoll brute	creeps	2	1	1	3	3	1	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+ngno	n2	Gnoll Robber	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+ngns	n2	Gnoll Assassin	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+ngnv	n2	gnoll king	creeps	2	1	1	3	3	1	1	foot	0	0	0.5	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+ngnw	n2	gnoll warden	creeps	5	1	1	3	3	1	1	foot	0	0	0.5	60	5	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+ngrd	n2	green dragon	creeps	2	1	1	0	3	0	-	fly	325	90	0.1	61	3	2	air	_	0	100	_	-	-	1	0	0	0	1	0
+ngrk	n2	mud golem	creeps	4	1	1	2	3	0	1	foot	0	0	0.5	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+ngrw	n2	green dragon whelp	creeps	1	1	1	0	3	1	-	fly	240	90	0.5	61	1	2	air	_	0	100	_	-	-	1	0	0	0	1	0
+ngsp	n2	GoblinSapper	creeps	1	1	1	0	3	1	2	foot	0	0	0.5	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+ngst	n2	rock golem	creeps	1	1	1	2	3	0	1	foot	0	0	0.5	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+ngza	n2	misha 3	other	1	1	1	0	1.9	0	1	foot	0	0	0.6	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nhar	n2	Harpy Scout	creeps	1	1	1	0	3	1	-	fly	240	90	0.5	61	1	2	air	_	0	100	_	-	-	1	0	0	0	1	0
+nhdc	n2	deceiver	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nhfp	n2	fallen priest	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nhhr	n2	heretic	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nhrh	n2	harpy hag	creeps	1	1	1	0	3	1	-	fly	240	90	0.5	61	1	2	air	_	0	100	_	-	-	1	0	0	0	1	0
+nhrq	n2	harpy queen	creeps	1	1	1	0	3	1	-	fly	280	90	0.5	61	1	2	air	_	0	100	_	-	-	1	0	0	0	1	0
+nhrr	n2	harpy rogue	creeps	1	1	1	0	3	1	-	fly	240	90	0.5	61	1	2	air	_	0	100	_	-	-	1	0	0	0	1	0
+nhrw	n2	harpy witch	creeps	4	1	1	0	3	1	-	fly	240	90	0.5	61	1	2	air	_	0	100	_	-	-	1	0	0	0	1	0
+nhyc	n2	campaign turtle	naga	2	1	1	3	2.67	0	1	amph	0	0	0.6	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nhyd	n2	hydra	creeps	1	1	1	3	2.33	1	1	amph	0	0	0.6	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	1	1
+nhyh	n2	hydra hatchling	creeps	1	1	1	3	2.33	1	1	amph	0	0	0.6	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	1	1
+nhym	n2	hydromancer	human	7	1	1	3	3	1	1	foot	0	0	0.5	60	4	2	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nina	n2	infernal automaton	creeps	2	1	1	2	1.67	0	2	foot	0	0	0.4	30	1	3	ground	_	0	100	_	-	-	1	0	0	0	0	1
+ninc	n2	infernal contraption	creeps	2	1	1	2	1.67	0	2	foot	0	0	0.4	30	1	3	ground	_	0	100	_	-	-	1	0	0	0	0	1
+ninf	n2	Infernal	demon	1	1	1	2	3	0	1	foot	0	0	0.4	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+ninm	n2	infernal machine	creeps	2	1	1	2	1.67	0	2	foot	0	0	0.4	30	1	3	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nith	n2	ice troll high priest	creeps	7	1	1	3	3	1	1	foot	0	0	0.5	60	4	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nitp	n2	ice troll shadow priest	creeps	6	1	1	3	3	1	1	foot	0	0	0.5	60	4	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nitr	n2	IceTroll	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	5	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nits	n2	ice troll berserker	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	5	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nitt	n2	ice troll trapper	creeps	5	1	1	3	3	1	1	foot	0	0	0.5	60	5	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nitw	n2	ice troll warlord	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	5	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+njg1	n2	Jungle Stalker	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+njga	n2	Elder Jungle Stalker	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+njgb	n2	Enranged Jungle Stalker	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nkob	n2	Kobold	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nkog	n2	Kobold Geomancer	creeps	6	1	1	3	3	1	1	foot	0	0	0.5	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nkol	n2	kobold leader	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nkot	n2	kobold tunneler	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nlds	n2	makrura deep seer	creeps	8	1	1	3	3	1	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	1
+nlkl	n2	makrura tidal lord	creeps	8	1	1	3	3	1	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	1
+nlpd	n2	makrura pool dweller	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	1
+nlpr	n2	makrura prawn	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	1
+nlps	n2	makrura prawn summoned	creeps	1	1	1	0	3	1	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	1
+nlrv	n2	deeplord revenant	creeps	7	1	1	0	9.2	1	1	hover	0	0	0.6	61	0	2	ground	_	0	100	_	-	-	1	0	0	0	1	1
+nlsn	n2	makrura snapper	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	1
+nltc	n2	makrura tide caller	creeps	5	1	1	3	3	1	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	1
+nltl	n2	lightning lizard	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	1	1	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nlur	n2	Monster Lure ward	creeps	1	1	1	0	0.94	0	-	foot	0	0	-	60	0	0	ward	_	0	100	_	-	-	1	0	0	0	1	1
+nmam	n2	Mammoth	creeps	1	1	1	3	2.67	1	1	foot	0	0	0.5	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nmbg	n2	mur'gul blood-gill	creeps	1	1	1	3	1.67	1	1	amph	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	1
+nmcf	n2	mur'gul cliffrunner	creeps	1	1	1	3	1.67	1	1	amph	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	1
+nmdr	n2	Dire Mammoth	creeps	1	1	1	3	2.67	1	1	foot	0	0	0.5	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nmfs	n2	murloc flesheater	creeps	5	1	1	3	3	1	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nmgd	n2	magnataur destroyer	creeps	1	1	1	3	2.67	1	1	foot	0	0	0.5	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nmgr	n2	magnataur reaver	creeps	1	1	1	3	2.67	1	1	foot	0	0	0.5	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nmgw	n2	magnataur warrior	creeps	1	1	1	3	2.67	1	1	foot	0	0	0.5	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nmit	n2	Icetusk Mammoth	creeps	1	1	1	3	2.67	1	1	foot	0	0	0.5	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nmmu	n2	murloc mutant	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nmpg	n2	murloc plaguebearer	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nmrl	n2	murloc fisherman	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nmrm	n2	murloc nightcrawler	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nmrr	n2	murloc huntsman	creeps	3	1	1	3	3	1	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nmrv	n2	mur'gul reaver	creeps	1	1	1	3	1.67	1	1	amph	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	1
+nmsc	n2	mur'gul shadowcaster	creeps	8	1	1	3	1.67	1	1	amph	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	1
+nmsn	n2	mur'gul snarecaster	creeps	6	1	1	3	1.67	1	1	amph	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	1
+nmtw	n2	mur'gul tidewarrior	creeps	1	1	1	3	1.67	1	1	amph	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	1
+nmyr	n2	naga myrmidon	naga	5	1	1	3	2.67	0	1	amph	0	0	0.5	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nmys	n2	naga myrmidon submerged	naga	5	1	1	3	2.67	0	1	amph	0	0	0.5	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nndk	n2	nether drake	creeps	1	1	1	0	2.13	1	-	fly	280	90	0.1	61	3	2	air	_	0	100	_	-	-	1	0	0	0	0	1
+nndr	n2	nether dragon	creeps	2	1	1	0	2.13	0	-	fly	325	90	0.1	61	3	2	air	_	0	100	_	-	-	1	0	0	0	0	1
+nnht	n2	nether hatchling	creeps	1	1	1	0	2.13	1	-	fly	240	90	0.1	61	1	2	air	_	0	100	_	-	-	1	0	0	0	0	1
+nnmg	n2	naga mur'gul	naga	1	1	1	3	1.67	1	1	amph	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nnrg	n2	naga royal guard	naga	8	1	1	3	2.67	0	1	amph	0	0	0.5	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nnrs	n2	naga royal guard submerged	naga	8	1	1	3	2.67	0	1	amph	0	0	0.5	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nnsu	n2	naga summoner	naga	8	1	1	3	2.33	0	1	amph	0	0	0.6	60	2	2	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nnsw	n2	naga siren	naga	8	1	1	3	2.33	0	1	amph	0	0	0.6	60	2	2	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nnwa	n2	nerubian warrior	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nnwl	n2	nerubian webspinner	creeps	3	1	1	3	3	1	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nnwq	n2	nerubian queen	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nnwr	n2	nerubian seer	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nnws	n2	nerubian spider lord	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+noga	n2	Stonemaul Warchief	creeps	1	1	1	3	2	1	1	foot	0	0	0.5	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nogl	n2	ogre lord	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	1	1	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nogm	n2	ogre mauler	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nogn	n2	Stonemaul Magi	creeps	1	1	1	3	2	1	1	foot	0	0	0.5	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nogo	n2	Stonemaul Ogre	creeps	1	1	1	3	2	1	1	foot	0	0	0.5	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nogr	n2	Ogre Warrior	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nomg	n2	ogre magi	creeps	5	1	1	3	3	1	1	foot	0	0	0.5	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nowb	n2	owlbear	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nowe	n2	enraged owlbear	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nowk	n2	berserk owlbear	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+npfl	n2	purple felhound	creeps	1	1	1	3	2.67	1	1	foot	0	0	0.5	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+npfm	n2	purple felhound	creeps	1	1	1	3	2.67	1	1	foot	0	0	0.5	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nplb	n2	polar bear	creeps	1	1	1	3	1.97	1	1	amph	0	0	0.5	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nplg	n2	giant polar bear	creeps	1	1	1	3	1.97	1	1	amph	0	0	0.5	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nqbh	n2	quillboar hunter	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nrdk	n2	Red Dragon Whelp	creeps	1	1	1	0	3	1	-	fly	240	90	0.5	61	1	2	air	_	0	100	_	-	-	1	0	0	0	1	0
+nrdr	n2	Red Drake	creeps	1	1	1	0	3	1	-	fly	280	90	0.1	61	3	2	air	_	0	100	_	-	-	1	0	0	0	1	0
+nrel	n2	reef elemental	creeps	1	1	1	0	1.5	0	1	amph	0	0	0.5	60	2	2	ground	_	0	100	_	-	-	1	0	0	0	1	1
+nrog	n2	rogue	creeps	2	1	1	3	3	0	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nrvd	n2	death revenant	creeps	7	1	1	0	9.2	1	1	hover	0	0	0.6	61	0	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nrvf	n2	fire revenant	creeps	7	1	1	0	9.2	1	1	hover	0	0	0.6	61	0	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nrvi	n2	ice revenant	creeps	7	1	1	0	9.2	1	1	hover	0	0	0.6	61	0	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nrvl	n2	lightning revenant	creeps	7	1	1	0	9.2	1	1	hover	0	0	0.6	61	0	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nrvs	n2	frost revenant	creeps	7	1	1	0	9.2	1	1	hover	0	0	0.6	61	0	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nrwm	n2	Red Dragon	creeps	2	1	1	0	3	0	-	fly	325	90	0.1	61	3	2	air	_	0	100	_	-	-	1	0	0	0	1	0
+nrzb	n2	razormane brute	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nrzg	n2	razormane chieftain	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nrzm	n2	razormane medicine man	creeps	8	1	1	3	3	1	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nrzs	n2	razormane scout	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nrzt	n2	quillboar	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nsat	n2	Satyr Trickster	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	5	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nsbm	n2	brood mother	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nsbs	n2	snap dragon submerged	naga	2	1	1	3	2.67	0	1	amph	0	0	0.5	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nsc2	n2	spider crab	creeps	1	1	1	3	2	1	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	1
+nsc3	n2	spider crab	creeps	1	1	1	3	2	1	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	1
+nsca	n2	skeletal archer(summoned)	creeps	1	1	1	0	5.03	0	1	foot	0	0	0.5	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nscb	n2	spider crab	creeps	1	1	1	3	2	1	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	1
+nsce	n2	SkeletonWarrior(summoned)	creeps	1	1	1	0	5.034	0	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nsel	n2	sea elemental	creeps	1	1	1	0	1.5	0	1	amph	0	0	0.5	60	2	2	ground	_	0	100	_	-	-	1	0	0	0	1	1
+nsgb	n2	sea giant behemoth	creeps	2	1	1	3	3.34	1	2	amph	0	0	0.4	30	1	3	ground	_	0	100	_	-	-	1	0	0	0	1	1
+nsgg	n2	siege golem	creeps	1	1	1	2	3	0	1	foot	0	0	0.5	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nsgh	n2	sea giant hunter	creeps	2	1	1	3	3.34	1	2	amph	0	0	0.4	30	1	3	ground	_	0	100	_	-	-	1	0	0	0	1	1
+nsgn	n2	sea giant	creeps	2	1	1	3	3.34	1	2	amph	0	0	0.4	30	1	3	ground	_	0	100	_	-	-	1	0	0	0	1	1
+nsgt	n2	giant spider	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nska	n2	skeletal archer	creeps	1	1	1	0	5.03	0	1	foot	0	0	0.5	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nske	n2	SkeletonWarrior	creeps	1	1	1	0	5.034	0	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nskf	n2	burning archer	creeps	2	1	1	0	5.03	0	1	foot	0	0	0.5	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nskg	n2	giant SkeletonWarrior	creeps	1	1	1	0	5.034	0	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nskm	n2	skeletal marksman	creeps	1	1	1	0	5.03	0	1	foot	0	0	0.5	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nsko	n2	skeletal orc	creeps	1	1	1	0	5.034	0	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	1
+nslf	n2	sludge flinger	creeps	4	1	1	0	3	1	1	foot	0	0	0.5	60	5	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nslh	n2	salamander hatchling	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	1	1	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nsll	n2	salamander lord	creeps	1	1	1	3	3	1	2	foot	0	0	0.5	60	1	1	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nslm	n2	sludge minion	creeps	1	1	1	0	3	1	1	foot	0	0	0.5	60	5	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nsln	n2	sludge monstrosity	creeps	1	1	1	0	3	1	1	foot	0	0	0.5	60	5	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nslr	n2	salamander	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	1	1	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nslv	n2	salamander vizier	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	1	1	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nsnp	n2	snap dragon	naga	2	1	1	3	2.67	0	1	amph	0	0	0.5	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nsns	n2	watery minion snarecaster	creeps	1	1	1	0	1.67	1	1	amph	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nsoc	n2	skeletal orc champion	creeps	1	1	1	0	5.034	0	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	1
+nsog	n2	skeletal orc grunt	creeps	1	1	1	0	5.034	0	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	1
+nspb	n2	black spider	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nspd	n2	spiderling	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nspg	n2	green spider	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nspp	n2	spirit pig	creeps	1	1	1	0	1.75	0	1	foot	0	0	0.6	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nspr	n2	spider	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nsqa	n2	ancient sasquatch	creeps	8	1	1	0	3	1	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nsqe	n2	elder sasquatch	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nsqo	n2	sasquatch oracle	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nsqt	n2	sasquatch	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nsra	n2	stormreaver apprentice	creeps	1	1	1	3	1.2	1	1	foot	0	0	0.6	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	1	1
+nsrh	n2	stormreaver hermit	creeps	8	1	1	3	1.2	1	1	foot	0	0	0.6	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	1	1
+nsrn	n2	stormreaver necrolyte	creeps	8	1	1	3	1.2	1	1	foot	0	0	0.6	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	1	1
+nsrv	n2	revenant of the seas	creeps	7	1	1	0	9.2	1	1	hover	0	0	0.6	61	0	2	ground	_	0	100	_	-	-	1	0	0	0	1	1
+nsrw	n2	stormreaver warlock	creeps	8	1	1	3	1.2	1	1	foot	0	0	0.6	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	1	1
+nssp	n2	spitting spider	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nsth	n2	satyr hellcaller	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nstl	n2	satyr soulstealer	creeps	8	1	1	3	3	1	1	foot	0	0	0.5	60	5	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nsts	n2	satyr shadowdancer	creeps	4	1	1	3	3	1	1	foot	0	0	0.5	60	5	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nstw	n2	storm wyrm	creeps	1	1	1	3	3	1	2	foot	0	0	0.5	60	1	1	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nsty	n2	satyr	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	5	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nthl	n2	thunder lizard	creeps	7	1	1	3	3	1	1	foot	0	0	0.5	60	1	1	ground	_	0	100	_	-	-	1	0	0	0	1	0
+ntka	n2	tuskarr spearman	creeps	2	1	1	3	2	1	1	foot	0	0	0.6	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	0	1
+ntkc	n2	tuskarr chieftain	creeps	1	1	1	3	2	1	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+ntkf	n2	tuskarr fighter	creeps	1	1	1	3	2	1	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+ntkh	n2	tuskarr healer	creeps	7	1	1	3	2	1	1	foot	0	0	0.6	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	0	1
+ntks	n2	tuskarr sorceror	creeps	7	1	1	3	2	1	1	foot	0	0	0.6	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	0	1
+ntkt	n2	tuskarr trapper	creeps	5	1	1	3	2	1	1	foot	0	0	0.5	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	0	1
+ntkw	n2	tuskarr warrior	creeps	1	1	1	3	2	1	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+ntor	n2	tornado	other	1	1	1	0	1.75	0	1	foot	0	0	0.5	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	1	1
+ntrd	n2	dragon turtle	creeps	1	1	1	3	2.67	1	1	amph	0	0	0.6	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	1	1
+ntrg	n2	gargantuan sea turtle	creeps	1	1	1	3	2.67	1	1	amph	0	0	0.6	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	1	1
+ntrh	n2	sea turtle hatchling	creeps	1	1	1	3	2.67	1	1	amph	0	0	0.6	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	1	1
+ntrs	n2	sea turtle	creeps	1	1	1	3	2.67	1	1	amph	0	0	0.6	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	1	1
+ntrt	n2	giant sea turtle	creeps	1	1	1	3	2.67	1	1	amph	0	0	0.6	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	1	1
+ntrv	n2	revenant of the tides	creeps	7	1	1	0	9.2	1	1	hover	0	0	0.6	61	0	2	ground	_	0	100	_	-	-	1	0	0	0	1	1
+ntws	n2	watery minion tidewarrior	creeps	1	1	1	0	1.67	1	1	amph	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nubk	n2	unbroken darkhunter	creeps	1	1	1	3	1.57	1	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nubr	n2	unbroken rager	creeps	1	1	1	3	1.57	1	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nubw	n2	unbroken darkweaver	creeps	1	1	1	3	1.57	1	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nvde	n2	elder voidwalker	creeps	1	1	1	0	2.67	0	1	hover	30	0	0.6	61	2	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nvdg	n2	greater voidwalker	creeps	4	1	1	0	2.67	0	1	hover	30	0	0.6	61	2	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nvdl	n2	lesser voidwalker	creeps	1	1	1	0	2.67	0	1	hover	30	0	0.6	61	2	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nvdw	n2	voidwalker	creeps	1	1	1	0	2.67	0	1	hover	30	0	0.6	61	2	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nwen	n2	Wendigo	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nwgs	n2	naga coutl	naga	3	1	1	0	2.1	0	-	fly	240	90	0.4	61	1	2	air	_	0	100	_	-	-	1	0	0	0	0	1
+nwiz	n2	wizard	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nwld	n2	dire wolf	creeps	1	1	1	3	1.75	1	1	foot	0	0	0.6	60	5	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nwlg	n2	giant wolf	creeps	1	1	1	3	1.75	1	1	foot	0	0	0.6	60	5	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nwlt	n2	timber wolf	creeps	1	1	1	3	1.75	1	1	foot	0	0	0.6	60	5	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nwna	n2	ancient wendigo	creeps	1	1	1	0	3	1	1	foot	0	0	0.5	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nwnr	n2	elder wendigo	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nwns	n2	wendigo shaman	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nwrg	n2	war golem	creeps	1	1	1	2	3	0	1	foot	0	0	0.5	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nws1	n2	dragon hawk	human	3	1	1	0	2.1	1	-	fly	240	90	0.4	61	1	2	air	_	0	100	_	-	-	1	0	0	0	1	0
+nwwd	n2	white dire wolf	creeps	1	1	1	3	1.75	1	1	foot	0	0	0.6	60	5	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nwwf	n2	white wolf	creeps	1	1	1	3	1.75	1	1	foot	0	0	0.6	60	5	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nwwg	n2	giant white wolf	creeps	1	1	1	3	1.75	1	1	foot	0	0	0.6	60	5	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nwzd	n2	dark wizard	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	4	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nwzg	n2	renegade wizard	creeps	6	1	1	3	3	1	1	foot	0	0	0.5	60	4	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nwzr	n2	rogue wizard	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	4	2	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nzep	n2	GoblinZeppelin	creeps	1	1	1	0	3	0	-	fly	280	90	0.5	61	3	2	air	_	0	100	_	-	-	1	0	0	0	1	0
+nzom	n2	Zombie	undead	1	1	1	2	3	1	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	0	0
+nalb	o2	Albatross	critters	1	1	1	0	1	0	1	fly	240	90	0.5	61	0	4	air	_	0	100	_	-	-	1	0	0	0	1	1
+ncrb	o2	Crab	critters	1	1	1	3	2	0	1	foot	0	0	0.5	60	0	4	ground	_	0	100	_	-	-	1	0	0	0	1	1
+nder	o2	deer	critters	1	1	1	3	3	0	1	foot	0	0	0.5	60	0	4	ground	_	0	100	_	-	-	1	0	0	0	1	0
+ndog	o2	Dog	critters	1	1	1	3	3	0	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	1	0
+ndwm	o2	Dune Worm	critters	1	1	1	3	1.67	0	1	foot	0	0	0.5	60	0	4	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nech	o2	Chicken	critters	1	1	1	3	2	0	1	foot	0	0	0.5	60	0	4	ground	_	0	100	_	-	-	1	0	0	0	1	1
+necr	o2	Rabbit	critters	1	1	1	3	2	0	1	foot	0	0	0.5	60	0	4	ground	_	0	100	_	-	-	1	0	0	0	1	1
+nfbr	o2	Felboar	critters	1	1	1	3	1	0	1	foot	0	0	0.5	60	0	4	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nfro	o2	Frog	critters	1	1	1	3	2	0	1	foot	0	0	0.5	60	0	4	ground	_	0	100	_	-	-	1	0	0	0	1	1
+nhmc	o2	Hermit Crab	critters	1	1	1	3	2	0	1	foot	0	0	0.5	60	0	4	ground	_	0	100	_	-	-	1	0	0	0	1	1
+now2	o2	owlscout 2	nightelf	1	1	1	0	3	0	1	fly	240	90	0.5	61	0	4	air	_	0	100	_	-	-	1	0	0	0	1	0
+now3	o2	owlscout 3	nightelf	1	1	1	0	3	0	1	fly	240	90	0.5	61	0	4	air	_	0	100	_	-	-	1	0	0	0	1	0
+nowl	o2	owlscout	nightelf	1	1	1	0	3	0	1	fly	240	90	0.5	61	0	4	air	_	0	100	_	-	-	1	0	0	0	1	0
+npig	o2	Pig	critters	1	1	1	3	3	0	1	foot	0	0	0.5	60	0	4	ground	_	0	100	_	-	-	1	0	0	0	1	0
+npng	o2	Penguin	critters	1	1	1	3	2.33	0	1	amph	0	0	0.5	60	0	4	ground	_	0	100	_	-	-	1	0	0	0	0	1
+npnw	o2	Penguin, water	critters	1	1	1	3	2.33	0	1	float	0	0	0.5	60	0	4	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nrac	o2	Raccoon	critters	1	1	1	3	2	0	1	foot	0	0	0.5	60	0	4	ground	_	0	100	_	-	-	1	0	0	0	1	1
+nrat	o2	Rat	critters	1	1	1	3	3	0	1	foot	0	0	0.5	60	0	4	ground	_	0	100	_	-	-	1	0	0	0	0	0
+nsea	o2	Seal	critters	1	1	1	3	3	0	1	foot	0	0	0.5	60	0	4	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nsha	o2	Amph. Sheep	critters	1	1	1	3	3	0	1	amph	0	0	0.5	60	0	4	ground	_	0	100	_	-	-	1	0	0	0	1	1
+nshe	o2	Sheep	critters	1	1	1	3	3	0	1	foot	0	0	0.5	60	0	4	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nshf	o2	Flying Sheep	critters	1	1	1	0	3	0	1	fly	240	90	0.5	61	0	4	air	_	0	100	_	-	-	1	0	0	0	1	0
+nshw	o2	Water Sheep (speccccial sheep)	critters	1	1	1	3	3	0	1	float	0	0	0.5	60	0	4	ground	_	0	100	_	-	-	1	0	0	0	1	1
+nskk	o2	Skink	critters	1	1	1	3	1.66	0	1	foot	0	0	0.5	60	0	4	ground	_	0	100	_	-	-	1	0	0	0	1	1
+nsno	o2	Snowy Owl	critters	1	1	1	0	0.5	0	1	fly	240	90	0.5	61	0	4	air	_	0	100	_	-	-	1	0	0	0	0	1
+nvil	o2	Villager Man	commoner	1	1	1	3	3	0	1	foot	0	0	0.5	60	0	4	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nvk2	o2	Villager Kid 2	commoner	1	1	1	3	3	0	1	foot	0	0	0.5	60	0	6	ground	_	0	100	_	-	-	1	0	0	0	0	0
+nvl2	o2	Villager Man 2	commoner	1	1	1	3	3	0	1	foot	0	0	0.5	60	0	4	ground	_	0	100	_	-	-	1	0	0	0	0	0
+nvlk	o2	Villager Kid	commoner	1	1	1	3	3	0	1	foot	0	0	0.5	60	0	6	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nvlw	o2	Villager Woman	commoner	1	1	1	3	3	0	1	foot	0	0	0.5	60	0	5	ground	_	0	100	_	-	-	1	0	0	0	1	0
+nvul	o2	Vulture	critters	1	1	1	0	3	0	1	fly	240	90	0.5	61	1	4	air	_	0	100	_	-	-	1	0	0	0	1	0
+ncb0	p3	city building	other	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\CityBuilding0-2.tga	0	100	_	-	-	1	0	0	0	1	0
+ncb1	p3	city building	other	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\CityBuilding0-2.tga	0	100	_	-	-	1	0	0	0	1	0
+ncb2	p3	city building	other	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\CityBuilding0-2.tga	0	100	_	-	-	1	0	0	0	1	0
+ncb3	p3	city building	other	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\CityBuilding3-5.tga	0	100	_	-	-	1	0	0	0	1	0
+ncb4	p3	city building	other	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\CityBuilding3-5.tga	0	100	_	-	-	1	0	0	0	1	0
+ncb5	p3	city building	other	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\CityBuilding3-5.tga	0	100	_	-	-	1	0	0	0	1	0
+ncb6	p3	city building	other	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\CityBuilding6-8.tga	0	100	_	-	-	1	0	0	0	1	0
+ncb7	p3	city building	other	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\CityBuilding6-8.tga	0	100	_	-	-	1	0	0	0	1	0
+ncb8	p3	city building	other	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\CityBuilding6-8.tga	0	100	_	-	-	1	0	0	0	1	0
+ncb9	p3	city building	other	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\CityBuilding9-11.tga	0	100	_	-	-	1	0	0	0	1	0
+ncba	p3	city building	other	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\CityBuilding9-11.tga	0	100	_	-	-	1	0	0	0	1	0
+ncbb	p3	city building	other	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\CityBuilding9-11.tga	0	100	_	-	-	1	0	0	0	1	0
+ncbc	p3	city building	other	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\CityBuildingLarge_0.tga	0	100	_	-	-	1	0	0	0	1	0
+ncbd	p3	city building	other	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\CityBuildingLarge_135.tga	0	100	_	-	-	1	0	0	0	1	0
+ncbe	p3	city building	other	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\CityBuildingLarge_90.tga	0	100	_	-	-	1	0	0	0	1	0
+ncbf	p3	city building	other	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\CityBuildingLarge_45.tga	0	100	_	-	-	1	0	0	0	1	0
+ncnt	p3	Centaur Tent	other	1	1	1	0	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\6x6SimpleSolid.tga	0	100	_	-	-	1	0	0	0	1	0
+ncop	p3	Circle Of Power	other	1	1	1	0	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\4x4unbuildable.tga	0	100	_	-	-	1	0	0	0	1	0
+ncp2	p3	Circle Of Power medium	other	1	1	1	0	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\6x6unbuildable.tga	0	100	_	-	-	1	0	0	0	1	0
+ncp3	p3	Circle Of Power large	other	1	1	1	0	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\8x8unbuildable.tga	0	100	_	-	-	1	0	0	0	1	0
+nct1	p3	Centaur Tent	other	1	1	1	0	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\6x6SimpleSolid.tga	0	100	_	-	-	1	0	0	0	1	0
+nct2	p3	Centaur Tent	other	1	1	1	0	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\6x6SimpleSolid.tga	0	100	_	-	-	1	0	0	0	1	0
+ndch	p3	draenei chieftain hut	other	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\8x8SimpleSolid.tga	0	100	_	-	-	1	0	0	0	0	1
+ndh0	p3	draenei hut 0	other	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\8x8SimpleSolid.tga	0	100	_	-	-	1	0	0	0	0	1
+ndh1	p3	draenei hut 1	other	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\8x8SimpleSolid.tga	0	100	_	-	-	1	0	0	0	0	1
+ndh2	p3	draenei outpost	other	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\12x12Simple.tga	0	100	_	-	-	1	0	0	0	0	1
+ndh3	p3	draenei warriors hall	other	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\12x12Simple.tga	0	100	_	-	-	1	0	0	0	0	1
+ndh4	p3	draenei seer's lodge	other	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\12x12Simple.tga	0	100	_	-	-	1	0	0	0	0	1
+ndrg	p3	Dragon Roost green	other	1	1	1	0	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\16x16Simple.tga	0	100	_	-	-	1	0	0	0	1	0
+ndrk	p3	Dragon Roost black	other	1	1	1	0	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\16x16Simple.tga	0	100	_	-	-	1	0	0	0	1	0
+ndro	p3	Dragon Roost Outland	other	1	1	1	0	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\16x16Simple.tga	0	100	_	-	-	1	0	0	0	0	1
+ndrr	p3	Dragon Roost red	other	1	1	1	0	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\16x16Simple.tga	0	100	_	-	-	1	0	0	0	1	0
+ndru	p3	Dragon Roost blue	other	1	1	1	0	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\16x16Simple.tga	0	100	_	-	-	1	0	0	0	1	0
+ndrz	p3	Dragon Roost bronze	other	1	1	1	0	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\16x16Simple.tga	0	100	_	-	-	1	0	0	0	1	0
+nfh0	p3	Forest Troll Hut 0	other	1	1	1	0	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\8x8SimpleSolid.tga	0	100	_	-	-	1	0	0	0	1	0
+nfh1	p3	Forest Troll Hut 1	other	1	1	1	0	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\6x6SimpleSolid.tga	0	100	_	-	-	1	0	0	0	1	0
+nfoh	p3	Fountain of Health	other	1	1	1	0	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\12x12Simple.tga	0	100	_	-	-	1	0	0	0	1	0
+nfr1	p3	Furbolg Hut 1	other	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\8x8SimpleSolid.tga	0	100	_	-	-	1	0	0	0	1	0
+nfr2	p3	Furbolg Hut 2	other	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\8x8SimpleSolid.tga	0	100	_	-	-	1	0	0	0	1	0
+ngad	p3	Goblin Ammo Dump	other	1	1	1	0	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\12x12Simple.tga	0	100	_	-	-	1	0	0	0	1	0
+ngme	p3	goblin merchant	other	1	1	1	0	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\12x12Simple.tga	0	100	_	-	-	1	0	0	0	1	0
+ngnh	p3	Gnoll Hut	other	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\6x6SimpleSolid.tga	0	100	_	-	-	1	0	0	0	1	0
+ngni	p3	Infected Granary	undead	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\6x6SimpleSolid.tga	0	100	_	-	-	1	0	0	0	0	0
+ngol	p3	GoldMine	other	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\16x16Goldmine.tga	0	100	resource	7	-	1	0	0	1	1	0
+ngt2	p3	Gnoll Hut	other	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\6x6SimpleSolid.tga	0	100	_	-	-	1	0	0	0	1	0
+ngwr	p3	grain warehouse	human	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\CityBuilding6-8.tga	0	100	_	-	-	1	0	0	0	0	0
+nhns	p3	harpy nest	other	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\8x8SimpleSolid.tga	0	100	_	-	-	1	0	0	0	1	0
+nmer	p3	MercenaryCamp L	other	1	1	1	0	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\12x12Simple.tga	0	100	_	-	-	1	0	0	0	1	0
+nmg0	p3	Murloc Hut 0	other	1	1	1	0	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\6x6SimpleSolid.tga	0	100	_	-	-	1	0	0	0	0	1
+nmg1	p3	Murloc Hut 1	other	1	1	1	0	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\6x6SimpleSolid.tga	0	100	_	-	-	1	0	0	0	0	1
+nmh0	p3	Murloc Hut 0	other	1	1	1	0	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\6x6SimpleSolid.tga	0	100	_	-	-	1	0	0	0	1	0
+nmh1	p3	Murloc Hut 1	other	1	1	1	0	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\6x6SimpleSolid.tga	0	100	_	-	-	1	0	0	0	1	0
+nmoo	p3	Fountain of Life	other	1	1	1	0	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\12x12Simple.tga	0	100	_	-	-	1	0	0	0	1	0
+nmr0	p3	MercenaryCamp V	other	1	1	1	0	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\12x12Simple.tga	0	100	_	-	-	1	0	0	0	1	0
+nmr2	p3	MercenaryCamp F	other	1	1	1	0	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\12x12Simple.tga	0	100	_	-	-	1	0	0	0	1	0
+nmr3	p3	MercenaryCamp W	other	1	1	1	0	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\12x12Simple.tga	0	100	_	-	-	1	0	0	0	1	0
+nmr4	p3	MercenaryCamp B	other	1	1	1	0	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\12x12Simple.tga	0	100	_	-	-	1	0	0	0	1	0
+nmr5	p3	MercenaryCamp A	other	1	1	1	0	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\12x12Simple.tga	0	100	_	-	-	1	0	0	0	1	0
+nmr6	p3	MercenaryCamp C	other	1	1	1	0	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\12x12Simple.tga	0	100	_	-	-	1	0	0	0	1	0
+nmr7	p3	MercenaryCamp N	other	1	1	1	0	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\12x12Simple.tga	0	100	_	-	-	1	0	0	0	1	0
+nmr8	p3	MercenaryCamp Y	other	1	1	1	0	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\12x12Simple.tga	0	100	_	-	-	1	0	0	0	1	0
+nmr9	p3	MercenaryCamp X	other	1	1	1	0	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\12x12Simple.tga	0	100	_	-	-	1	0	0	0	1	0
+nmra	p3	MercenaryCamp D	other	1	1	1	0	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\12x12Simple.tga	0	100	_	-	-	1	0	0	0	1	0
+nmrb	p3	MercenaryCamp G	other	1	1	1	0	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\12x12Simple.tga	0	100	_	-	-	1	0	0	0	1	0
+nmrc	p3	MercenaryCamp Z	other	1	1	1	0	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\12x12Simple.tga	0	100	_	-	-	1	0	0	0	1	1
+nmrd	p3	MercenaryCamp I	other	1	1	1	0	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\12x12Simple.tga	0	100	_	-	-	1	0	0	0	0	1
+nmre	p3	MercenaryCamp O	other	1	1	1	0	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\12x12Simple.tga	0	100	_	-	-	1	0	0	0	0	1
+nmrf	p3	MercenaryCamp K	other	1	1	1	0	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\12x12Simple.tga	0	100	_	-	-	1	0	0	0	0	1
+nmrk	p3	Marketplace	other	1	1	1	0	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\12x12Simple.tga	0	100	_	-	-	1	0	0	0	1	1
+nnzg	p3	nerubian ziggurat	other	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\6x6SimpleSolid.tga	0	100	buffer	9	-	1	0	0	0	1	0
+nshp	p3	Goblin Shipyard	other	1	1	1	0	3	0	-	float	0	0	-	60	0	0	structure	PathTextures\8x8SimpleSolid.tga	0	100	_	-	-	1	384	0	0	1	1
+ntav	p3	Tavern	other	1	1	1	0	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\12x12Simple.tga	0	100	_	-	-	1	0	0	0	1	1
+nten	p3	Tent	other	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\6x6SimpleSolid.tga	0	100	_	-	-	1	0	0	0	1	0
+nth0	p3	Ice Troll Hut 0	other	1	1	1	0	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\8x8SimpleSolid.tga	0	100	_	-	-	1	0	0	0	1	0
+nth1	p3	Ice Troll Hut 1	other	1	1	1	0	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\6x6SimpleSolid.tga	0	100	_	-	-	1	0	0	0	1	0
+ntn2	p3	Tent	other	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\6x6SimpleSolid.tga	0	100	_	-	-	1	0	0	0	1	0
+ntnt	p3	Tauren Tent	other	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\6x6SimpleSolid.tga	0	100	_	-	-	1	0	0	0	1	0
+ntt2	p3	Tauren Tent	other	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\6x6SimpleSolid.tga	0	100	_	-	-	1	0	0	0	1	0
+nwgt	p3	WayGate	other	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\Waygate.tga	0	100	_	-	-	1	0	0	0	1	0
+Ecen	z1	cenarius	nightelf	12	1	1	2	3	0	1	horse	0	0	0.4	60	4	0	ground	_	0	100	_	-	1	1	0	0	0	0	0
+Eevi	z1	evil illidan	nightelf	10	1	1	2	4.1	0	1	amph	0	0	0.5	60	4	0	ground	_	0	100	_	-	1	1	0	0	0	0	1
+Eevm	z1	evil illidan demon form	nightelf	10	1	1	2	1.77	0	1	amph	0	0	0.5	60	4	2	ground	_	0	100	_	-	1	1	0	0	0	0	1
+Efur	z1	furion	nightelf	11	1	1	2	5	0	1	foot	0	0	0.6	60	5	0	ground	_	0	100	_	-	1	1	0	0	0	0	0
+Eidm	z1	illidan demon form	nightelf	12	1	1	2	3	0	1	foot	0	0	0.5	60	4	2	ground	_	0	100	_	-	1	1	0	0	0	0	0
+Eill	z1	illidan	nightelf	12	1	1	2	5	0	1	foot	0	0	0.5	60	4	0	ground	_	0	100	_	-	1	1	0	0	0	0	0
+Eilm	z1	illidanmorphed	nightelf	12	1	1	2	3	0	1	foot	0	0	0.5	60	4	2	ground	_	0	100	_	-	1	1	0	0	0	0	0
+Ekgg	z1	HeroKeeperoftheGrove ghost	nightelf	9	1	1	2	3	0	1	horse	0	0	0.4	60	4	2	ground	_	0	100	_	-	1	1	0	0	0	0	0
+Emfr	z1	Mal'furion	nightelf	11	1	1	2	2.167	0	1	horse	0	0	0.4	60	4	0	ground	_	0	100	_	-	1	1	0	0	0	0	1
+Emns	z1	Mal'furion no stag	nightelf	11	1	1	2	4.33	0	1	foot	0	0	0.6	60	5	0	ground	_	0	100	_	-	1	1	0	0	0	0	1
+Etyr	z1	Tyrande	nightelf	12	1	1	2	3	0	1	horse	0	0	0.4	60	4	2	ground	_	0	100	_	-	1	1	0	0	0	0	0
+Ewrd	z1	Maiev	nightelf	13	1	1	2	1	0	1	foot	0	0	0.4	60	5	0	ground	_	0	100	_	-	1	1	0	0	0	0	1
+Hant	z1	antonidus	human	11	1	1	2	2.8	0	1	foot	0	0	0.5	60	4	2	ground	_	0	100	_	-	1	1	0	0	0	0	0
+Hapm	z1	Admiral Proudmoore	human	12	1	1	2	1.5	0	1	foot	0	0	0.6	60	5	0	ground	_	0	100	_	-	1	1	0	0	0	0	1
+Harf	z1	arthas w/ frostmourne	human	12	1	1	2	1.5	0	1	foot	0	0	0.6	60	5	0	ground	_	0	100	_	-	1	1	0	0	0	0	0
+Hart	z1	arthas	human	12	1	1	2	1.5	0	1	foot	0	0	0.6	60	5	0	ground	_	0	100	_	-	1	1	0	0	0	0	0
+Hdgo	z1	Dagren the Orcslayer	human	10	1	1	2	1.5	0	1	foot	0	0	0.6	60	5	0	ground	_	0	100	_	-	1	1	0	0	0	0	1
+Hgam	z1	ghostly archmage	human	9	1	1	2	2.8	0	1	foot	0	0	0.5	60	4	2	ground	_	0	100	_	-	1	1	0	0	0	0	1
+Hhkl	z1	Halahk the Lifebringer	human	10	1	1	2	1.5	0	1	foot	0	0	0.6	60	5	0	ground	_	0	100	_	-	1	1	0	0	0	0	1
+Hjai	z1	jaina	human	10	1	1	2	2.8	0	1	foot	0	0	0.5	60	0	2	ground	_	0	100	_	-	1	1	0	0	0	0	0
+Hkal	z1	Kael	human	12	1	1	2	3	0	1	foot	0	0	0.5	60	4	2	ground	_	0	100	_	-	1	1	0	0	0	0	1
+Hlgr	z1	Lord Garithos	human	10	1	1	2	5.1	0	1	foot	0	0	0.6	60	5	0	ground	_	0	100	_	-	1	1	0	0	0	0	1
+Hmbr	z1	muradin bronzebeard	human	11	1	1	2	2.5	0	1	foot	0	0	0.6	60	5	0	ground	_	0	100	_	-	1	1	0	0	0	0	0
+Hmgd	z1	Magroth the Defender	human	10	1	1	2	1.5	0	1	foot	0	0	0.6	60	5	0	ground	_	0	100	_	-	1	1	0	0	0	0	1
+Hpb1	z1	paladin boss 1	human	10	1	1	2	1.5	0	1	foot	0	0	0.6	60	5	0	ground	_	0	100	_	-	1	1	0	0	0	0	0
+Hpb2	z1	paladin boss 2	human	10	1	1	2	1.5	0	1	foot	0	0	0.6	60	5	0	ground	_	0	100	_	-	1	1	0	0	0	0	0
+Huth	z1	uther	human	11	1	1	2	1.5	0	1	foot	0	0	0.6	60	5	0	ground	_	0	100	_	-	1	1	0	0	0	0	0
+Hvsh	z1	Lady Vashj	naga	11	1	1	2	2.5	0	1	amph	0	0	0.6	60	5	2	ground	_	0	100	_	-	1	1	0	0	0	0	1
+Hvwd	z1	sylvanas windrunner	human	10	1	1	2	3	0	1	foot	0	0	0.6	60	5	2	ground	_	0	100	_	-	1	1	0	0	0	0	0
+Naka	z1	Akama	creeps	6	1	1	3	2	0	1	foot	0	0	0.6	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+Nbbc	z1	blackrock blademaster	orc	10	1	1	2	1.9	0	1	foot	0	0	0.6	60	5	0	ground	_	0	100	_	-	1	1	0	0	0	0	0
+Nkjx	z1	Kiljaeden - cinematic only	undead	12	1	1	2	3	0	1	foot	0	0	0.5	60	0	2	ground	_	0	100	_	-	1	1	0	0	0	0	1
+Nklj	z1	Kiljaeden	undead	12	1	1	2	3	0	1	foot	0	0	0.5	60	0	2	ground	_	0	100	_	-	1	1	0	0	0	0	1
+Nmag	z1	Magtheridon	undead	9	1	1	2	3	0	1	foot	0	0	0.4	60	1	0	ground	_	0	100	_	-	1	1	0	0	0	0	1
+Nman	z1	mannoroth	undead	11	1	1	2	3	0	1	foot	0	0	0.4	60	1	0	ground	_	0	100	_	-	1	1	0	0	0	0	0
+Npld	z1	pit lord	undead	11	1	1	2	3	0	1	foot	0	0	0.4	60	1	0	ground	_	0	100	_	-	6	1	0	0	0	0	0
+Nsjs	z1	Chen Stormstout	orc	10	1	1	2	2.5	0	1	foot	0	0	0.6	60	5	0	ground	_	0	100	_	-	1	1	0	0	0	0	1
+Ocb2	z1	cairne bloodhoof	orc	11	1	1	2	2	0	1	foot	0	0	0.4	60	1	0	ground	_	0	100	_	-	1	1	0	0	0	0	1
+Ocbh	z1	cairne bloodhoof	orc	11	1	1	2	2	0	1	foot	0	0	0.4	60	1	0	ground	_	0	100	_	-	1	1	0	0	0	0	0
+Odrt	z1	Drek'Thar	orc	9	1	1	2	2.1	0	1	horse	0	0	0.4	60	4	2	ground	_	0	100	_	-	1	1	0	0	0	0	1
+Ogld	z1	Gul'Dan	orc	9	1	1	2	1.5	0	1	foot	0	0	0.6	60	5	0	ground	_	0	100	_	-	1	1	0	0	0	0	1
+Ogrh	z1	grom hellscream	orc	11	1	1	2	1.9	0	1	foot	0	0	0.6	60	5	0	ground	_	0	100	_	-	1	1	0	0	0	0	0
+Opgh	z1	possessed grom hellscream	orc	11	1	1	2	1.9	0	1	foot	0	0	0.6	60	5	0	ground	_	0	100	_	-	1	1	0	0	0	0	0
+Orex	z1	Rexxar	orc	12	1	1	2	3	0	1	foot	0	0	0.4	60	1	0	ground	_	0	100	_	-	1	1	0	0	0	0	1
+Orkn	z1	Rokhan	orc	11	1	1	2	2.1	0	1	foot	0	0	0.4	60	1	2	ground	_	0	100	_	-	1	1	0	0	0	0	1
+Osam	z1	Samuro	orc	9	1	1	2	1.9	0	1	foot	0	0	0.6	60	5	0	ground	_	0	100	_	-	1	1	0	0	0	0	1
+Otcc	z1	cairne bloodhoof cinematic	orc	11	1	1	2	2	0	1	foot	0	0	0.4	60	1	0	ground	_	0	100	_	-	1	1	0	0	0	0	0
+Othr	z1	thrall	orc	12	1	1	2	2.1	0	1	horse	0	0	0.4	60	5	2	ground	_	0	100	_	-	1	1	0	0	0	0	0
+Uanb	z1	anub'arak	undead	11	1	1	2	3	0	1	foot	0	0	0.5	60	5	2	ground	_	0	100	_	-	1	1	0	0	0	0	1
+Ubal	z1	balnazzar	undead	10	1	1	2	3	0	1	foot	0	0	0.5	60	5	0	ground	_	0	100	_	-	1	1	0	0	0	0	1
+Uclc	z1	kelthuzadlich cinematic	undead	11	1	1	2	3	0	1	foot	0	0	0.5	60	5	2	ground	_	0	100	_	-	1	1	0	0	0	0	0
+Udth	z1	dethecus	undead	10	1	1	2	3	0	1	foot	0	0	0.5	60	5	0	ground	_	0	100	_	-	1	1	0	0	0	0	1
+Uear	z1	evil arthas	undead	13	1	1	2	3	0	1	foot	0	0	0.5	60	5	0	ground	_	0	100	_	-	1	1	0	0	0	0	0
+Uktl	z1	kelthuzadlich	undead	11	1	1	2	3	0	1	foot	0	0	0.5	60	5	2	ground	_	0	100	_	-	1	1	0	0	0	0	0
+Umal	z1	malganis	undead	10	1	1	2	3	0	1	foot	0	0	0.5	60	5	0	ground	_	0	100	_	-	1	1	0	0	0	0	0
+Usyl	z1	Evil Sylvanas	undead	12	1	1	2	2.5	0	1	foot	0	0	0.6	60	5	2	ground	_	0	100	_	-	1	1	0	0	0	0	1
+Utic	z1	tichondrius	undead	10	1	1	2	3	0	1	foot	0	0	0.5	60	5	0	ground	_	0	100	_	-	1	1	0	0	0	0	0
+Uvar	z1	varimathras	undead	11	1	1	2	3	0	1	foot	0	0	0.5	60	5	0	ground	_	0	100	_	-	1	1	0	0	0	0	1
+Uvng	z1	vengyr	undead	10	1	1	2	3	0	1	foot	0	0	0.5	60	5	0	ground	_	0	100	_	-	1	1	0	0	0	0	1
+Uwar	z1	archimonde	undead	12	1	1	2	3	0	1	foot	0	0	0.5	60	0	2	ground	_	0	100	_	-	1	1	0	0	0	0	0
+eilw	z2	illidan wagon	nightelf	5	1	1	2	0.83	0	1	foot	0	0	0.6	60	1	4	ground	_	0	100	_	-	-	1	0	0	0	0	1
+enec	z2	night elf courier	nightelf	1	1	1	3	2.03	0	1	foot	0	0	0.5	60	0	4	ground	_	0	100	_	-	-	1	0	0	0	0	1
+ensh	z2	Naisha	nightelf	3	1	1	3	3	0	1	foot	0	0	0.6	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+eshd	z2	shandris	nightelf	5	1	1	3	3	0	1	foot	0	0	0.6	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	0	0
+etrs	z2	night elf transport ship	nightelf	2	1	1	2	3.73	0	-	float	0	0	0.4	15	3	3	ground	_	0	100	_	-	-	1	0	0	0	0	1
+hbew	z2	blood elf wagon	human	5	1	1	2	0.83	0	1	foot	0	0	0.6	60	1	4	ground	_	0	100	_	-	-	1	0	0	0	0	1
+hcth	z2	the captain	human	8	1	1	3	3.04	0	1	foot	0	0	0.6	60	5	0	ground	_	0	100	_	-	-	1	0	0	0	0	0
+hhdl	z2	headless rider	human	3	1	1	3	5.1	0	1	horse	0	0	0.5	60	5	4	ground	_	0	100	_	-	-	1	0	0	0	0	0
+hhes	z2	high elven swordsman	human	7	1	1	3	3.04	0	1	foot	0	0	0.6	60	5	0	ground	_	0	100	_	-	-	1	0	0	0	0	0
+hprt	z2	portal unit	human	1	1	1	0	0.94	0	-	foot	0	0	-	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+hrdh	z2	pack horse	human	3	1	1	3	5.1	0	1	horse	0	0	0.5	60	5	4	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nbee	z2	blood elf engineer	human	1	1	1	3	3	0	1	foot	0	0	0.6	60	0	4	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nbel	z2	blood elf lieutenant	human	7	1	1	3	2	0	1	foot	0	0	0.6	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nbsp	z2	battleship	other	1	1	1	2	3	0	-	foot	0	0	0.1	15	3	0	ground	_	0	100	_	-	-	1	0	0	0	0	0
+nchg	z2	chaos grunt	orc	3	1	1	3	1.75	0	1	foot	0	0	0.6	60	5	0	ground	_	0	100	_	-	-	1	0	0	0	0	0
+nchr	z2	ChaosWolfRider	orc	5	1	1	3	1.87	0	1	horse	0	0	0.5	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	0	0
+nchw	z2	ChaosWarlock	orc	6	1	1	3	1.334	0	1	foot	0	0	0.6	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	0	0
+nckb	z2	Chaos Kodo Beast	orc	5	1	1	3	3	0	2	horse	0	0	0.5	60	1	2	ground	_	0	100	_	-	-	1	0	0	0	0	0
+ncpn	z2	Chaos Peon	orc	1	1	1	3	2	0	1	foot	0	0	0.6	60	0	4	ground	_	0	100	_	-	-	1	0	0	0	0	0
+ndmu	z2	dalaran mutant	creeps	5	1	1	3	1.67	0	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+ndrd	z2	draenei darkslayer	creeps	6	1	1	3	2	0	1	foot	0	0	0.6	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+ndrf	z2	draenei guardian	creeps	6	1	1	3	2	0	1	foot	0	0	0.6	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+ndrh	z2	draenei harbinger	creeps	7	1	1	3	2	0	1	foot	0	0	0.6	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	0	1
+ndrj	z2	dalaran reject	creeps	1	1	1	2	2.03	0	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+ndrl	z2	draenei laborer	creeps	1	1	1	3	2	0	1	foot	0	0	0.6	60	0	4	ground	_	0	100	_	-	-	1	0	0	0	0	1
+ndrm	z2	draenei disciple	creeps	2	1	1	3	2	0	1	foot	0	0	0.6	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	0	1
+ndrn	z2	draenei vindicator	creeps	6	1	1	3	2	0	1	foot	0	0	0.6	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+ndrp	z2	draenei protector	creeps	6	1	1	3	2	0	1	foot	0	0	0.6	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+ndrs	z2	draenei seer	creeps	8	1	1	3	2	0	1	foot	0	0	0.6	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	0	1
+ndrt	z2	draenei stalker	creeps	6	1	1	3	2	0	1	foot	0	0	0.6	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+ndrw	z2	draenei watcher	creeps	6	1	1	3	2	0	1	foot	0	0	0.6	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+ndsa	z2	draenei salamander	creeps	1	1	1	3	3	1	1	foot	0	0	0.5	60	1	1	ground	_	0	100	_	-	-	1	0	0	0	0	1
+negz	z2	engineer gazlowe	orc	1	1	1	0	3	1	2	foot	0	0	0.5	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nemi	z2	emissary	human	1	1	1	3	3	0	1	foot	0	0	0.5	60	0	4	ground	_	0	100	_	-	-	1	0	0	0	0	0
+nfgl	z2	flesh golem	creeps	1	1	1	2	3	0	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+ngbl	z2	goblin blaster	orc	1	1	1	0	3	0	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nhea	z2	high elven archer	human	2	1	1	3	3	0	1	foot	0	0	0.6	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	0	0
+nhef	z2	high elven female	human	1	1	1	3	3	0	1	foot	0	0	0.5	60	0	5	ground	_	0	100	_	-	-	1	0	0	0	0	0
+nhem	z2	high elven male	human	1	1	1	3	3	0	1	foot	0	0	0.5	60	0	4	ground	_	0	100	_	-	-	1	0	0	0	0	0
+nhew	z2	high elven male	human	1	1	1	3	3	0	1	foot	0	0	0.5	60	0	4	ground	_	0	100	_	-	-	1	0	0	0	0	1
+njks	z2	jailor kassan	human	1	1	1	3	3	0	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nmdm	z2	medivh morphed	human	6	1	1	0	3	0	1	fly	240	90	0.6	61	1	2	air	_	0	100	_	-	-	1	0	0	0	0	0
+nmed	z2	medivh	human	6	1	1	3	3	0	1	foot	0	0	0.6	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	0	0
+nmpe	z2	naga peon	naga	1	1	1	3	2	0	1	amph	0	0	0.6	60	0	4	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nmsh	z2	misha the bear	orc	1	1	1	3	3	1	1	foot	0	0	0.5	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nser	z2	searinox	human	1	1	1	0	3	0	-	fly	280	90	0.1	61	3	2	air	_	0	100	_	-	-	1	0	0	0	0	0
+nspc	z2	support column	orc	1	1	1	2	3	0	-	foot	0	0	-	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+nssn	z2	night elf assassin	nightelf	3	1	1	3	3	0	1	foot	0	0	0.6	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	0	0
+nthr	z2	tharifas	nightelf	1	1	1	0	3	1	-	fly	280	90	0.1	61	3	2	air	_	0	100	_	-	-	1	0	0	0	0	0
+nw2w	z2	War2Warlock	orc	6	1	1	3	1.334	0	1	foot	0	0	0.6	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	0	0
+nwat	z2	watcher	nightelf	2	1	1	3	3	0	1	foot	0	0	0.6	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	0	0
+nzlc	z2	cinematic lich king	undead	1	1	1	0	0.94	0	-	foot	0	0	-	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+odkt	z2	Drak'Thul	orc	8	1	1	3	1.5	1	1	foot	0	0	0.6	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	0	1
+ogrk	z2	Gar'thok	orc	3	1	1	3	1.75	0	1	foot	0	0	0.6	60	5	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+ojgn	z2	actual orc juggernaut unit	orc	2	1	1	0	3.733	0	-	float	0	0	0.1	15	3	2	ground	_	0	100	_	-	-	1	0	0	0	0	1
+omtg	z2	mathog	orc	3	1	1	3	1.75	0	1	foot	0	0	0.6	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+onzg	z2	nazgrel	orc	6	1	1	3	1.87	0	1	horse	0	0	0.5	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	0	1
+oosc	z2	kodo beast (riderless)	orc	5	1	1	3	3	0	1	foot	0	0	0.6	60	1	4	ground	_	0	100	_	-	-	1	0	0	0	0	0
+oswy	z2	spirit wyvern	orc	3	1	1	0	3	0	-	fly	240	90	0.4	61	1	2	air	_	0	100	_	-	-	1	0	0	0	0	1
+ovlj	z2	vol'jin	orc	7	1	1	3	1.97	0	1	foot	0	0	0.6	60	5	2	ground	_	0	100	_	-	-	1	0	0	0	0	1
+owar	z2	orc warchief	orc	3	1	1	3	1.75	0	1	foot	0	0	0.6	60	4	0	ground	_	0	100	_	-	-	1	0	0	0	0	0
+ownr	z2	wyvern	orc	3	1	1	0	3	0	-	fly	240	90	0.4	61	1	2	air	_	0	100	_	-	-	1	0	0	0	0	0
+uabc	z2	Abomination cinematic	undead	2	1	1	3	2.17	0	1	foot	0	0	0.4	60	1	0	ground	_	0	100	_	-	-	1	0	0	0	0	0
+uarb	z2	air barge	undead	1	1	1	0	3	0	-	fly	280	90	0.5	61	3	2	air	_	0	100	_	-	-	1	0	0	0	0	1
+ubdd	z2	dead azurelore	undead	6	1	1	0	2	0	-	fly	325	90	0.4	61	3	2	air	_	0	100	_	-	-	1	0	0	0	0	1
+ubdr	z2	azurelore	undead	1	1	1	0	3	0	-	fly	325	90	0.1	61	3	2	air	_	0	100	_	-	-	1	0	0	0	0	1
+ubot	z2	undead transport	undead	2	1	1	0	3.733	0	-	float	0	0	0.4	15	3	3	ground	_	0	100	_	-	-	1	0	0	0	0	1
+udes	z2	undead destroyer	undead	2	1	1	0	3.733	0	-	float	0	0	0.2	15	3	3	ground	_	0	100	_	-	-	1	0	0	0	0	1
+uktg	z2	kelthuzadghost	undead	8	1	1	0	3	0	1	foot	0	0	0.6	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	0	0
+uktn	z2	kelthuzadnecro	undead	8	1	1	3	3	0	1	foot	0	0	0.6	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	0	0
+uswb	z2	sylvanus banshee	undead	7	1	1	0	1.17	0	1	hover	50	0	0.6	61	2	2	ground	_	0	100	_	-	-	1	0	0	0	0	0
+haro	z3	Arcane Observatory	human	5	1	1	2	6.66	0	-	_	0	0	-	60	0	0	structure	PathTextures\ArcaneObservatoryPath.tga	0	100	_	-	-	1	0	0	0	0	1
+nbfl	z3	Fountain of Blood	orc	1	1	1	0	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\12x12Simple.tga	0	100	_	-	-	1	0	0	0	0	0
+nbse	z3	bindstone southeast	other	1	1	1	2	2.33	0	-	_	0	0	-	60	0	0	structure	PathTextures\6x6SimpleSolid.tga	0	100	_	-	-	1	0	0	0	0	1
+nbsm	z3	book of summoning pedestal	undead	1	1	1	0	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\4x4SimpleSolid.tga	0	100	_	-	-	1	0	0	0	0	0
+nbsw	z3	bindstone southwest	other	1	1	1	2	2.33	0	-	_	0	0	-	60	0	0	structure	PathTextures\6x6SimpleSolid.tga	0	100	_	-	-	1	0	0	0	0	1
+nbt1	z3	boulder tower	human	1	1	1	2	2.34	0	-	_	0	0	-	60	0	0	structure	PathTextures\4x4SimpleSolid.tga	0	100	_	-	-	1	0	0	0	0	1
+nbt2	z3	boulder tower upgraded	human	1	1	1	2	2.34	0	-	_	0	0	-	60	0	0	structure	PathTextures\4x4SimpleSolid.tga	0	100	_	-	-	1	0	0	0	0	1
+nbwd	z3	barrow den	nightelf	3	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\8x8SimpleSolid.tga	0	100	_	-	-	1	0	0	0	0	0
+ncap	z3	corrupted Ancient Protector	nightelf	4	1	1	0	3	0	-	foot	0	0	0.4	60	3	4	structure	PathTextures\6x6SimpleSolid.tga	0	100	buffer	15	-	1	0	0	0	0	0
+ncaw	z3	corrupted AncientofWar	nightelf	9	1	1	2	6	0	-	foot	0	0	0.4	60	3	4	structure	PathTextures\12x12Simple.tga	0	100	factory	9	-	1	0	0	0	0	0
+ncmw	z3	corrupted MoonWell	demon	1	1	1	2	2.34	0	-	_	0	0	-	60	0	0	structure	PathTextures\6x6SimpleSolid.tga	0	100	buffer	9	-	1	0	0	0	0	0
+ncta	z3	corrupted TreeofAges	nightelf	1	1	1	2	6	0	-	foot	0	0	0.4	60	3	4	structure	PathTextures\12x12TreeOfLife.tga	0	100	townhall	8	-	1	0	0	0	0	0
+ncte	z3	corrupted TreeofEternity	nightelf	1	1	1	2	6	0	-	foot	0	0	0.4	60	3	4	structure	PathTextures\12x12TreeOfLife.tga	0	100	townhall	8	-	1	0	0	0	0	0
+nctl	z3	corrupted TreeofLife	nightelf	1	1	1	2	6	0	-	foot	0	0	0.4	60	3	4	structure	PathTextures\12x12TreeOfLife.tga	0	100	townhall	8	-	1	0	0	0	0	0
+ndfl	z3	Defiled Fountain of Life	orc	1	1	1	0	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\12x12Simple.tga	0	100	_	-	-	1	0	0	0	0	0
+ndgt	z3	dalaran guard tower	human	1	1	1	2	2.34	0	-	_	0	0	-	60	0	0	structure	PathTextures\4x4SimpleSolid.tga	0	100	_	-	-	1	0	0	0	0	0
+ndke	z3	dark portal (southeast)	other	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\DarkPortalSE.tga	0	100	_	-	-	1	0	0	0	0	1
+ndkw	z3	dark portal (southwest)	other	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\DarkPortalSW.tga	0	100	_	-	-	1	0	0	0	0	1
+ndmg	z3	demon gate	undead	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\DemonGatePath.tga	0	100	_	-	-	1	0	0	0	0	0
+ndrb	z3	Dragon Building	orc	1	1	1	0	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\12x12Simple.tga	0	100	_	-	-	1	0	0	0	0	0
+ndt1	z3	cold tower	human	1	1	1	2	2.34	0	-	_	0	0	-	60	0	0	structure	PathTextures\4x4SimpleSolid.tga	0	100	_	-	-	1	0	0	0	0	1
+ndt2	z3	cold tower upgraded	human	1	1	1	2	2.34	0	-	_	0	0	-	60	0	0	structure	PathTextures\4x4SimpleSolid.tga	0	100	_	-	-	1	0	0	0	0	1
+nef0	z3	elven farm	human	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\6x6SimpleSolid.tga	0	100	_	-	-	1	0	0	0	0	0
+nef1	z3	elven farm	human	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\6x6SimpleSolid.tga	0	100	_	-	-	1	0	0	0	0	0
+nef2	z3	elven farm	human	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\6x6SimpleSolid.tga	0	100	_	-	-	1	0	0	0	0	0
+nef3	z3	elven farm	human	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\6x6SimpleSolid.tga	0	100	_	-	-	1	0	0	0	0	0
+nef4	z3	elven farm	human	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\6x6SimpleSolid.tga	0	100	_	-	-	1	0	0	0	0	0
+nef5	z3	elven farm	human	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\6x6SimpleSolid.tga	0	100	_	-	-	1	0	0	0	0	0
+nef6	z3	elven farm	human	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\6x6SimpleSolid.tga	0	100	_	-	-	1	0	0	0	0	0
+nef7	z3	elven farm	human	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\6x6SimpleSolid.tga	0	100	_	-	-	1	0	0	0	0	0
+nefm	z3	elven farm	human	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\6x6SimpleSolid.tga	0	100	_	-	-	1	0	0	0	0	0
+negf	z3	elven guard fire tower	human	1	1	1	2	2.34	0	-	_	0	0	-	60	0	0	structure	PathTextures\4x4SimpleSolid.tga	0	100	buffer	15	-	1	0	0	0	0	0
+negm	z3	elven guard magic tower	human	1	1	1	2	2.34	0	-	_	0	0	-	60	0	0	structure	PathTextures\4x4SimpleSolid.tga	0	100	buffer	15	-	1	0	0	0	0	0
+negt	z3	elven guard tower	human	1	1	1	2	2.34	0	-	_	0	0	-	60	0	0	structure	PathTextures\4x4SimpleSolid.tga	0	100	buffer	15	-	1	0	0	0	0	0
+net1	z3	energy tower	human	1	1	1	2	2.34	0	-	_	0	0	-	60	0	0	structure	PathTextures\4x4SimpleSolid.tga	0	100	_	-	-	1	0	0	0	0	1
+net2	z3	energy tower upgraded	human	1	1	1	2	2.34	0	-	_	0	0	-	60	0	0	structure	PathTextures\4x4SimpleSolid.tga	0	100	_	-	-	1	0	0	0	0	1
+nfnp	z3	purple fountain	nightelf	1	1	1	0	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\12x12Simple.tga	0	100	_	-	-	1	0	0	0	0	1
+nfrm	z3	frostmourne pedestal	undead	1	1	1	0	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\4x4SimpleSolid.tga	0	100	_	-	-	1	0	0	0	0	0
+nfrt	z3	fruit stand	human	1	1	1	2	2.33	0	-	_	0	0	-	60	0	0	structure	PathTextures\8x8Round.tga	0	100	_	-	-	1	0	0	0	0	1
+nft1	z3	flame tower	human	1	1	1	2	2.34	0	-	_	0	0	-	60	0	0	structure	PathTextures\4x4SimpleSolid.tga	0	100	_	-	-	1	0	0	0	0	1
+nft2	z3	flame tower upgraded	human	1	1	1	2	2.34	0	-	_	0	0	-	60	0	0	structure	PathTextures\4x4SimpleSolid.tga	0	100	_	-	-	1	0	0	0	0	1
+nfv0	z3	elven fishing village	nightelf	1	1	1	2	2.33	0	-	_	0	0	-	60	0	0	structure	PathTextures\6x6SimpleSolid.tga	0	100	_	-	-	1	0	0	0	0	1
+nfv1	z3	elven fishing village	nightelf	1	1	1	2	2.33	0	-	_	0	0	-	60	0	0	structure	PathTextures\6x6SimpleSolid.tga	0	100	_	-	-	1	0	0	0	0	1
+nfv2	z3	elven fishing village	nightelf	1	1	1	2	2.33	0	-	_	0	0	-	60	0	0	structure	PathTextures\6x6SimpleSolid.tga	0	100	_	-	-	1	0	0	0	0	1
+nfv3	z3	elven fishing village	nightelf	1	1	1	2	2.33	0	-	_	0	0	-	60	0	0	structure	PathTextures\6x6SimpleSolid.tga	0	100	_	-	-	1	0	0	0	0	1
+nfv4	z3	elven fishing village	nightelf	1	1	1	2	2.33	0	-	_	0	0	-	60	0	0	structure	PathTextures\6x6SimpleSolid.tga	0	100	_	-	-	1	0	0	0	0	1
+ngob	z3	gemstone obelisk	nightelf	1	1	1	0	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\4x4SimpleSolid.tga	0	100	_	-	-	1	0	0	0	0	0
+nhcn	z3	horn of cenarius pedestal	nightelf	1	1	1	0	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\4x4SimpleSolid.tga	0	100	_	-	-	1	0	0	0	0	0
+nheb	z3	High Elven Barracks	human	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\12x12Simple.tga	0	100	factory	9	-	1	0	0	0	0	0
+nico	z3	icecrown obelisk	other	1	1	1	0	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\8x8Round.tga	0	100	_	-	-	1	0	0	0	0	1
+nitb	z3	treasure box	human	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\8x8Round.tga	0	100	_	-	-	1	0	0	0	0	1
+nmgv	z3	magic vault	human	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\8x8Round.tga	0	100	_	-	-	1	0	0	0	0	0
+nnad	z3	altar of the depths - naga altar	naga	5	1	1	2	2.33	0	-	_	0	0	-	60	0	0	structure	PathTextures\10x10Simple.tga	0	100	factory	9	-	1	0	0	0	0	1
+nnfm	z3	coral bed - naga farm	naga	1	1	1	2	2.33	0	-	_	0	0	-	60	0	0	structure	PathTextures\6x6SimpleSolid.tga	0	100	_	-	-	1	0	0	0	0	1
+nnsa	z3	shrine of azshara - naga caster barracks	naga	5	1	1	2	2.33	0	-	_	0	0	-	60	0	0	structure	PathTextures\12x12Simple.tga	0	100	factory	9	-	1	0	0	0	0	1
+nnsg	z3	spawning grounds - naga barracks	naga	9	1	1	2	2.33	0	-	_	0	0	-	60	0	0	structure	PathTextures\12x12Simple.tga	0	100	factory	9	-	1	0	0	0	0	1
+nntg	z3	tidal guardian - naga tower	naga	1	1	1	2	2.33	0	-	_	0	0	-	60	0	0	structure	PathTextures\4x4SimpleSolid.tga	0	100	_	-	-	1	0	0	0	0	1
+nntt	z3	temple of tides - naga town hall	naga	6	1	1	2	2.33	0	-	_	0	0	-	60	0	0	structure	PathTextures\16x16Simple.tga	0	100	townhall	8	-	1	0	0	0	0	1
+npgf	z3	Pig Farm	orc	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\6x6SimpleSolid.tga	0	100	_	-	-	1	0	0	0	0	0
+npgr	z3	power generator	orc	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\4x4SimpleSolid.tga	0	100	_	-	-	1	0	0	0	0	1
+nshr	z3	shrine	undead	1	1	1	0	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\12x12Simple.tga	0	100	_	-	-	1	0	0	0	0	0
+ntt1	z3	death tower	human	1	1	1	2	2.34	0	-	_	0	0	-	60	0	0	structure	PathTextures\4x4SimpleSolid.tga	0	100	_	-	-	1	0	0	0	0	1
+ntx2	z3	death tower upgraded	human	1	1	1	2	2.34	0	-	_	0	0	-	60	0	0	structure	PathTextures\4x4SimpleSolid.tga	0	100	_	-	-	1	0	0	0	0	1
+nvr0	z3	elven fishing village	nightelf	1	1	1	2	2.33	0	-	_	0	0	-	60	0	0	structure	PathTextures\6x6SimpleSolid.tga	0	100	_	-	-	1	0	0	0	0	1
+nvr1	z3	elven fishing village	nightelf	1	1	1	2	2.33	0	-	_	0	0	-	60	0	0	structure	PathTextures\6x6SimpleSolid.tga	0	100	_	-	-	1	0	0	0	0	1
+nvr2	z3	elven fishing village	nightelf	1	1	1	2	2.33	0	-	_	0	0	-	60	0	0	structure	PathTextures\6x6SimpleSolid.tga	0	100	_	-	-	1	0	0	0	0	1
+nwc1	z3	wyvern cage 1	orc	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\8x8Round.tga	0	100	_	-	-	1	0	0	0	0	0
+nwc2	z3	wyvern cage 2	orc	1	1	1	2	3	0	-	_	0	0	-	60	0	0	structure	PathTextures\8x8Round.tga	0	100	_	-	-	1	0	0	0	0	0
+nzin	z3	zone indicator	other	1	1	1	2	1	0	-	_	0	0	-	60	0	0	structure	PathTextures\2x2UnBuildable.tga	0	100	_	-	-	1	0	0	0	0	1
+ocbw	z3	Chaos OrcBurrow	orc	3	1	1	2	0.64	0	-	_	0	0	-	60	0	0	structure	PathTextures\6x6SimpleSolid.tga	0	100	buffer	9	-	1	0	0	0	0	0
+zcso	z9	chaos space orc	other	2	1	1	3	1.7	0	1	foot	0	0	0.6	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	0	0
+zhyd	z9	hydralisk	other	2	1	1	3	1.7	0	1	foot	0	0	0.6	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	0	0
+zjug	z9	orc juggernaut	other	2	1	1	0	1.7	0	1	fly	1	0	0.1	15	3	2	ground	_	0	100	_	-	-	1	0	0	0	0	0
+zmar	z9	Marine	other	2	1	1	3	1.7	0	1	foot	0	0	0.6	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	0	0
+zshv	z9	shoveler	other	1	1	1	3	3	1	1	foot	0	0	0.5	60	0	0	ground	_	0	100	_	-	-	1	0	0	0	0	0
+zsmc	z9	sammy cube	other	2	1	1	0	0.1	0	1	foot	0	0	0.6	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	0	0
+zzrg	z9	zergling	other	2	1	1	3	1.7	0	1	foot	0	0	0.6	60	0	2	ground	_	0	100	_	-	-	1	0	0	0	0	0

@@ -1,5 +1,6 @@
 
 import { inspect } from "util";
+import { promises as fs } from "fs";
 import parse from "jass-to-ast";
 import {
 	ArrayRef,
@@ -24,6 +25,7 @@ import {
 	Program,
 	Return,
 	Statements,
+	Type,
 	UnaryOp,
 	Variable
 } from "jass-to-ast/src/grammar/types.js";
@@ -68,7 +70,7 @@ const _astToJS = ast => {
 			return `"${ast}"`;
 
 		case FuncRef:
-			return ast.data[ 0 ];
+			return ast.data;
 
 		case Globals:
 			return [ ast.comment, _astToJS( ast.globals ).split( "\n" ).map( v => v.slice( 1 ) ).join( "\n" ), ast.endComment ].filter( Boolean ).join( "\n" );
@@ -89,6 +91,7 @@ const _astToJS = ast => {
 			return ast.replace( "this", "_this" );
 
 		case Native:
+		case Type:
 			return "";
 
 		case Param:
@@ -98,11 +101,13 @@ const _astToJS = ast => {
 			return `( ${_astToJS( ast.data[ 0 ] )} )`;
 
 		case Program:
-		case Statements:
-			return [ ...ast ].map( _astToJS ).join( "\n" ).split( "\n" ).map( v => v ? "\t" + v : v ).join( "\n" );
+			return [ ...ast ].map( _astToJS ).join( "\n" );
 
 		case Return:
 			return `return ${_astToJS( ast.data[ 0 ] )}`;
+
+		case Statements:
+			return [ ...ast ].map( _astToJS ).join( "\n" ).split( "\n" ).map( v => v ? "\t" + v : v ).join( "\n" );
 
 		case UnaryOp:
 			return `${ast.operator.replace( "not", "!" )} ${_astToJS( ast.expr )}`;
@@ -120,12 +125,23 @@ const _astToJS = ast => {
 export const astToJS = ast => _astToJS( ast )
 	.replace( /\n{3,}/g, "\n\n" ); // Clean up multiple blank lines
 
-export default war3Map => {
+export default async script => {
 
-	const script = war3Map.getScript().replace( /\r/g, "" );
+	console.log( "Transpiling JASS to JavaScript..." );
 
+	script = script.replace( /\r/g, "" );
 	const ast = parse( script );
+	const js = astToJS( ast );
 
-	return astToJS( ast ).slice( 1 );
+	console.log( "Transpiled JASS to JavaScript" );
+
+	const [ common, blizzard ] = await Promise.all( [
+		fs.readFile( "lib/common.js", "utf-8" ).then( contents => contents.slice( 1 ) ),
+		fs.readFile( "lib/blizzard.js", "utf-8" )
+	] );
+
+	return common +
+		blizzard +
+		js.split( "\n" ).map( v => v ? "\t" + v : v ).join( "\n" );
 
 };

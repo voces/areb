@@ -1,0 +1,837 @@
+unitAbilID	sortAbil	comment(s)	auto	abilList	heroAbilList	InBeta
+Hamg	a1	HeroArchMage	_	AInv	AHbz,AHab,AHwe,AHmt	1
+Hblm	a1	HeroBloodMage	_	AInv,Asph	AHfs,AHbn,AHdr,AHpx	1
+Hmkg	a1	HeroMountainKing	_	AInv	AHtc,AHtb,AHbh,AHav	1
+Hpal	a1	HeroPaladin	_	AInv	AHhb,AHds,AHre,AHad	1
+hbot	a2	transport ship	_	Sch5,Slo3,Sdro		0
+hbsh	a2	battleship	_	_		0
+hdes	a2	destroyer	_	_		0
+hdhw	a2	blood elf dragon hawk	_	Aclf,Amls		1
+hfoo	a2	Footman	_	Adef,Aihn		1
+hgry	a2	GryphonRider	_	Asth		1
+hgyr	a2	Flying Machine	_	Agyb,Agyv,Aflk		1
+hkni	a2	Knight	_	Aihn,Ahsb		1
+hmil	a2	Militia	_	Ahar,Amil,Ahrp		1
+hmpr	a2	Priest	Ahea	Ahea,Ainf,Adis,Aihn		1
+hmtm	a2	MortarTeam	_	Afla,Afsh		1
+hmtt	a2	Siege Engine	_	Srtt,Aroc		1
+hpea	a2	Peasant	_	Ahar,Amil,Ahrp		1
+hphx	a2	Phoenix	_	Aphx,ACmi,ACrk,Apxf		1
+hpxe	a2	Phoenix Egg	_	Aphx,ACrk,ACmi		1
+hrif	a2	Rifleman	_	Aihn		1
+hrtt	a2	siege engine upgraded	_	Aroc		1
+hsor	a2	Sorceress	Aslo	Aivs,Aply,Aslo,Aihn		1
+hspt	a2	Blood Elf Spell Breaker	Asps	Asps,Acmg,Amim,Afbk,Aihn		1
+hwat	a2	WaterElemental	_	_		1
+hwt2	a2	WaterElemental level 2	_	_		1
+hwt3	a2	WaterElemental level 3	_	_		1
+halt	a3	AltarofKings	_	Abds		1
+harm	a3	Workshop	_	Abds		1
+hars	a3	ArcaneSanctum	_	Abds		1
+hatw	a3	Arcane Tower	_	Abds,Afbt,AHta,Adts		1
+hbar	a3	HumanBarracks	_	Abds		1
+hbla	a3	Blacksmith	_	Abds		1
+hcas	a3	Castle	_	Abdl,Amic,Argl		1
+hctw	a3	CannonTower	_	Abds,Adts,Afsh		1
+hgra	a3	GryphonAviary	_	Abds		1
+hgtw	a3	GuardTower	_	Abds,Adts		1
+hhou	a3	Farm	_	Abds		1
+hkee	a3	Keep	_	Abdl,Amic,Argl		1
+hlum	a3	LumberMill	_	Abds,Arlm		1
+hshy	a3	Human Shipyard	_	Ane2,Abds		0
+htow	a3	TownHall	_	Abdl,Argl		1
+hvlt	a3	Arcane Vault	_	Abds,Aall,Apit		1
+hwtw	a3	Scout Tower	_	Abds,Adts		1
+Obla	b1	HeroBladeMaster	_	AInv	AOwk,AOcr,AOmi,AOww	1
+Ofar	b1	HeroFarSeer	_	AInv	AOfs,AOsf,AOcl,AOeq	1
+Oshd	b1	HeroShadowHunter	_	AInv	AOhw,AOhx,AOsw,AOvd	1
+Otch	b1	HeroTaurenChieftain	_	AInv	AOsh,AOae,AOre,AOws	1
+nwad	b2	WatcherWard	_	Adt1,Aeth,Avul		1
+obot	b2	orcish transport	_	Sch5,Slo3,Sdro		0
+ocat	b2	Demolisher	_	Abof		1
+odes	b2	orcish destroyer	_	_		0
+odoc	b2	WitchDoctor	_	Aeye,Ahwd,Asta,Aion		1
+oeye	b2	SentryWard	_	Adt1,Aeth		1
+ogru	b2	Grunt	_	Asal,Aion		1
+ohun	b2	HeadHunter	_	Sbsk,Aion		1
+ohwd	b2	HealingWard	_	Aoar		1
+okod	b2	KodoBeast	_	Aakb,Advc,Adev,Apak		1
+opeo	b2	Peon	_	Ahar,Arep,Asal		1
+orai	b2	WolfRider	_	Aens,Asal,Aion		1
+oshm	b2	Shaman	Ablo	Ablo,Alsh,Apg2,Aion		1
+osp1	b2	Serpent Ward 1	_	ACmi		1
+osp2	b2	Serpent Ward 2	_	ACmi		1
+osp3	b2	Serpent Ward 3	_	ACmi		1
+osp4	b2	Serpent Ward 4	_	ACmi		0
+ospm	b2	spiritwalkerMorph	_	Acpf,Aspl,Adcn,Aast,Aion,ACsk		1
+ospw	b2	spiritwalker	_	Acpf,Aspl,Adcn,Aast,Aion,ACsk		1
+osw1	b2	spirit wolf level 1	_	_		1
+osw2	b2	spirit wolf 2	_	ACct		1
+osw3	b2	spirit wolf 3	_	ACct,Apiv		1
+otau	b2	Tauren	_	Awar,Aion		1
+otbk	b2	Berserker	_	Absk,Aion		1
+otbr	b2	Troll Batrider	_	Aliq,Auco		1
+otot	b2	StasisTrapward	_	Aeth		1
+owyv	b2	Wind Rider	_	Aven		1
+oalt	b3	AltarofStorms	_	Abds,Aspi		1
+obar	b3	Barracks	_	Abds,Aspi		1
+obea	b3	Beastiary	_	Abds,Aspi		1
+ofor	b3	Forge	_	Abds,Aspi,Arlm		1
+ofrt	b3	Fortress	_	Abdl,Aspi,Argl		1
+ogre	b3	GreatHall	_	Abdl,Aspi,Argl		1
+oshy	b3	Orc Shipyard	_	Ane2,Abds		0
+osld	b3	SpiritLodge	_	Abds,Aspi		1
+ostr	b3	Stronghold	_	Abdl,Aspi,Argl		1
+otrb	b3	OrcBurrow	_	Abds,Aspi,Abun,Abtl,Astd,Arbr		1
+otto	b3	Tauren Totem	_	Abds,Aspi		1
+ovln	b3	Voodoo Lounge	_	Abds,Aall,Aspi,Apit		1
+owtw	b3	Watch Tower	_	Abds,Arbr,Aspi		1
+Edem	c1	HeroDemonHunter	_	AInv,Ault	AEmb,AEim,AEev,AEme	1
+Edmm	c1	HeroDemonHunterMorph	_	AInv,Ault	AEmb,AEim,AEev,AEme	1
+Ekee	c1	HeroKeeperoftheGrove	_	AInv,Ault	AEer,AEfn,AEah,AEtq	1
+Emoo	c1	HeroMoonPriestess	_	Ashm,AInv,Ault	AHfa,AEst,AEar,AEsf	1
+Ewar	c1	HeroWarden	_	Ashm,AInv,Ault	AEbl,AEfk,AEsh,AEsv	1
+earc	c2	Archer	_	Aco2,Ashm,Aien,Ault,Aegr		1
+ebal	c2	Glaive Thrower	_	Aimp,Ault		1
+ebsh	c2	night elf battleship	_	Ault		0
+echm	c2	Chimaera	_	Acor,Alit,Ault		1
+edcm	c2	DruidoftheClawMorph	_	Abrf,Ara2,Aien,Ault		1
+edes	c2	night elf destroyer	_	Ault		0
+edoc	c2	DruidoftheClaw	_	Abrf,Arej,Aroa,Aien,Ault		1
+edot	c2	DruidoftheTalon	Afae	Acyc,Arav,Afae,Aien,Ault		1
+edry	c2	Dryad	Aadm	Aadm,Amim,Aspo,Aien,Ault		1
+edtm	c2	DruidoftheTalonMorph	Afae	Arav,Afa2,Ault		1
+efdr	c2	faerie dragon	Apsh	Amim,Amfl,Apsh,Ault		1
+efon	c2	Ent	_	Ault		1
+ehip	c2	Hippogryph	_	Aco3,Ault		1
+ehpr	c2	Hippogryph Rider	_	Adec,Ault		1
+emtg	c2	Mountain Giant	_	Atau,Agra,Arsk,Assk,Aien,Ault		1
+esen	c2	Huntress	_	Aesn,Ashm,Amgl,Aien,Ault		1
+espv	c2	Spirit of Vengeance	Avng	ACmi,Asp1,ACrk,Avng,Ault		1
+even	c2	Vengeance	_	Avul,Ault		1
+ewsp	c2	Wisp	_	Adtn,Aren,Awha,Ault		1
+eaoe	c3	AncientofLore	_	Abds,Aeat,Aro1		1
+eaom	c3	AncientofWar	_	Abds,Aeat,Aro1		1
+eaow	c3	AncientofWind	_	Abds,Aeat,Aro1		1
+eate	c3	AltarofElders	_	Abds		1
+eden	c3	Ancient of Wonders	_	Abds,Aall,Aeat,Aro1,Apit		1
+edob	c3	HuntersHall	_	Abds		1
+edos	c3	ChimaeraRoost	_	Abds		1
+egol	c3	EntangledGoldMine	_	Abds,Aenc,Slo2,Adri,Aegm		1
+emow	c3	MoonWell	_	Abds,Ambt		1
+eshy	c3	Night Elf Shipyard	_	Abds,Ane2		0
+etoa	c3	TreeofAges	_	Aent,Aeat,Aro1,Abdl,Atol,Arlm		1
+etoe	c3	TreeofEternity	_	Aent,Aeat,Aro1,Abdl,Atol,Arlm		1
+etol	c3	TreeofLife	_	Aent,Aeat,Aro1,Abdl,Atol,Arlm		1
+etrp	c3	Ancient Protector	_	Abds,Aeat,Aro2		1
+Ucrl	d1	HeroCryptLord	_	AInv	AUim,AUts,AUcb,AUls	1
+Udea	d1	HeroDeathKnight	_	AInv	AUdc,AUdp,AUau,AUan	1
+Udre	d1	HeroDreadLord	_	AInv	AUav,AUsl,AUcs,AUin	1
+Ulic	d1	HeroLich	_	AInv	AUfn,AUfu,AUdr,AUdd	1
+uabo	d2	Abomination	_	Aap1,Aiun,Acn2		1
+uaco	d2	Acolyte	_	Aaha,Arst,Alam,Auns		1
+uban	d2	Banshee	Acrs	Aam2,Acrs,Aps2,Aiun		1
+ubsp	d2	destroyer	Afak	Advm,Afak,Aave,Aabs,ACmi		1
+ucrm	d2	CryptFiendMorph	_	Aweb,Aspa,Abur,Aiun		1
+ucry	d2	CryptFiend	Aweb	Aweb,Aspa,Abur,Aiun		1
+ucs1	d2	Carrion Scarab level 1	_	_		1
+ucs2	d2	Carrion Scarab level 2	_	Abu2		1
+ucs3	d2	Carrion Scarab level 3	_	Abu3		1
+ucsB	d2	Carrion Scarab level 2 -burrowed	_	Abu2		1
+ucsC	d2	Carrion Scarab level 3 -burrowed	_	Abu3		1
+ufro	d2	FrostWyrm	_	Afrz,Afrb		1
+ugar	d2	Gargoyle	_	Astn		1
+ugho	d2	Ghoul	_	Acan,Ahrl,Aiun		1
+ugrm	d2	GargoyleMorphed	_	Astn,ACmi		1
+uloc	d2	Locust	_	Aloc		1
+umtw	d2	MeatWagon	_	Sch2,Amel,Amed,Apts,Aexh		1
+unec	d2	Necromancer	_	Acri,Arai,Aiun,Auuf		1
+uobs	d2	Obsidian Statue	_	Arpl,Arpm,Aave		1
+uplg	d2	PlagueWard	_	Aap2		1
+ushd	d2	Shade	_	Atru,Agho		1
+uske	d2	SkeletonWarrior	_	_		1
+uskm	d2	Skeletal Mage	_	_		1
+uubs	d2	undead battleship	_	_		0
+uaod	d3	AltarofDarkness	_	Abgs		1
+ubon	d3	Boneyard	_	Abgs		1
+ugol	d3	UndeadGoldMine	_	Abgs,Abgm		1
+ugrv	d3	Graveyard	_	Abgs,Agyd,Arlm		1
+unp1	d3	Halls of the Dead	_	Abgl,Arlm,Afr2		1
+unp2	d3	Black Citadel	_	Abgl,Arlm,Afr2		1
+unpl	d3	Necropolis	_	Abgl,Arlm		1
+usap	d3	SacrificialPit	_	Abgs,Asac		1
+usep	d3	Crypt	_	Abgs		1
+ushp	d3	undead shipyard	_	Abgs,Ane2		0
+uslh	d3	Slaughterhouse	_	Abgs		1
+utod	d3	TempleoftheDamned	_	Abgs		1
+utom	d3	Tomb of Relics	_	Aall,Abgs,Apit		1
+uzg1	d3	Ziggurat Upgrade	_	Abgs		1
+uzg2	d3	Frost Tower	_	Abgs,Afra		1
+uzig	d3	Ziggurat	_	Abgs		1
+Nbrn	n1	HeroBansheeRanger	_	AInv	ANsi,ANba,ANdr,ANch	1
+Nbst	n1	HeroBeastMaster	_	AInv	ANsg,ANsq,ANsw,ANst	1
+Nngs	n1	HeroNagaSeaWitch	_	AInv	ANfl,ANfa,ANms,ANto	1
+Npbm	n1	HeroPandarenBrewmaster	_	AInv	ANbf,ANdh,ANdb,ANef	1
+Nalc	n1	HeroAlchemist	_	AInv	ANhs,ANab,ANcr,ANtm	1
+Nalm	n1	HeroAlchemistMorph	_	AInv	ANhs,ANab,ANcr,ANtm	1
+Nal2	n1	HeroAlchemistMorph2	_	AInv	ANhs,ANab,ANcr,ANtm	1
+Nal3	n1	HeroAlchemistMorph3	_	AInv	ANhs,ANab,ANcr,ANtm	1
+Ntin	n1	HeroTinker	_	AInv	ANsy,ANcs,ANeg,ANrg	1
+Nrob	n1	HeroTinkerMorph	_	AInv,ANde	ANsy,ANcs,ANeg,ANrg	1
+ncgb	n1a	Clockwerk Goblin (lvl 1)	_	Asdg		1
+ncg1	n1a	Clockwerk Goblin (lvl 2)	_	Asd2		1
+ncg2	n1a	Clockwerk Goblin (lvl 3)	_	Asd3		1
+ncg3	n1a	Clockwerk Goblin (lvl 3)	_	Asd3		1
+nfac	n1a	pocket factory	_	ARal		0
+nfa1	n1a	pocket factory	_	ARal		0
+nfa2	n1a	pocket factory	_	ARal		0
+Nplh	n1	HeroPitLord	_	AInv	ANrf,ANht,ANca,ANdo	1
+Nfir	n1	FireLord	_	AInv	ANia,ANso,ANlm,ANvc	1
+nlv1	a2	LavaSpawn1	_	_		1
+nlv2	a2	LavaSpawn2	_	_		1
+nlv3	a2	LavaSpawn3	_	_		1
+ndr1	n1a	DarkMinion1	_	_		1
+ndr2	n1a	DarkMinion2	_	_		1
+ndr3	n1a	DarkMinion3	_	_		1
+ngz1	n1a	grizzly bear 1	_	_		1
+ngz2	n1a	grizzly bear 2	_	ANbh		1
+ngz3	n1a	grizzly bear 3	_	ANbh,ANbl		1
+ngzc	n1a	misha 1	_	ACrk		0
+ngzd	n1a	misha 2	_	ANbh,ACrk		0
+ngza	n2	misha 3	_	ANb2,ACrk		0
+ngz4	n1a	misha 4	_	ANb2,ACrk		0
+npn1	n1a	Fire pandaren split	_	Apig,ACrk		1
+npn2	n1a	Wind pandaren split	_	Adsm,ACcy,ACrk,ANwk		1
+npn3	n1a	Earth pandaren split	_	ACmi,ACpv,ANta,ACrk		1
+npn4	n1a	Fire pandaren split2	_	Apig,ACrk		1
+npn5	n1a	Wind pandaren split2	_	Adsm,ACcy,ACrk,ANwk		1
+npn6	n1a	Earth pandaren split2	_	ACmi,ACpv,ANta,ACrk		1
+nqb1	n1a	quillbeast 1	_	_		1
+nqb2	n1a	quillbeast 2	Afzy	Afzy		1
+nqb3	n1a	quillbeast 3	Afzy	Afzy		1
+nqb4	n1a	quillbeast 4	Afzy	Afzy		0
+nwe1	n1a	war eagle 1	_	ANtr		1
+nwe2	n1a	war eagle 2	_	ANtr,Alit		1
+nwe3	n1a	war eagle 3	_	ANtr,Alit,Apiv		1
+nadk	n2	blue drake	_	Afrb		1
+nadr	n2	blue dragon	_	Advc,ACdv,Afrb,ACmi		1
+nadw	n2	blue dragon whelp	_	Afrb		1
+nahy	n2	ancient hydra	_	Aspo,Awrh,ACdv,Advc,Aspy		1
+nanb	n2	barbed arachnathid	_	_		0
+nanm	n2	Barbed Arachnathid (merc)	_	Abu5		0
+nanc	n2	crystal arachnathid	_	_		0
+nane	n2	arachnathid earth-borer	_	ACvs,ACss		0
+nano	n2	arachnathid overlord	_	ACac		0
+nanw	n2	arachnathid warrior	_	_		0
+narg	n2	battle golem	_	ACmi		1
+nass	n2	assassin	_	Ashm,ACvs		1
+nbal	n2	doomguard	_	ACcr,Adsm,Awrs,ACrf,ACsk		1
+nba2	n2	doomguard(summoned)	_	ACcr,Adsm,Awrs,ACrf,ACsk		1
+nban	n2	bandit	_	Ashm		1
+nbda	n2	blue dragonspawn apprentice	_	ACrj,ACev		0
+nbdk	n2	black drake	_	_		1
+nbdm	n2	blue dragonspawn meddler	_	ACev		0
+nbdo	n2	blue dragonspawn overseer	_	ACev,ACav,ACbf		0
+nbdr	n2	black whelp	_	_		1
+nbds	n2	blue dragonspawn sorceror	_	ACfn,ACev		0
+nbdw	n2	blue dragonspawn warrior	_	ACev		0
+nbld	n2	bandit lord	_	Ashm,ACav,ACds		1
+nbnb	n2	barbed arachnathid burrowed	_	Abu5		0
+nbot	n2	transport ship	_	Sch5,Slo3,Sdro		1
+nbrg	n2	brigand	_	Ashm		1
+nbwm	n2	black dragon	_	Advc,ACdv,ACmi		1
+nbzd	n2	bronze dragon	_	Advc,ACdv,Alit,ACmi		1
+nbzk	n2	bronze drake	_	Alit		1
+nbzw	n2	bronze dragon whelp	_	Alit		1
+ncea	n2	CentaurArcher	_	_		1
+ncen	n2	Centaur outrunner	_	_		1
+ncer	n2	centaur drudge	_	_		1
+ncfs	n2	watery minion cliffrunner	_	_		0
+ncim	n2	centaur impaler	_	ACsa		1
+ncks	n2	centaur sorceror	Ablo	ACbl,ACdm		1
+ncnk	n2	centaur khan	_	SCae,ACrn,Awrs		1
+ndqn	n2	succubus	_	_		0
+ndqp	n2	maiden of pain	_	ACdr,ACss		0
+ndqs	n2	queen of suffering	_	ACdc,ACua,ACch		0
+ndqt	n2	vile temptress	_	_		0
+ndqv	n2	vile tormentor	_	ACsi		0
+ndrv	n2	revenant of the depths	_	ACwe		1
+ndtb	n2	dark troll berserker	_	_		1
+ndth	n2	dark troll high priest	Anhe	Anh2,ACsl		1
+ndtp	n2	dark troll shadow priest	Anhe	Anh1		1
+ndtr	n2	darkTroll	_	_		1
+ndtt	n2	darkTrollTrapper	_	ACen		1
+ndtw	n2	darkTrollwarlord	_	ACat		1
+nehy	n2	elder hydra	Afae	ACff		1
+nelb	n2	berserk elemental	_	ACmi,ACfn		1
+nele	n2	enraged elemental	_	ACmi		1
+nenc	n2	corrupted ent	_	_		1
+nenf	n2	enforcer	_	Ashm,ACev		1
+nenp	n2	poison ent	_	Aenr,ACvs		1
+nepl	n2	plague ent	_	Aenr,Aap3		1
+nerd	n2	Eredar Diabolist	ANpa	ACpa,ANfb		0
+ners	n2	Eredar Sorceror	Aadm	ACdm,ACsl		0
+nerw	n2	Eredar Warlock	_	ACbh,ACfd,ACmf		0
+nfel	n2	Fel Stalker	_	Ambb		1
+nfgb	n2	bloodfiend	_	ACce		0
+nfgo	n2	forgotten one	_	ACfb,ACch,ACtn		0
+nfgt	n2	forgotten one tentacle	_	_		0
+nfgu	n2	felguard	_	_		0
+nfod	n2	faceless one deathbringer	_	ACad,ACsi		0
+nfor	n2	faceless one trickster	Acrs	ACcs,ACpu		0
+nfot	n2	faceless one terror	_	ACsl,ACmf		0
+nfov	n2	overlord	_	Acht,ACce,ACvp		0
+nfpc	n2	Polar Furbolg Champion	_	_		0
+nfpe	n2	Polar Furbolg Elder Shaman	_	AChv,ACfn		0
+nfpl	n2	Polar Furbolg	_	_		0
+nfps	n2	Polar Furbolg Shaman	AUfu	ACf2,ACdm		0
+nfpt	n2	Polar Furbolg Tracker	Aslo	ACsw		0
+nfpu	n2	Polar Furbolg Ursa Warrior	_	Awrs,ACac		0
+nfra	n2	Furbolg Ursa Warrior	_	Awrs,ACac		1
+nfrb	n2	Furbolg Tracker	Afae	ACff		1
+nfre	n2	Furbolg Elder Shaman	_	ACr2,ACls		1
+nfrg	n2	Furbolg Champion	_	_		1
+nfrl	n2	Furbolg	_	_		1
+nfrp	n2	Furbolg Panda	_	_		1
+nfrs	n2	Furbolg Shaman	_	ACr2		1
+nfsh	n2	forest troll high priest	Anhe	Anh2,ACif,ACd2		1
+nfsp	n2	forest troll shadow priest	Anhe	Anh1,ACdm		1
+nftb	n2	forest troll berserker	_	_		1
+nftk	n2	ForestTrollKing	_	ACat		1
+nftr	n2	ForestTroll	_	_		1
+nftt	n2	ForestTrollTrapper	_	ACen		1
+ngdk	n2	green drake	_	_		1
+nggr	n2	granite golem	_	ACmi,ACtb,ACtc		1
+ngh1	n2	ghost	_	ACps		1
+ngh2	n2	wraith	Acrs	ACps,ACcs		1
+ngir	n2	goblin shredder	_	Ahr3		1
+nglm	n2	GoblinLandMine	_	Amnx,Amin		1
+ngna	n2	Gnoll Poacher	_	_		1
+ngnb	n2	gnoll brute	_	_		1
+ngno	n2	Gnoll Robber	_	_		1
+ngns	n2	Gnoll Assassin	_	ACvs		1
+ngnv	n2	gnoll king	_	ACac		1
+ngnw	n2	gnoll warden	_	ACpu		1
+ngrd	n2	green dragon	_	Advc,ACdv,ACmi		1
+ngrk	n2	mud golem	Aslo	ACmi,ACsw		1
+ngrw	n2	green dragon whelp	_	_		1
+ngsp	n2	GoblinSapper	_	Asds		1
+ngst	n2	rock golem	_	ACmi,ACtb		1
+nhar	n2	Harpy Scout	_	_		1
+nhdc	n2	deceiver	Acrs	ACcs		1
+nhfp	n2	fallen priest	_	_		1
+nhhr	n2	heretic	Arai	ACrd,ACca		1
+nhrh	n2	harpy hag	Acrs	ACcs,ACsl		1
+nhrq	n2	harpy queen	_	ACr2,ACcy		1
+nhrr	n2	harpy rogue	_	_		1
+nhrw	n2	harpy witch	Afae	ACff		1
+nhyc	n2	campaign hydra	_	Advc,ACdv,ANth,Ansk		0
+nhyd	n2	hydra	_	Aspo, Aspt		1
+nhyh	n2	hydra hatchling	_	Aspo		1
+nina	n2	infernal automaton	_	ANin		0
+ninc	n2	infernal contraption	_	_		0
+ninf	n2	infernal	_	ACmi,ANpi,ACrk		1
+ninm	n2	infernal machine	_	ACbc		0
+nith	n2	ice troll high priest	Anhe	Anh2,ACf2,ACd2		1
+nitp	n2	ice troll shadow priest	Anhe	Anh1		1
+nitr	n2	IceTroll	_	_		1
+nits	n2	ice troll berserker	_	_		1
+nitt	n2	ice troll trapper	_	ACen		1
+nitw	n2	ice troll warlord	_	ACat		1
+njgb	n2	Enranged Jungle Stalker	_	ACtc		0
+njga	n2	Elder Jungle Stalker	_	_		0
+njg1	n2	Jungle Stalker	_	_		0
+nkob	n2	Kobold	_	_		1
+nkog	n2	kobold geomancer	Aslo	ACsw,ACdm		1
+nkol	n2	kobold taskmaster	_	ACac,ACbh		1
+nkot	n2	kobold tunneler	_	ACbh		1
+nlds	n2	makrura deep seer	_	Aenw,Aslp		1
+nlkl	n2	makrura tidal lord	_	ACce,ACav		1
+nlpd	n2	makrura pool dweller	_	_		1
+nlpr	n2	makrura prawn	_	_		1
+nlps	n2	makrura prawn summoned	_	_		1
+nlrv	n2	deeplord revenant	AUfu	ACcv,ACf2		1
+nlsn	n2	makrura snapper	_	_		1
+nltc	n2	makrura tide caller	Anhe	Anh1,ACf2		1
+nltl	n2	lightning lizard	_	Alit,ACpu		1
+nlur	n2	monster lure ward	_	_		1
+nmam	n2	Mammoth	_	_		0
+nmbg	n2	mur'gul blood-gill	Anhe	Anh1		1
+nmcf	n2	mur'gul cliffrunner	_	_		1
+nmdr	n2	Dire Mammoth	_	_		0
+nmfs	n2	murloc flesheater	_	ACcn		1
+nmgd	n2	Magnataur Destroyer	_	ACmi,ACcb,ACtc		0
+nmgr	n2	Magnataur Reaver	_	ACmi,ACcb		0
+nmgw	n2	Magnataur Warrior	_	ACmi		0
+nmit	n2	Icetusk Mammoth	_	_		0
+nmmu	n2	murloc mutant	_	ACcr		1
+nmpg	n2	murloc plaguebearer	_	Aap3		1
+nmrl	n2	murloc fisherman	_	_		1
+nmrm	n2	murloc nightcrawler	_	ACvs,Ashm		1
+nmrr	n2	murloc huntsman	_	ACen		1
+nmrv	n2	mur'gul reaver	_	ACac		1
+nmsc	n2	mur'gul shadowcaster	Acrs	AChx,ACcs		1
+nmsn	n2	mur'gul snarecaster	Aslo	ACsw,ACdm		1
+nmtw	n2	mur'gul tidewarrior	_	_		1
+nmyr	n2	naga myrmidon	_	ANen,Asb1		0
+nmys	n2	naga myrmidon submerged	_	Asb1		0
+nndk	n2	nether drake	_	_		0
+nndr	n2	nether dragon	_	ACmi,ACcr		0
+nnht	n2	nether dragon hatchling	_	_		0
+nnmg	n2	naga mur'gul	_	_		0
+nnrg	n2	naga royal guard	_	Asb2,ACcv,ACcb,ACwe,ACsk		0
+nnrs	n2	naga royal guard submerged	_	Asb2		0
+nnsu	n2	naga summoner	ANpa	Acny,ACfu,ANpa,Ahnl		0
+nnsw	n2	naga siren	ANpa	Acny,ACfu,ANpa		0
+nnwa	n2	nerubian warrior	_	Assp		1
+nnwl	n2	nerubian webspinner	Aweb	ACwb,ACrd,Aspa		1
+nnwq	n2	nerubian queen	Arai	ACua,ACca,ACrd,Aspa		1
+nnwr	n2	nerubian seer	Arai	ACrd,ACdm,Aspa		1
+nnws	n2	nerubian spider lord	_	Assp		1
+noga	n2	Stonemaul Warchief	_	SCae,ANta,ACbh		0
+nogl	n2	ogre lord	_	ACav,ACsh		1
+nogm	n2	ogre mauler	_	_		1
+nogn	n2	Stonemaul Magi	_	ACro		0
+nogo	n2	Stonemaul Ogre	_	ACen		0
+nogr	n2	Ogre Warrior	_	_		1
+nomg	n2	ogre magi	Ablo	ACbb		1
+nowb	n2	owlbear	_	_		1
+nowe	n2	enraged owlbear	_	_		1
+nowk	n2	berserk owlbear	_	ACbh,Awrs		1
+npfl	n2	felbeast	_	_		0
+npfm	n2	fel ravager	ANba	ACbk,ACde		0
+nplb	n2	polar bear	_	_		0
+nplg	n2	giant polar bear	_	_		0
+nqbh	n2	quillboar hunter	_	ACev		1
+nrdk	n2	Red Dragon Whelp	_	_		1
+nrdr	n2	Red Drake	_	_		1
+nrel	n2	reef elemental	_	_		1
+nrog	n2	rogue	_	Ashm		1
+nrvd	n2	death revenant	Arai	ACrd,ACdc,ACad		1
+nrvf	n2	fire revenant	_	ACim		1
+nrvi	n2	ice revenant	_	ACvp,ACfn		1
+nrvl	n2	lightning revenant	_	ACpu,ACcl		1
+nrvs	n2	frost revenant	_	ACbz		1
+nrwm	n2	Red Dragon	_	Advc,ACdv,ACmi		1
+nrzb	n2	razormane brute	_	_		1
+nrzg	n2	razormane chieftain	_	ACah,ACtb		1
+nrzm	n2	razormane medicine man	_	AChw,ACs9		1
+nrzs	n2	razormane scout	_	_		1
+nrzt	n2	quillboar	_	_		1
+nsat	n2	Satyr Trickster	_	ACpu		1
+nsbm	n2	brood mother	_	ACvs,ACen,Aspd		1
+nsbs	n2	snap dragon submerged	_	Asb3		0
+nsc2	n2	spider crab 2	_	_		1
+nsc3	n2	spider crab 3	_	_		1
+nscb	n2	spider crab	_	_		1
+nsel	n2	sea elemental	_	ACbh		1
+nsgb	n2	sea giant behemoth	_	ACpv,Awrs,ACtb		1
+nsgg	n2	siege golem	_	ACmi		1
+nsgh	n2	sea giant hunter	_	ACpv,ACen		1
+nsgn	n2	sea giant	_	ACpv		1
+nsgt	n2	giant spider	_	ACvs,ACen		1
+nska	n2	skeletal archer	_	_		1
+nske	n2	SkeletonWarrior	_	_		1
+nsca	n2	skeletal archer(summoned)	_	_		1
+nsce	n2	SkeletonWarrior(summoned)	_	_		1
+nskf	n2	burning archer	_	ACsa		1
+nskg	n2	giant SkeletonWarrior	_	_		1
+nskm	n2	skeletal marksman	_	ACcw		1
+nsko	n2	skeletal orc	_	_		1
+nslf	n2	sludge flinger	Aslo	ACsw		1
+nslh	n2	salamander hatchling	_	_		1
+nsll	n2	salamander lord	_	ACim,ACrf,Advc,ACdv		1
+nslm	n2	sludge minion	Aslo	ACsw		1
+nsln	n2	sludge monstrosity	Aslo	ACsw		1
+nslr	n2	salamander	_	ACim,ACfb		1
+nslv	n2	salamander vizier	Ablo	ACbl,Ambd,ACdm		1
+nsnp	n2	snap dragon	_	Aspo,Asb3		0
+nsns	n2	watery minion snarecaster	Aslo	ACsw,ACdm		0
+nsoc	n2	skeletal orc champion	_	ACdc		1
+nsog	n2	skeletal orc grunt	_	_		1
+nspb	n2	black spider	_	_		1
+nspd	n2	spiderling	_	_		1
+nspg	n2	green spider	_	_		1
+nspp	n2	spirit pig	_	_		1
+nspr	n2	spider	_	_		1
+nsqa	n2	ancient sasquatch	_	ACtc,ACfr,ACrn		1
+nsqe	n2	elder sasquatch	_	ACbh,ACfr		1
+nsqo	n2	sasquatch oracle	_	ACrj,ACro		1
+nsqt	n2	sasquatch	_	_		1
+nsra	n2	stormreaver apprentice	_	_		1
+nsrh	n2	stormreaver hermit	_	ACpu		1
+nsrn	n2	stormreaver necrolyte	Ablo	ACbl,ACcl		1
+nsrv	n2	revenant of the seas	_	_		1
+nsrw	n2	stormreaver warlock	_	ACmo,ACad		1
+nssp	n2	spitting spider	_	ACvs		1
+nsth	n2	Satyr Hellcaller	Ablo	ACbl,ACua,ACad		1
+nstl	n2	Satyr Soulstealer	Arai	Ambd,ACrd		1
+nsts	n2	Satyr Shadowdancer	Acrs	ACcs,Ashm		1
+nstw	n2	storm wyrm	_	Alit,ACls,ACcl,Advc,ACdv		1
+nsty	n2	satyr	_	_		1
+nthl	n2	thunder lizard	_	Alit,ACt2		1
+ntka	n2	tuskarr spearman	_	_		0
+ntkc	n2	tuskarr chieftain	_	ACac		0
+ntkf	n2	tuskarr figher	_	_		0
+ntkh	n2	tuskarr healer	Anhe	ACdm,Anh1		0
+ntks	n2	tuskarr sorceror	Ainf	ACif		0
+ntkt	n2	tuskarr trapper	_	ACen		0
+ntkw	n2	tuskarr warrior	_	_		0
+ntor	n2	tornado	_	Atdg,Atsp,Atwa,Aasl		1
+ntrd	n2	dragon turtle	_	ACc2,ACdv,Advc,ANt2		1
+ntrg	n2	gargantuan sea turtle	_	ANth		1
+ntrh	n2	sea turtle hatchling	_	ANth		1
+ntrs	n2	sea turtle	_	ANth		1
+ntrt	n2	giant sea turtle	_	ANth		1
+ntrv	n2	revenant of the tides	_	_		1
+ntws	n2	watery minion tidewarrior	_	_		0
+nubk	n2	unbroken darkhunter	_	_		0
+nubr	n2	unbroken rager	_	ACen		0
+nubw	n2	unbroken darkweaver	_	ACuf		0
+nvde	n2	elder voidwalker	_	ACfl,ACde		0
+nvdg	n2	greater voidwalker	AUfu	ACf2,ACcl		0
+nvdl	n2	lesser voidwalker	_	_		0
+nvdw	n2	voidwalker	AHca	ACcw		0
+nwen	n2	Wendigo	_	_		1
+nwgs	n2	Naga Coutl	Aadm	Andm		0
+nwiz	n2	wizard	_	_		1
+nwld	n2	dire wolf	_	ACct,ACro		1
+nwlg	n2	giant wolf	_	ACct		1
+nwlt	n2	timber wolf	_	_		1
+nwna	n2	ancient wendigo	_	Awrs,ACbh,ACrn		1
+nwnr	n2	elder wendigo	_	ACbh		1
+nwns	n2	wendigo shaman	_	ACrj,ACro		1
+nwrg	n2	war golem	_	ACmi		1
+nws1	n2	dragon hawk	_	ACen		1
+nwwd	n2	white dire wolf	_	ACct,ACro		1
+nwwf	n2	white wolf	_	_		1
+nwwg	n2	giant white wolf	_	ACct		1
+nwzd	n2	dark wizard	Arai	ACrd,ACba,ACpy		1
+nwzg	n2	renegade wizard	_	ACpu,ACls		1
+nwzr	n2	rogue wizard	AUfu	ACf2		1
+nzep	n2	GoblinZeppelin	_	Sch3,Achd,Aloa,Adro		1
+nzom	n2	Zombie	_	_		0
+nchp	n2	chaplain	Anhe	Anh2,ACif,Adsm		0
+nhym	n2	hydromancer	Aslo	ACsw,ACpy,ACc3		0
+nalb	o2	Albatross	_	Awan		1
+ncrb	o2	Crab	_	Awan		1
+nfro	o2	Frog	_	Awan		1
+nech	o2	Chicken	_	Awan		1
+nrac	o2	Raccoon	_	Awan		1
+necr	o2	Rabbit	_	Awan		1
+nder	o2	deer	_	Awan		1
+ndog	o2	dog	_	Awan		1
+ndwm	o2	Dune Worm	_	Awan		0
+nfbr	o2	Felboar	_	Awan		0
+nhmc	o2	Hermit Crab	_	Awan		1
+now2	o2	owl 2 (scout)	_	Avul,ACmi,Adtg		1
+now3	o2	owl 3 (scout)	_	Avul,ACmi,Adtg		1
+nowl	o2	owl (scout)	_	Avul,ACmi,Adtg		1
+npig	o2	Pig	_	Awan		1
+npng	o2	Penguin	_	Awan		0
+npnw	o2	Penguin, water	_	Awan		0
+nrat	o2	Rat	_	Awan		0
+nsea	o2	Seal	_	Awan		1
+nsha	o2	Amphibious Sheep	_	Awan		1
+nshe	o2	Sheep	_	Awan		1
+nshf	o2	Flying Sheep	_	Awan		1
+nshw	o2	Secret Watery Sheep	_	Awan		1
+nskk	o2	Skink	_	Awan		1
+nsno	o2	Snowy Owl	_	Awan		0
+nvil	o2	Villager Man	_	_		1
+nvk2	o2	Villager Kid 2	_	_		0
+nvl2	o2	Villager Man 2	_	_		0
+nvlk	o2	Villager Kid	_	_		1
+nvlw	o2	Villager Woman	_	_		1
+nvul	o2	Vulture	_	Awan		1
+ncb0	p3	city building	_	_		1
+ncb1	p3	city building	_	_		1
+ncb2	p3	city building	_	_		1
+ncb3	p3	city building	_	_		1
+ncb4	p3	city building	_	_		1
+ncb5	p3	city building	_	_		1
+ncb6	p3	city building	_	_		1
+ncb7	p3	city building	_	_		1
+ncb8	p3	city building	_	_		1
+ncb9	p3	city building	_	_		1
+ncba	p3	city building	_	_		1
+ncbb	p3	city building	_	_		1
+ncbc	p3	city building	_	_		1
+ncbd	p3	city building	_	_		1
+ncbe	p3	city building	_	_		1
+ncbf	p3	city building	_	_		1
+ncnt	p3	Centaur Tent	_	_		1
+ncop	p3	circle of power	_	Avul		1
+ncp2	p3	circle of power medium	_	Avul		1
+ncp3	p3	circle of power large	_	Avul		1
+nct1	p3	Centaur Tent	_	_		1
+nct2	p3	Centaur Tent	_	_		1
+ndch	p3	draenei chieftain hut	_	_		0
+ndh0	p3	draenei hut 0	_	Abds		0
+ndh1	p3	draenei hut 1	_	Abds		0
+ndh2	p3	draenei haven	_	Abdl,Argl		0
+ndh3	p3	draenei barracks	_	_		0
+ndh4	p3	draenei seer's den	_	_		0
+ndrg	p3	Dragon Roost green	_	Ane2,Avul		1
+ndrk	p3	Dragon Roost black	_	Ane2,Avul		1
+ndro	p3	Dragon Roost Outland	_	Ane2,Avul		0
+ndrr	p3	Dragon Roost red	_	Ane2,Avul		1
+ndru	p3	Dragon Roost blue	_	Ane2,Avul		1
+ndrz	p3	Dragon Roost bronze	_	Ane2,Avul		1
+nfh0	p3	Forest Troll Hut 0	_	_		1
+nfh1	p3	Forest Troll Hut 1	_	_		1
+nfoh	p3	Fountain of Health	_	Avul,ACnr		1
+nfr1	p3	Furbolg Hut 1	_	_		1
+nfr2	p3	Furbolg Hut 2	_	_		1
+ngad	p3	Goblin Ammo Dump	_	Ane2,Andt,Avul		1
+ngme	p3	goblin merchant	_	Aneu,Avul,Apit		1
+ngnh	p3	Gnoll Hut	_	_		1
+ngni	p3	Infected Granary	_	_		0
+ngol	p3	GoldMine	_	Agld,Avul		1
+ngt2	p3	Gnoll Hut	_	_		1
+ngwr	p3	grain warehouse	_	_		0
+nhns	p3	harpy nest	_	_		1
+nmer	p3	MercenaryCamp L	_	Ane2,Avul		1
+nmg0	p3	Mur'gul Hut 0	_	_		0
+nmg1	p3	Mur'gul Hut 1	_	_		0
+nmh0	p3	Murloc Hut 0	_	_		1
+nmh1	p3	Murloc Hut 1	_	_		1
+nmoo	p3	Fountain of Life	_	Avul,ANre		1
+nmr0	p3	MercenaryCamp V	_	Ane2,Avul		1
+nmr2	p3	MercenaryCamp F	_	Ane2,Avul		1
+nmr3	p3	MercenaryCamp W	_	Ane2,Avul		1
+nmr4	p3	MercenaryCamp B	_	Ane2,Avul		1
+nmr5	p3	MercenaryCamp A	_	Ane2,Avul		1
+nmr6	p3	MercenaryCamp C	_	Ane2,Avul		1
+nmr7	p3	MercenaryCamp N	_	Ane2,Avul		1
+nmr8	p3	MercenaryCamp Y	_	Ane2,Avul		1
+nmr9	p3	MercenaryCamp X	_	Ane2,Avul		1
+nmra	p3	MercenaryCamp D	_	Ane2,Avul		1
+nmrb	p3	MercenaryCamp G	_	Ane2,Avul		1
+nmrc	p3	MercenaryCamp Z	_	Ane2,Avul		1
+nmrd	p3	MercenaryCamp I	_	Ane2,Avul		0
+nmre	p3	MercenaryCamp O	_	Ane2,Avul		0
+nmrf	p3	MercenaryCamp K	_	Ane2,Avul		0
+nmrk	p3	Marketplace	_	Aneu,Asid,Avul,Asud,Apit		1
+nnzg	p3	nerubian ziggurat	_	_		1
+nshp	p3	Goblin Shipyard	_	Ane2,Avul		1
+ntav	p3	Tavern	_	Ane2,Avul,Aawa		1
+nten	p3	Tent	_	_		1
+nth0	p3	Ice Troll Hut 0	_	_		1
+nth1	p3	Ice Troll Hut 1	_	_		1
+ntn2	p3	Tent	_	_		1
+ntnt	p3	Tauren Tent	_	_		1
+ntt2	p3	Tauren Tent	_	_		1
+nwgt	p3	WayGate	_	Awrp,Avul		1
+Ecen	z1	cenarius	_	AInv,SCc1	AEer,AEfn,AEah,AEtq	0
+Eevi	z1	evil illidan	_	AInv,Ault,ANcl	AEmb,AEim,AEev,AEvi	0
+Eevm	z1	evil illidanmorphed	_	AInv,Ault,ANcl	AEmb,AEim,AEev,AEvi	0
+Efur	z1	furion	_	AInv,Ault	AEer,AEfn,AEah,AEtq	0
+Eidm	z1	illidan demon form	_	AInv,Ault	AEmb,AEim,AEev	0
+Eill	z1	illidan	_	AInv,Ault	AEmb,AEim,AEev,AEIl	0
+Eilm	z1	illidanmorphed	_	AInv,Ault	AEmb,AEim,AEev,AEIl	0
+Ekgg	z1	keeper ghost	_	AInv,Ault	AEer,AEfn,AEah,AEtq	0
+Emfr	z1	Mal'furion	_	AInv,Ault	AEer,AEfn,AEah,AEtq	0
+Emns	z1	Mal'furion no stag	_	AInv,Ault	AEer,AEfn,AEah,AEtq	0
+Etyr	z1	Tyrande	_	AInv,Ashm,Ault	AHfa,AEst,AEar,AEsf	0
+Ewrd	z1	Maiev	_	Ashm,AInv,Ault	AEbl,AEfk,AEsh,AEsv	0
+Hant	z1	antonidus	_	AInv	AHbz,AHab,AHwe,AHmt	0
+Hapm	z1	Admiral Proudmoore	_	AInv		0
+Harf	z1	arthas w/ frostmourne	_	AInv	AHhb,AHds,AHre,AHad	0
+Hart	z1	arthas	_	AInv	AHhb,AHds,AHre,AHad	0
+Hdgo	z1	Dagren the Orcslayer	_	AInv	AHhb,AHds,AHre,AHad	0
+Hhkl	z1	Halahk the Lifebringer	_	AInv	AHhb,AHds,AHre,AHad	0
+Hjai	z1	jaina	_	AInv	AHbz,AHab,AHwe,AHmt	0
+Hkal	z1	Kael	_	AInv,Asph	AHfs,AHbn,AHdr,AHpx	0
+Hlgr	z1	Lord Garithos	_	AInv	ANsh,AHhb,AHad,ANav	0
+Hmbr	z1	muradin bronzebeard	_	AInv	AHtc,AHtb,AHbh,AHav	0
+Hmgd	z1	Magroth the Defender	_	AInv	AHhb,AHds,AHre,AHad	0
+Hpb1	z1	Paladin Boss 1	_	AInv	AHhb,AHds,AHre,AHad	0
+Hpb2	z1	Paladin Boss 2	_	AInv	AHhb,AHds,AHre,AHad	0
+Huth	z1	uther	_	AInv	AHhb,AHds,AHre,AHad	0
+Hvsh	z1	Lady Vashj	_	AInv	ANfl,ANfa,ANms,ANto	0
+Hvwd	z1	sylvanus windrunner	_	AInv,Ault	AHca,AEst,AEar,AEsf	0
+Nbbc	z1	blackrock blademaster	_	AInv	AOwk,AOcr,AOmi,AOww	0
+Nklj	z1	Kiljaeden	_	_		0
+Nkjx	z1	Kiljaeden - cinematic only	_	_		0
+Nmag	z1	Magtheridon	_	AInv	ANrf,ANht,ANca,ANdo	0
+Nman	z1	Mannoroth	_	AInv	AOsh,AHtc,AOeq,ANrn	0
+Npld	z1	Pit Lord	_	AInv	AOsh,AHtc,AOeq,ANrn	1
+Nsjs	z1	Chen Stormstout	_	AInv	ANcf,Acdh,Acdb,Acef,Aamk	0
+Ocbh	z1	cairne bloodhoof	_	AInv	AOsh,AOae,AOre,AOws	0
+Ocb2	z1	cairne bloodhoof (war3x)	_	AInv	AOs2,AOr2,AOr3,AOw2,Aamk	0
+Odrt	z1	Drek'Thar	_	AInv	AOfs,AOsf,AOcl,AOeq	0
+Ogld	z1	Gul'dan	_	AInv		0
+Ogrh	z1	grom hellscream	_	AInv	AOwk,AOcr,AOmi,AOww	0
+Opgh	z1	possessed grom hellscream	_	AInv	AOwk,AOcr,AOmi,AOww	0
+Orex	z1	Rexxar	_	AInv	Arsg,Arsq,ANsb,Arsp,Aamk	0
+Orkn	z1	Rokhan	_	AInv	ANhw,ANhx,Arsw,AOls,Aamk	0
+Osam	z1	Samuro	_	AInv	AOwk,AOcr,AOmi,AOww	0
+Otcc	z1	cairne bloodhoof cinematic	_	AInv	AOsh,AOae,AOre,AOws	0
+Othr	z1	thrall	_	AInv	AOfs,AOsf,AOcl,AOeq	0
+Uanb	z1	anub'arak	_	AInv	AUim,AUts,AUcb,AUls	0
+Ubal	z1	balnazzar	_	AInv	AUsl,AUav,ANr3,AOeq,ACf3	0
+Uclc	z1	kelthuzadlich cinematic	_	AInv	AUfn,AUfu,AUdr,AUdd	0
+Udth	z1	detheroc	_	AInv	AUsl,AEsh,AUcs,AUdd	0
+Uear	z1	evil arthas	_	AInv	AUdc,AUdp,AUau,AUan	0
+Uktl	z1	kelthuzadlich	_	AInv	AUfn,AUfu,AUdr,AUdd	0
+Umal	z1	malganis	_	AInv	AUsl,AUcs,ANsl,ANdc	0
+Usyl	z1	Evil Sylvanas	_	AInv	ANsi,ANba,ANdr,ANch	0
+Utic	z1	tichondrius	_	AInv	AUsl,AUcs,ANrc,ANfd	0
+Uvar	z1	varimathras	_	AInv	AUsl,AUav,ANrf,ANdo	0
+Uvng	z1	Vengyr	_	AInv	AUav,AUsl,AUcs,AUin	0
+Uwar	z1	archimonde	_	AInv,ACm2	ANrc,ANdp,ANfd,AHbh	0
+Hgam	z1	ghostly archmage	_	AInv	AHbz,AHab,AHwe,AHmt	0
+eilw	z2	illidan wagon	_	_		0
+enec	z2	night elf courier	_	_		0
+ensh	z2	Naisha	_	Aesr,Ashm,Amgr		0
+eshd	z2	shandris	_	Ashm		0
+etrs	z2	night elf transport ship	_	Sch5,Slo3,Sdro		0
+hbew	z2	blood elf wagon	_	_		0
+hcth	z2	captain thornby	_	Adef		0
+hhdl	z2	headless rider	_	_		0
+hhes	z2	high elven swordsman	_	Adef		0
+hrdh	z2	pack horse	_	_		0
+Naka	z2	akama	_	AInv,Apiv,Ahid	ACs7,AOcl,AEsh,ANr2	0
+nsw1	b2	spirit beast level 1	_	_		0
+nsw2	b2	spirit beast level 2	_	Afbb		0
+nsw3	b2	spirit beast level 3	_	Afbb,Ambb		0
+ncat	b2	Catapult(Draenei)	_	Abof		0
+nbee	z2	blood elf engineer	_	Ahar,Ahrp		0
+nbel	z2	blood elf lieutenant	Asps	Asps,Amim,Aiun		0
+nbsp	z2	battleship	_	_		0
+nchg	z2	chaos grunt	_	Asal		0
+nchr	z2	ChaosWolfRider	_	Aens,Asal		0
+nchw	z2	ChaosWarlock	_	Awfb,Suhf,Scri		0
+nckb	z2	Chaos Kodo Beast	_	Aakb,Advc,Adev		0
+ncpn	z2	Chaos Peon	_	Ahar,Arep,Asal		0
+ndmu	z2	dalaran mutant	_	_		0
+ndrd	z2	draenei darkslayer	_	ACim		0
+ndrf	z2	draenei guardian	_	_		0
+ndrn	z2	draenei vindicator	_	_		0
+ndrt	z2	draenei stalker	_	Apiv,ACev,ACen		0
+ndrh	z2	draenei harbinger	Ablo	Ache,ACbb		0
+ndrl	z2	draenei laborer	_	Ahar,Arep		0
+ndsa	z2	draenei salamander	_	Alit		1
+ndrj	z2	dalaran reject	_	_		0
+ndrm	z2	draenei disciple	Anhe	Anh1		0
+ndrp	z2	draenei protector	_	ACen		0
+ndrs	z2	draenei seer	Aslo	ACsw,ACba,AChv		0
+ndrw	z2	draenei watcher	_	_		0
+negz	z2	engineer gazlowe	_	Asds		0
+nemi	z2	emissary	Ahea	Ahea,Ainf,Adis		0
+nfgl	z2	flesh golem	_	ACsh,ACcr		0
+ngbl	z2	goblin blaster	_	_		0
+nhea	z2	high elven archer	_	_		0
+nhef	z2	high elven female	_	_		0
+nhem	z2	high elven male	_	_		0
+nhew	z2	blood elf worker	_	Ahar,Ahrp		0
+njks	z2	jailor kassan	_	_		0
+nmdm	z2	medivh morphed	_	Amrf		0
+nmed	z2	medivh	_	Amrf		0
+nmpe	z2	naga peon	_	ANha,Arep		0
+nmsh	z2	misha the bear	_	_		0
+nser	z2	searinox	_	_		0
+nspc	z2	support column	_	_		0
+nssn	z2	night elf assassin	_	_		0
+nthr	z2	tharifas	_	_		0
+nw2w	z2	War2 Warlock	_	ACfb,ACuf,ACcr		0
+nwat	z2	sentry	Ablo	ACbl		0
+odkt	z2	Drak'Thul	_	ACmo,ACad		0
+ogrk	z2	Gar'thok	_	Asal,Aion		0
+ojgn	z2	actual orc juggernaut unit	_	_		0
+omtg	z2	mathog	_	_		0
+onzg	z2	nazgrel	_	Aens,Asal,Aion		0
+oosc	z2	kodo beast (riderless)	_	_		0
+oswy	z2	spirit wyvern	_	_		0
+ovlj	z2	vol'jin	_	Aeye,Ahwd,Asta,Aion		0
+owar	z2	orc warchief	_	_		0
+ownr	z2	wyvern	_	_		0
+uabc	z2	Abomination cinematic	_	Aap1		0
+uarb	z2	air barge	_	Sch3,Achd,Aloa,Adro		0
+ubdd	z2	dead azurelore	_	_		0
+ubdr	z2	azurelore	_	_		0
+ubot	z2	undead transport ship	_	Sch5,Slo3,Sdro		0
+udes	z2	undead destroyer	_	_		0
+uktg	z2	kelthuzadghost	_	_		0
+uktn	z2	kelthuzadnecro	_	Acri,Arai,Auhf		0
+uswb	z2	sylvanus banshee	Acrs	ACam,Acrs		0
+hprt	z2	portal unit	_	_		0
+haro	z3	Arcane Observatory	_	Abds		0
+nbfl	z3	Fountain of Blood	_	Avul		0
+nbsm	z3	book of summoning pedestal	_	_		0
+nbt1	z3	boulder tower	_	_		0
+nbt2	z3	boulder tower upgraded	_	_		0
+nbwd	z3	barrow den	_	_		0
+ncap	z3	corrupted Ancient Protector	_	Aeat,Aro2		0
+ncaw	z3	corrupted AncientofWar	_	Aeat,Aro1		0
+ncmw	z3	corrupted MoonWell	_	Ambt		0
+ncta	z3	corrupted treeofAges	_	Aent,Aeat,Aro1,Atol		0
+ncte	z3	corrupted treeofEternity	_	Aent,Aeat,Aro1,Atol		0
+nctl	z3	corrupted treeofLife	_	Aent,Aeat,Aro1,Atol		0
+ndfl	z3	Defiled Fountain of Life	_	Avul		0
+ndgt	z3	dalaran guard tower	_	_		0
+ndke	z3	dark portal (southeast)	_	_		0
+ndkw	z3	dark portal (southwest)	_	_		0
+ndmg	z3	demon gate	_	_		0
+ndrb	z3	Dragon Building	_	_		0
+ndt1	z3	cold tower	_	_		0
+ndt2	z3	cold tower upgraded	_	_		0
+nef0	z3	elven farm	_	_		0
+nef1	z3	elven farm	_	_		0
+nef2	z3	elven farm	_	_		0
+nef3	z3	elven farm	_	_		0
+nef4	z3	elven farm	_	_		0
+nef5	z3	elven farm	_	_		0
+nef6	z3	elven farm	_	_		0
+nef7	z3	elven farm	_	_		0
+nefm	z3	elven farm	_	_		0
+negf	z3	elven guard fire tower	_	_		0
+negm	z3	elven guard magic tower	_	_		0
+negt	z3	elven guard tower	_	_		0
+net1	z3	energy tower	_	_		0
+net2	z3	energy tower upgraded	_	_		0
+nfnp	z3	purple fountain	_	ACnr,ANre,Avul		0
+nfrm	z3	frostmourne pedestal	_	Avul		0
+nfrt	z3	Fruit Stand	_	_		0
+nft1	z3	flame tower	_	_		0
+nft2	z3	flame tower upgraded	_	_		0
+nfv0	z3	elven fishing village	_	_		0
+nfv1	z3	elven fishing village	_	_		0
+nfv2	z3	elven fishing village	_	_		0
+nfv3	z3	elven fishing village	_	_		0
+nfv4	z3	elven fishing village	_	_		0
+ngob	z3	gemstone obelisk	_	_		0
+nhcn	z3	horn of cenarius pedestal	_	Avul		0
+nheb	z3	High Elven Barracks	_	_		0
+nico	z3	icecrown obelisk	_	_		0
+nitb	z3	treasure box	_	_		0
+nmgv	z3	magic vault	_	_		0
+nnad	z3	altar of the depths - naga altar	_	Abds		0
+nnfm	z3	coral bed - naga farm	_	Abds		0
+nnsa	z3	shrine of azshara - naga caster barracks	_	Abds		0
+nnsg	z3	spawning grounds - naga barracks	_	Abds		0
+nntg	z3	tidal guardian - naga tower	_	Abds		0
+nntt	z3	temple of tides - naga town hall	_	Argl,Abds		0
+npgf	z3	pig farm	_	Aspi		0
+npgr	z3	power generator	_	_		0
+nshr	z3	shrine	_	_		0
+ntt1	z3	death tower	_	_		0
+ntx2	z3	death tower upgraded	_	_		0
+nvr0	z3	elven fishing village	_	_		0
+nvr1	z3	elven fishing village	_	_		0
+nvr2	z3	elven fishing village	_	_		0
+nwc1	z3	wyvern cage 1	_	_		0
+nwc2	z3	wyvern cage 2	_	_		0
+ocbw	z3	Chaos OrcBurrow	_	Abds,Aspi,Abun,Sbtl,Astd,Arbr		0
+nzin	z3	zone indicator	_	Avul		0
+nbse	z3	bindstone southeast	_	Avul		0
+nbsw	z3	bindstone southwest	_	Avul		0
+zcso	z9	Chaos Space Orc	_	Arng		0
+zhyd	z9	hydralisk	_	_		0
+zjug	z9	orc juggernaut	_	_		0
+zmar	z9	Marine	_	_		0
+zshv	z9	kobold shoveler	_	ACcl		0
+zsmc	z9	sammy cube	_	_		0
+zzrg	z9	zergling	_	_		0
+nzlc	z2	cinematic lich king	_	_		0

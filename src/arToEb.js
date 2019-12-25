@@ -11,7 +11,7 @@ const fs = fsCallbacks.promises;
 const loadTemplate = async parsed => {
 
 	console.log( "Globbing templates..." );
-	const templatesPaths = await glob.async( "./src/template/**/*" );
+	const templatesPaths = await glob( "./src/template/**/*" );
 	console.log( `Globed ${templatesPaths.length} templates` );
 	return {
 		templatesPaths,
@@ -36,20 +36,28 @@ const loadTemplate = async parsed => {
 			return file.replace( /\/\* \{\{(.+?)\}\} \*\//g, replacer )
 				.replace( /\bt\( "(.+?)" \);?/g, replacer )
 				.replace( /\bts\( "(.+?)" \);?/g, ( ...args ) => `"${replacer( ...args )}"` )
-				.replace( /\btj\( "(.+?)" \);?/g, ( ...args ) => jsStringify( replacer( ...args ) ) );
+				.replace( /\btj\( "(.+?)", ([0-9]|".+") \)?/g, ( _, match, spacing ) => {
+
+					const str = jsStringify( replacer( _, match ) );
+					const tab = isNaN( spacing ) ? JSON.parse( spacing ) : "\t".repeat( parseInt( spacing ) );
+					const lines = str.split( "\n" );
+					return [ lines[ 0 ], ...lines.slice( 1 ).map( v => v ? tab + v : v ) ].join( "\n" );
+
+				} )
+				.replace( /\btj\( "(.+?)" \)?/g, ( ...args ) => jsStringify( replacer( ...args ) ) );
 
 		} ) )
 	};
 
 };
 
-const setupBin = async () => {
+const setupOutputDirectory = async () => {
 
-	if ( await fs.access( "./bin" ).catch( err => err ) instanceof Error ) {
+	if ( await fs.access( "./out" ).catch( err => err ) instanceof Error ) {
 
-		console.log( "Making /bin..." );
-		await fs.mkdir( "./bin" );
-		console.log( "Made /bin" );
+		console.log( "Making /out..." );
+		await fs.mkdir( "./out" );
+		console.log( "Made /out" );
 
 	}
 
@@ -60,7 +68,7 @@ const writeTemplate = async ( templates, templatesPaths ) =>
 
 		const templateFile = templatesPaths[ i ].split( "/" ).slice( 3 ).join( "/" );
 		const templatePath = path.join(
-			"bin",
+			"out",
 			templateFile
 		);
 		const dir = path.dirname( templatePath );
@@ -78,11 +86,11 @@ const writeFiles = () => new Promise( ( resolve, reject ) => {
 
 	console.log( "Cloning files..." );
 	const child = spawn( "rsync", [
-		"-az",
+		"-a",
 		"--copy-links",
 		"src/files/",
 		"resources",
-		"bin"
+		"out"
 	], { shell: true } );
 
 	let err = "";
@@ -106,19 +114,14 @@ const writeFiles = () => new Promise( ( resolve, reject ) => {
 
 export default async buffer => {
 
-	const binSetupPromise = setupBin();
-	const parsed = parser( buffer );
-	const templatePromise = loadTemplate( parsed );
+	const setupOutputDirectoryPromise = setupOutputDirectory();
 
 	await Promise.all( [
-		binSetupPromise.then( () => writeFiles() ),
-		Promise.all( [ templatePromise, binSetupPromise ] )
+		setupOutputDirectoryPromise.then( () => writeFiles() ),
+		parser( buffer )
+			.then( parsed => Promise.all( [ loadTemplate( parsed ), setupOutputDirectoryPromise ] ) )
 			.then( ( [ { templates, templatesPaths } ] ) =>
 				writeTemplate( templates, templatesPaths ) )
 	] );
-
-	// const { templatePaths, templates } = await ;
-
-	return parsed;
 
 };
